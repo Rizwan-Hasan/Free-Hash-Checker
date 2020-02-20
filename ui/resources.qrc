@@ -1,0 +1,26 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icon.png</file>
+  </qresource>
+  <qresource prefix="calculate">
+    <file>calculator.png</file>
+  </qresource>
+  <qresource prefix="check">
+    <file>magnifying-glass.png</file>
+  </qresource>
+  <qresource prefix="copy">
+    <file>copy.png</file>
+  </qresource>
+  <qresource prefix="select">
+    <file>cursor.png</file>
+  </qresource>
+  <qresource prefix="clear">
+    <file>eraser.png</file>
+  </qresource>
+  <qresource prefix="folder">
+    <file>folder.png</file>
+  </qresource>
+  <qresource prefix="background">
+    <file>background.jpg</file>
+  </qresource>
+</RCC>

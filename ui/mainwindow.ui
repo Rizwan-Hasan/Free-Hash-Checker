@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>270</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>270</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>480</width>
+    <height>270</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icon/icon.png</normaloff>:/icon/icon.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="MainTab">
+       <attribute name="title">
+        <string>Main</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>11</x>
+          <y>11</y>
+          <width>431</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <property name="bottomMargin">
+            <number>3</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="labelFileExplore">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="resources.qrc">:/folder/folder.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditFileExplore">
+             <property name="placeholderText">
+              <string>Select a file for calculating the hash</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonSelectFile">
+             <property name="text">
+              <string>Select file</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/select/cursor.png</normaloff>:/select/cursor.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QPushButton" name="buttonClearHashBox">
+             <property name="text">
+              <string>Clear</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/clear/eraser.png</normaloff>:/clear/eraser.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditHashBox">
+             <property name="maxLength">
+              <number>128</number>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>Calculated hash will be displayed here</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonCopyToClipboard">
+             <property name="text">
+              <string>Copy</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/copy/copy.png</normaloff>:/copy/copy.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QPushButton" name="buttnClearCheckHashBox">
+             <property name="text">
+              <string>Clear</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/clear/eraser.png</normaloff>:/clear/eraser.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditCheckHashBox">
+             <property name="maxLength">
+              <number>128</number>
+             </property>
+             <property name="readOnly">
+              <bool>false</bool>
+             </property>
+             <property name="placeholderText">
+              <string>Paste your existing hash here for checking</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonCheckHash">
+             <property name="text">
+              <string>Check</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/check/magnifying-glass.png</normaloff>:/check/magnifying-glass.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0">
+           <property name="leftMargin">
+            <number>1</number>
+           </property>
+           <item>
+            <widget class="QComboBox" name="comboBoxHashChoices">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="currentText">
+              <string>MD5</string>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+             </property>
+             <property name="frame">
+              <bool>true</bool>
+             </property>
+             <item>
+              <property name="text">
+               <string>MD5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>SHA1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>SHA224</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>SHA256</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>SHA384</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>SHA512</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBarHashCaclulation">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>24</number>
+             </property>
+             <property name="textVisible">
+              <bool>false</bool>
+             </property>
+             <property name="invertedAppearance">
+              <bool>false</bool>
+             </property>
+             <property name="textDirection">
+              <enum>QProgressBar::TopToBottom</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonHashCalculate">
+             <property name="text">
+              <string>Calculate</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/calculate/calculator.png</normaloff>:/calculate/calculator.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="AboutTab">
+       <attribute name="title">
+        <string>About</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>480</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonClearHashBox</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEditHashBox</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>122</x>
+     <y>113</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttnClearCheckHashBox</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEditCheckHashBox</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>61</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
