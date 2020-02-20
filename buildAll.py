@@ -40,6 +40,17 @@ def rcc(inputFile: str, outputFile: str):
     return runCommand(command)
 
 
+def clean(verbose: bool = True):
+    with open('build.yml', 'r', encoding='utf-8') as file:
+        for i in MyYAML().load(file.read()):
+            try:
+                os.remove(i['pyName'])
+            except FileNotFoundError:
+                pass
+            if verbose is True:
+                print('cleaned {0}'.format(i['pyName']))
+
+
 def main(verbose: bool = True):
     with open('build.yml', 'r', encoding='utf-8') as file:
         for i in MyYAML().load(file.read()):

@@ -23,4 +23,7 @@
   <qresource prefix="background">
     <file>background.jpg</file>
   </qresource>
+  <qresource prefix="ok">
+    <file>ok.png</file>
+  </qresource>
 </RCC>

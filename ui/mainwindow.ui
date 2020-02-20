@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Free Hash Checker</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -58,7 +58,7 @@
           <x>11</x>
           <y>11</y>
           <width>431</width>
-          <height>121</height>
+          <height>138</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout">
@@ -88,6 +88,9 @@
            </item>
            <item>
             <widget class="QLineEdit" name="lineEditFileExplore">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="placeholderText">
               <string>Select a file for calculating the hash</string>
              </property>
@@ -288,7 +291,7 @@
      <x>0</x>
      <y>0</y>
      <width>480</width>
-     <height>21</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
