@@ -3,7 +3,7 @@
 import logging
 import sys
 
-from PySide2.QtGui import QPixmap
+from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
 
 from ui.ui_mainwindow import Ui_MainWindow
@@ -23,11 +23,24 @@ class MainWindow(QMainWindow):
         #
         self.__main()
 
+    def __main(self):
+        # Making window centered ↓
+        self.__makeWindowCenter()
+
+        # Window customizing ↓
+        self.setWindowTitle('Free Hash Checker')
+
+        self.__buttonFunctionSetter()
+
+    def __makeWindowCenter(self):
+        # For launching windows in center
+        qtRectangle = self.frameGeometry()
+        centerPoint = QGuiApplication.primaryScreen().geometry().center()
+        qtRectangle.moveCenter(centerPoint)
+        self.move(qtRectangle.topLeft())
+
     def __buttonFunctionSetter(self):
         self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
-
-    def __main(self):
-        self.__buttonFunctionSetter()
 
     def __buttonSelectFile_Func(self):
         dialog = QFileDialog(self)
