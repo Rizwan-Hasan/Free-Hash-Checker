@@ -3,9 +3,11 @@
 import logging
 import sys
 
+from PySide2.QtCore import QTimer
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
 
+from threadClass import Hashing
 from ui.ui_mainwindow import Ui_MainWindow
 
 logging.basicConfig(
@@ -15,6 +17,7 @@ logging.basicConfig(
 
 
 class MainWindow(QMainWindow):
+
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
@@ -31,6 +34,11 @@ class MainWindow(QMainWindow):
         self.setWindowTitle('Free Hash Checker')
 
         self.__buttonFunctionSetter()
+
+        self.hashing = Hashing()
+        self.hashing.test = self.ui.progressBarHashCaclulation
+        # self.hashing.mytest.connect(self.textBoxMD5.setText)
+        self.hashing.start()
 
     # For launching windows in center ↓
     def __makeWindowCenter(self):
