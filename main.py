@@ -38,12 +38,12 @@ class MainWindow(QMainWindow):
             self.tr(u"Select a File"), str(),
             self.tr(u"All Files (*)")
         )
-        logging.info(fileName)
         fileName = fileName[0]
         if fileName:
             self.ui.lineEditFileExplore.clear()
             self.ui.lineEditFileExplore.setText(fileName)
             self.ui.labelFileExplore.setPixmap(QPixmap(":ok/ok.png"))
+            logging.info('File selected "{0}"'.format(fileName))
 
 
 if __name__ == "__main__":
