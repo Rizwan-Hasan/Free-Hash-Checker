@@ -32,8 +32,8 @@ class MainWindow(QMainWindow):
 
         self.__buttonFunctionSetter()
 
+    # For launching windows in center ↓
     def __makeWindowCenter(self):
-        # For launching windows in center
         qtRectangle = self.frameGeometry()
         centerPoint = QGuiApplication.primaryScreen().geometry().center()
         qtRectangle.moveCenter(centerPoint)
