@@ -40,7 +40,7 @@ def rcc(inputFile: str, outputFile: str):
     return runCommand(command)
 
 
-def main():
+def main(verbose: bool = True):
     with open('build.yml', 'r', encoding='utf-8') as file:
         for i in MyYAML().load(file.read()):
             if i['type'] == 'ui':
@@ -49,14 +49,16 @@ def main():
                 except FileNotFoundError:
                     pass
                 uic(i['name'], i['pyName'])
-                print('{0} > {1}'.format(i['name'], i['pyName']))
+                if verbose is True:
+                    print('{0} > {1}'.format(i['name'], i['pyName']))
             elif i['type'] == 'qrc':
                 try:
                     os.remove(i['pyName'])
                 except FileNotFoundError:
                     pass
                 rcc(i['name'], i['pyName'])
-                print('{0} > {1}'.format(i['name'], i['pyName']))
+                if verbose is True:
+                    print('{0} > {1}'.format(i['name'], i['pyName']))
 
 
 if __name__ == '__main__':

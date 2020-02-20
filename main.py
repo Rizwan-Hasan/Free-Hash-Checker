@@ -3,7 +3,11 @@
 import sys
 
 from PySide2.QtWidgets import QApplication, QMainWindow
+
+import buildAll
 from ui.ui_mainwindow import Ui_MainWindow
+
+buildAll.main(verbose=False)
 
 
 class MainWindow(QMainWindow):
