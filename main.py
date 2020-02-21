@@ -34,9 +34,9 @@ class MainWindow(QMainWindow):
         # Window customizing ↓
         self.setWindowTitle('Free Hash Checker')
 
-        # Default Button Setter Functions ↓
+        # Default Button's Behaviour Set ↓
         self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
-        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+        self.ui.buttonHashCalculate.setDisabled(True)
 
     # For launching windows in center ↓
     def __makeWindowCenter(self):
@@ -60,6 +60,12 @@ class MainWindow(QMainWindow):
             self.ui.lineEditFileExplore.setText(fileName)
             self.ui.labelFileExplore.setPixmap(QPixmap(":ok/ok.png"))
             logging.info('File selected "{0}"'.format(fileName))
+            self.ui.buttonHashCalculate.setDisabled(False)
+            try:
+                self.ui.buttonHashCalculate.clicked.disconnect()
+            except RuntimeError:
+                pass
+            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
 
     def __buttonHashCalculate__Func(self):
         self.__hashCalculator = HashingMethods()
@@ -93,13 +99,9 @@ class MainWindow(QMainWindow):
 
     def __btnHashCalculatorThreadCanceler_Func(self):
         self.__hashCalculator.terminateThread()
-        print('Request QUIT')
-        while self.__hashCalculator.isRunning():
-            print('Running: {0}'.format(self.__hashCalculator.isRunning()))
-        else:
-            print('Running: {0}'.format(self.__hashCalculator.isRunning()))
         self.ui.buttonHashCalculate.clicked.disconnect()
         self.ui.buttonHashCalculate.setText('Calculate')
+        self.ui.buttonHashCalculate.setDisabled(True)
         self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
 
 

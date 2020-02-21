@@ -272,6 +272,12 @@
               <iconset resource="resources.qrc">
                <normaloff>:/calculate/calculator.png</normaloff>:/calculate/calculator.png</iconset>
              </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
             </widget>
            </item>
           </layout>
