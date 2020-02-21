@@ -37,6 +37,8 @@ class MainWindow(QMainWindow):
         # Default Button's Behaviour Set ↓
         self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
         self.ui.buttonHashCalculate.setDisabled(True)
+        self.ui.comboBoxHashChoices.setDisabled(True)
+        self.ui.progressBarHashCaclulation.setDisabled(True)
 
     # For launching windows in center ↓
     def __makeWindowCenter(self):
@@ -61,6 +63,8 @@ class MainWindow(QMainWindow):
             self.ui.labelFileExplore.setPixmap(QPixmap(":ok/ok.png"))
             logging.info('File selected "{0}"'.format(fileName))
             self.ui.buttonHashCalculate.setDisabled(False)
+            self.ui.comboBoxHashChoices.setDisabled(False)
+            self.ui.progressBarHashCaclulation.setDisabled(False)
             try:
                 self.ui.buttonHashCalculate.clicked.disconnect()
             except RuntimeError:
@@ -102,6 +106,8 @@ class MainWindow(QMainWindow):
         self.ui.buttonHashCalculate.clicked.disconnect()
         self.ui.buttonHashCalculate.setText('Calculate')
         self.ui.buttonHashCalculate.setDisabled(True)
+        self.ui.comboBoxHashChoices.setDisabled(True)
+        self.ui.progressBarHashCaclulation.setDisabled(True)
         self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
 
 
