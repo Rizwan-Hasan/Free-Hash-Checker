@@ -3,7 +3,7 @@
 import logging
 import sys
 
-from PySide2.QtCore import Slot, QThreadPool, QCoreApplication
+from PySide2.QtCore import Slot, QThreadPool
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
 
@@ -76,14 +76,19 @@ class MainWindow(QMainWindow):
     def __on_finished_hash_calculation(self, calculatedHash):
         self.ui.lineEditHashBox.setText(calculatedHash)
 
+    def l(self):
+        self.__hashCalculator.quit()
+
     # noinspection PyTypeChecker
     @Slot(int)
     def __on_going_progressbar(self, value):
         if value == 1:
             self.ui.progressBarHashCaclulation.setFormat('%p%')
-            self.ui.buttonHashCalculate.setText(QCoreApplication.translate("MainWindow", u"MD5", None))
+            # self.ui.buttonHashCalculate.setText('Cancel')
+            # self.ui.buttonHashCalculate.clicked.connect(lambda func: self.l())
         elif value == 100:
-            self.ui.progressBarHashCaclulation.setFormat(QCoreApplication.translate("MainWindow", u"Finished", None))
+            self.ui.progressBarHashCaclulation.setFormat('Finished')
+            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
         self.ui.progressBarHashCaclulation.setValue(value)
 
 
