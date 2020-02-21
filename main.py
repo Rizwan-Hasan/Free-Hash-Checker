@@ -13,7 +13,7 @@ from ui.ui_mainwindow import Ui_MainWindow
 
 logging.basicConfig(
     level=logging.DEBUG,
-    format='%(name)s - %(levelname)s : %(message)s'
+    format='%(name)s:%(levelname)s:%(message)s'
 )
 
 
@@ -69,7 +69,7 @@ class MainWindow(QMainWindow):
 
     def __buttonHashCalculate__Func(self):
         self.__hashCalculator = HashingMethods()
-        self.__hashCalculator.setHashName('sha256')
+        self.__hashCalculator.setHashName(self.ui.comboBoxHashChoices.currentText())
         self.__hashCalculator.setFileLoc(self.ui.lineEditFileExplore.text())
         self.__hashCalculator.signalEmitter.calculatedHash.connect(self.__on_finished_hash_calculation)
         self.__hashCalculator.signalEmitter.progressBarValue.connect(self.__on_going_progressbar)

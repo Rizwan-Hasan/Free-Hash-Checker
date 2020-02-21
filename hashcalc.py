@@ -36,7 +36,7 @@ class HashingMethods(QThread):
         self.__fileLoc = fileLoc
 
     def setHashName(self, hashName: str):
-        self.__hashName = hashName
+        self.__hashName = hashName.lower()
 
     def getHash(self):
         return self.__calculatedHash
