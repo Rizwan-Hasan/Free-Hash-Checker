@@ -3,7 +3,6 @@
 import logging
 import sys
 
-from PySide2.QtCore import QTimer
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
 
