@@ -4,8 +4,6 @@ import logging
 import sys
 import time
 
-import qtmodern.styles
-import qtmodern.windows
 from PySide2.QtCore import Slot
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory
