@@ -3,8 +3,10 @@
 import logging
 import sys
 
+from PySide2.QtCore import Slot, QThreadPool
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
+
 from hashcalc import HashingMethods
 from ui.ui_mainwindow import Ui_MainWindow
 
@@ -20,7 +22,8 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
+        self.__hashCalculator = HashingMethods()
+        self.pool = QThreadPool()
         #
         self.__main()
 
@@ -62,8 +65,17 @@ class MainWindow(QMainWindow):
             logging.info('File selected "{0}"'.format(fileName))
 
     def __buttonHashCalculate__Func(self):
+        self.__hashCalculator = HashingMethods()
+        self.__hashCalculator.setHashName('sha256')
+        self.__hashCalculator.setFileLoc(self.ui.lineEditFileExplore.text())
+        self.__hashCalculator.emitter.done.connect(self.__on_worker_done)
+        self.__hashCalculator.setProgressBar(self.ui.progressBarHashCaclulation)
+        self.__hashCalculator.start()
 
-        calculatedHash: str
+    @Slot(str)
+    def __on_worker_done(self, calculatedHash):
+        # modify the UI
+        self.ui.lineEditHashBox.setText(calculatedHash)
 
 
 if __name__ == "__main__":
