@@ -1,6 +1,3 @@
-# /run/media/rizwan/Video/Movies/Robin.Hood.2018.1080p.WEB-DL.DD5.1.H264-FGT.mkv
-# /run/media/rizwan/Softwares/Games/MathWorks Matlab R2018a.iso
-
 from hashlib import md5, sha256, sha512
 from os import stat
 
