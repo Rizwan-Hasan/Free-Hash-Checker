@@ -6,7 +6,7 @@ import sys
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
 
-from threadClass import Hashing
+from hashcalc import Hashing
 from ui.ui_mainwindow import Ui_MainWindow
 
 logging.basicConfig(
@@ -32,6 +32,7 @@ class MainWindow(QMainWindow):
         # Window customizing ↓
         self.setWindowTitle('Free Hash Checker')
 
+        # Button Setter Functions ↓
         self.__buttonFunctionSetter()
 
         self.hashing = Hashing()
