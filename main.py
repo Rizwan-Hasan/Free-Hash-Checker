@@ -2,8 +2,9 @@
 
 import logging
 import sys
+import time
 
-from PySide2.QtCore import Slot, QThreadPool
+from PySide2.QtCore import Slot
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
 
@@ -22,8 +23,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.__hashCalculator = HashingMethods()
-        self.pool = QThreadPool()
+        self.__hashCalculator: HashingMethods
         #
         self.__main()
 
@@ -34,8 +34,9 @@ class MainWindow(QMainWindow):
         # Window customizing ↓
         self.setWindowTitle('Free Hash Checker')
 
-        # Button Setter Functions ↓
-        self.__buttonFunctionSetter()
+        # Default Button Setter Functions ↓
+        self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
+        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
 
     # For launching windows in center ↓
     def __makeWindowCenter(self):
@@ -43,10 +44,6 @@ class MainWindow(QMainWindow):
         centerPoint = QGuiApplication.primaryScreen().geometry().center()
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
-
-    def __buttonFunctionSetter(self):
-        self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
-        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
 
     def __buttonSelectFile_Func(self):
         dialog = QFileDialog(self)
@@ -75,21 +72,32 @@ class MainWindow(QMainWindow):
     @Slot(str)
     def __on_finished_hash_calculation(self, calculatedHash):
         self.ui.lineEditHashBox.setText(calculatedHash)
-
-    def l(self):
-        self.__hashCalculator.quit()
+        logging.info('Response received: ' + calculatedHash)
+        while self.__hashCalculator.isFinished() is False:
+            time.sleep(0.5)
+        logging.info('Hash Calculator Thread Finished')
 
     # noinspection PyTypeChecker
     @Slot(int)
     def __on_going_progressbar(self, value):
-        if value == 1:
+        if self.__hashCalculator.isRunning():
             self.ui.progressBarHashCaclulation.setFormat('%p%')
-            # self.ui.buttonHashCalculate.setText('Cancel')
-            # self.ui.buttonHashCalculate.clicked.connect(lambda func: self.l())
-        elif value == 100:
+            self.ui.buttonHashCalculate.setText('Cancel')
+            self.ui.buttonHashCalculate.clicked.disconnect()
+            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__btnHashCalculatorThreadCanceler_Func())
+        if value == 100:
             self.ui.progressBarHashCaclulation.setFormat('Finished')
+            self.ui.buttonHashCalculate.clicked.disconnect()
             self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
         self.ui.progressBarHashCaclulation.setValue(value)
+
+    def __btnHashCalculatorThreadCanceler_Func(self):
+        self.__hashCalculator.terminateThread()
+        print('Request QUIT')
+        while self.__hashCalculator.isRunning():
+            print('Running: {0}'.format(self.__hashCalculator.isRunning()))
+        else:
+            print('Running: {0}'.format(self.__hashCalculator.isRunning()))
 
 
 if __name__ == "__main__":

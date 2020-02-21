@@ -4,6 +4,7 @@ from hashlib import md5, sha1, sha224, sha384, sha256, sha512
 
 from PySide2.QtCore import QThread, Signal, QObject
 from PySide2.QtWidgets import QLineEdit
+
 # from tqdm import tqdm
 
 logging.basicConfig(
@@ -17,6 +18,7 @@ class HashingMethods(QThread):
     __fileLoc: str
     __lineEditHashBox: QLineEdit
     __hashName: str
+    __termination: bool
 
     class __SignalEmitter(QObject):
         calculatedHash = Signal(str)
@@ -26,7 +28,6 @@ class HashingMethods(QThread):
 
     def run(self):
         self.__hashCalculate()
-        self.quit()
 
     def setBLOCKSIZE(self, blocksize: int):
         self.__BLOCKSIZE = blocksize
@@ -55,12 +56,17 @@ class HashingMethods(QThread):
         elif self.__hashName == 'sha512':
             return sha512()
 
+    def terminateThread(self):
+        if self.isRunning():
+            self.__termination = True
+
     def __hashCalculate(self):
         count: int = 0
         sizeCount: int = 0
         fileSize = os.stat(self.__fileLoc).st_size
         perUnit = fileSize / 100
         hasher = self.__hashDecider()
+        self.__termination = False
         with open(self.__fileLoc, 'rb') as file:
             fileData = file.read(self.__BLOCKSIZE)
             # consoleProgressBar: tqdm = tqdm(total=100)
@@ -74,6 +80,9 @@ class HashingMethods(QThread):
                     self.signalEmitter.progressBarValue.emit(count)
                 hasher.update(fileData)
                 fileData = file.read(self.__BLOCKSIZE)
+                if self.__termination:
+                    file.close()
+                    return
             else:
                 count = 100
                 # noinspection PyUnresolvedReferences
@@ -82,9 +91,10 @@ class HashingMethods(QThread):
                 # consoleProgressBar.close()
 
             calculatedHash: str = hasher.hexdigest()
-            logging.info(calculatedHash)
+            logging.info('Response from the thread: ' + calculatedHash)
             # noinspection PyUnresolvedReferences
             self.signalEmitter.calculatedHash.emit(calculatedHash)
+            return
 
 
 if __name__ == '__main__':
