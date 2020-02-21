@@ -161,6 +161,8 @@ class Ui_MainWindow(object):
         icon5 = QIcon()
         icon5.addFile(u":/calculate/calculator.png", QSize(), QIcon.Normal, QIcon.Off)
         self.buttonHashCalculate.setIcon(icon5)
+        self.buttonHashCalculate.setCheckable(False)
+        self.buttonHashCalculate.setFlat(False)
 
         self.horizontalLayout_2.addWidget(self.buttonHashCalculate)
 
