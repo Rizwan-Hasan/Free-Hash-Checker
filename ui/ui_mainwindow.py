@@ -37,6 +37,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setTabPosition(QTabWidget.North)
         self.tabWidget.setTabShape(QTabWidget.Rounded)
+        self.tabWidget.setIconSize(QSize(20, 20))
         self.MainTab = QWidget()
         self.MainTab.setObjectName(u"MainTab")
         self.layoutWidget = QWidget(self.MainTab)
@@ -169,7 +170,9 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addLayout(self.horizontalLayout_2, 3, 0, 1, 1)
 
-        self.tabWidget.addTab(self.MainTab, "")
+        icon6 = QIcon()
+        icon6.addFile(u":/home/home.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabWidget.addTab(self.MainTab, icon6, "")
         self.AboutTab = QWidget()
         self.AboutTab.setObjectName(u"AboutTab")
         self.tabWidget.addTab(self.AboutTab, "")
@@ -218,7 +221,7 @@ class Ui_MainWindow(object):
         self.comboBoxHashChoices.setCurrentText(QCoreApplication.translate("MainWindow", u"MD5", None))
         self.progressBarHashCaclulation.setFormat(QCoreApplication.translate("MainWindow", u"%p%", None))
         self.buttonHashCalculate.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.MainTab), QCoreApplication.translate("MainWindow", u"Main", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.MainTab), QCoreApplication.translate("MainWindow", u"Home", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.AboutTab), QCoreApplication.translate("MainWindow", u"About", None))
     # retranslateUi
 
