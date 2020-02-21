@@ -150,7 +150,7 @@ class Ui_MainWindow(object):
         self.progressBarHashCaclulation.setObjectName(u"progressBarHashCaclulation")
         self.progressBarHashCaclulation.setMaximum(100)
         self.progressBarHashCaclulation.setValue(0)
-        self.progressBarHashCaclulation.setTextVisible(False)
+        self.progressBarHashCaclulation.setTextVisible(True)
         self.progressBarHashCaclulation.setInvertedAppearance(False)
         self.progressBarHashCaclulation.setTextDirection(QProgressBar.TopToBottom)
 
@@ -214,6 +214,7 @@ class Ui_MainWindow(object):
         self.comboBoxHashChoices.setItemText(5, QCoreApplication.translate("MainWindow", u"SHA512", None))
 
         self.comboBoxHashChoices.setCurrentText(QCoreApplication.translate("MainWindow", u"MD5", None))
+        self.progressBarHashCaclulation.setFormat(QCoreApplication.translate("MainWindow", u"%p%", None))
         self.buttonHashCalculate.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.MainTab), QCoreApplication.translate("MainWindow", u"Main", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.AboutTab), QCoreApplication.translate("MainWindow", u"About", None))

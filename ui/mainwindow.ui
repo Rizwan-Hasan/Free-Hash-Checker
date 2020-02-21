@@ -250,13 +250,16 @@
               <number>0</number>
              </property>
              <property name="textVisible">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="invertedAppearance">
               <bool>false</bool>
              </property>
              <property name="textDirection">
               <enum>QProgressBar::TopToBottom</enum>
+             </property>
+             <property name="format">
+              <string>%p%</string>
              </property>
             </widget>
            </item>
