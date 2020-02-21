@@ -5,7 +5,7 @@ import sys
 
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
-
+from hashcalc import HashingMethods
 from ui.ui_mainwindow import Ui_MainWindow
 
 logging.basicConfig(
@@ -43,6 +43,7 @@ class MainWindow(QMainWindow):
 
     def __buttonFunctionSetter(self):
         self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
+        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
 
     def __buttonSelectFile_Func(self):
         dialog = QFileDialog(self)
@@ -59,6 +60,10 @@ class MainWindow(QMainWindow):
             self.ui.lineEditFileExplore.setText(fileName)
             self.ui.labelFileExplore.setPixmap(QPixmap(":ok/ok.png"))
             logging.info('File selected "{0}"'.format(fileName))
+
+    def __buttonHashCalculate__Func(self):
+
+        calculatedHash: str
 
 
 if __name__ == "__main__":
