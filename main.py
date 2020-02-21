@@ -6,7 +6,6 @@ import sys
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
 
-from hashcalc import Hashing
 from ui.ui_mainwindow import Ui_MainWindow
 
 logging.basicConfig(
@@ -34,11 +33,6 @@ class MainWindow(QMainWindow):
 
         # Button Setter Functions ↓
         self.__buttonFunctionSetter()
-
-        self.hashing = Hashing()
-        self.hashing.test = self.ui.progressBarHashCaclulation
-        # self.hashing.mytest.connect(self.textBoxMD5.setText)
-        self.hashing.start()
 
     # For launching windows in center ↓
     def __makeWindowCenter(self):

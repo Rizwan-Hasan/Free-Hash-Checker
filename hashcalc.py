@@ -54,10 +54,19 @@ class HashingMethods(QThread):
                     sizeCount -= perUnit
                     count += 1
                     consoleProgressBar.update(1)
+                    self.__progressBar.setValue(self.__progressBar.value() + 1)
                 hasher.update(fileData)
                 fileData = file.read(self.__BLOCKSIZE)
             else:
                 count = 100
                 consoleProgressBar.update(count)
                 consoleProgressBar.close()
+                self.__progressBar.setValue(count)
             return hasher.hexdigest()
+
+    def calculateHash(self, hashName: str):
+        return self.__hashCalculate(hashName)
+
+
+if __name__ == '__main__':
+    print('Hello World')

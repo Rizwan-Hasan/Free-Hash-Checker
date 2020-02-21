@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
         self.progressBarHashCaclulation = QProgressBar(self.layoutWidget)
         self.progressBarHashCaclulation.setObjectName(u"progressBarHashCaclulation")
         self.progressBarHashCaclulation.setMaximum(100)
-        self.progressBarHashCaclulation.setValue(24)
+        self.progressBarHashCaclulation.setValue(0)
         self.progressBarHashCaclulation.setTextVisible(False)
         self.progressBarHashCaclulation.setInvertedAppearance(False)
         self.progressBarHashCaclulation.setTextDirection(QProgressBar.TopToBottom)
