@@ -34,11 +34,13 @@ class MainWindow(QMainWindow):
         # Window customizing ↓
         self.setWindowTitle('Free Hash Checker')
 
-        # Default Button's Behaviour Set ↓
-        self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
+        # Enable/Disable Stat Set ↓
         self.ui.buttonHashCalculate.setDisabled(True)
         self.ui.comboBoxHashChoices.setDisabled(True)
         self.ui.progressBarHashCaclulation.setDisabled(True)
+
+        # Default Button's Behaviour Set ↓
+        self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
 
     # For launching windows in center ↓
     def __makeWindowCenter(self):
@@ -78,10 +80,18 @@ class MainWindow(QMainWindow):
         self.__hashCalculator.signalEmitter.calculatedHash.connect(self.__on_finished_hash_calculation)
         self.__hashCalculator.signalEmitter.progressBarValue.connect(self.__on_going_progressbar)
         self.__hashCalculator.start()
+        if self.__hashCalculator.isRunning():
+            self.ui.progressBarHashCaclulation.setFormat('%p%')
+            self.ui.buttonHashCalculate.setText('Cancel')
+            self.ui.buttonHashCalculate.clicked.disconnect()
+            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__btnHashCalculatorThreadCanceler_Func())
 
     @Slot(str)
     def __on_finished_hash_calculation(self, calculatedHash):
         self.ui.lineEditHashBox.setText(calculatedHash)
+        self.ui.buttonHashCalculate.setText('Calculate')
+        self.ui.buttonHashCalculate.clicked.disconnect()
+        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
         logging.info('Response received: ' + calculatedHash)
         while self.__hashCalculator.isFinished() is False:
             time.sleep(0.5)
@@ -90,15 +100,6 @@ class MainWindow(QMainWindow):
     # noinspection PyTypeChecker
     @Slot(int)
     def __on_going_progressbar(self, value):
-        if self.__hashCalculator.isRunning():
-            self.ui.progressBarHashCaclulation.setFormat('%p%')
-            self.ui.buttonHashCalculate.setText('Cancel')
-            self.ui.buttonHashCalculate.clicked.disconnect()
-            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__btnHashCalculatorThreadCanceler_Func())
-        if value == 100:
-            self.ui.progressBarHashCaclulation.setFormat('Finished')
-            self.ui.buttonHashCalculate.clicked.disconnect()
-            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
         self.ui.progressBarHashCaclulation.setValue(value)
 
     def __btnHashCalculatorThreadCanceler_Func(self):
@@ -108,6 +109,7 @@ class MainWindow(QMainWindow):
         self.ui.buttonHashCalculate.setDisabled(True)
         self.ui.comboBoxHashChoices.setDisabled(True)
         self.ui.progressBarHashCaclulation.setDisabled(True)
+        self.ui.progressBarHashCaclulation.reset()
         self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
 
 
