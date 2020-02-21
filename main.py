@@ -4,8 +4,8 @@ import logging
 import sys
 import time
 
-from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication
+from PySide2.QtCore import Slot, qApp
+from PySide2.QtGui import QPixmap, QGuiApplication, QPalette, QColor, Qt
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory
 
 from hashcalc import HashingMethods
