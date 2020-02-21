@@ -173,6 +173,9 @@ class Ui_MainWindow(object):
         icon6 = QIcon()
         icon6.addFile(u":/home/home.png", QSize(), QIcon.Normal, QIcon.Off)
         self.tabWidget.addTab(self.MainTab, icon6, "")
+        self.SettingsTab = QWidget()
+        self.SettingsTab.setObjectName(u"SettingsTab")
+        self.tabWidget.addTab(self.SettingsTab, "")
         self.AboutTab = QWidget()
         self.AboutTab.setObjectName(u"AboutTab")
         self.tabWidget.addTab(self.AboutTab, "")
@@ -222,6 +225,7 @@ class Ui_MainWindow(object):
         self.progressBarHashCaclulation.setFormat(QCoreApplication.translate("MainWindow", u"%p%", None))
         self.buttonHashCalculate.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.MainTab), QCoreApplication.translate("MainWindow", u"Home", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.SettingsTab), QCoreApplication.translate("MainWindow", u"Settings", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.AboutTab), QCoreApplication.translate("MainWindow", u"About", None))
     # retranslateUi
 

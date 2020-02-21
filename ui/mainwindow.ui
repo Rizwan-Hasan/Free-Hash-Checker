@@ -295,6 +295,11 @@
         </layout>
        </widget>
       </widget>
+      <widget class="QWidget" name="SettingsTab">
+       <attribute name="title">
+        <string>Settings</string>
+       </attribute>
+      </widget>
       <widget class="QWidget" name="AboutTab">
        <attribute name="title">
         <string>About</string>
