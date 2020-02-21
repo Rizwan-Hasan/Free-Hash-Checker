@@ -1,29 +1,32 @@
+import logging
 import os
 from hashlib import md5, sha1, sha224, sha384, sha256, sha512
 
 from PySide2.QtCore import QThread, Signal, QObject
-from PySide2.QtWidgets import QProgressBar, QLineEdit
+from PySide2.QtWidgets import QLineEdit
 from tqdm import tqdm
 
-
-class MyEmitter(QObject):
-    # setting up custom signal
-    done = Signal(str)
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(name)s - %(levelname)s : %(message)s'
+)
 
 
 class HashingMethods(QThread):
     __BLOCKSIZE: int = 4096
     __fileLoc: str
     __lineEditHashBox: QLineEdit
-    __progressBar: QProgressBar
     __hashName: str
-    emitter = MyEmitter()
+
+    class __SignalEmitter(QObject):
+        calculatedHash = Signal(str)
+        progressBarValue = Signal(int)
+
+    signalEmitter = __SignalEmitter()
 
     def run(self):
-        calculatedHash = self.__hashCalculate()
-        print(calculatedHash)
-        # noinspection PyUnresolvedReferences
-        self.emitter.done.emit(calculatedHash)
+        self.__hashCalculate()
+        self.quit()
 
     def setBLOCKSIZE(self, blocksize: int):
         self.__BLOCKSIZE = blocksize
@@ -33,9 +36,6 @@ class HashingMethods(QThread):
 
     def setHashName(self, hashName: str):
         self.__hashName = hashName
-
-    def setProgressBar(self, progressBar: QProgressBar):
-        self.__progressBar = progressBar
 
     def getHash(self):
         return self.__calculatedHash
@@ -70,15 +70,21 @@ class HashingMethods(QThread):
                     sizeCount -= perUnit
                     count += 1
                     consoleProgressBar.update(1)
-                    self.__progressBar.setValue(self.__progressBar.value() + 1)
+                    # noinspection PyUnresolvedReferences
+                    self.signalEmitter.progressBarValue.emit(count)
                 hasher.update(fileData)
                 fileData = file.read(self.__BLOCKSIZE)
             else:
                 count = 100
                 consoleProgressBar.update(count)
                 consoleProgressBar.close()
-                self.__progressBar.setValue(count)
-            return hasher.hexdigest()
+                # noinspection PyUnresolvedReferences
+                self.signalEmitter.progressBarValue.emit(count)
+
+            calculatedHash: str = hasher.hexdigest()
+            logging.info(calculatedHash)
+            # noinspection PyUnresolvedReferences
+            self.signalEmitter.calculatedHash.emit(calculatedHash)
 
 
 if __name__ == '__main__':

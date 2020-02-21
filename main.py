@@ -68,14 +68,17 @@ class MainWindow(QMainWindow):
         self.__hashCalculator = HashingMethods()
         self.__hashCalculator.setHashName('sha256')
         self.__hashCalculator.setFileLoc(self.ui.lineEditFileExplore.text())
-        self.__hashCalculator.emitter.done.connect(self.__on_worker_done)
-        self.__hashCalculator.setProgressBar(self.ui.progressBarHashCaclulation)
+        self.__hashCalculator.signalEmitter.calculatedHash.connect(self.__on_finished_hash_calculation)
+        self.__hashCalculator.signalEmitter.progressBarValue.connect(self.__on_going_progressbar)
         self.__hashCalculator.start()
 
     @Slot(str)
-    def __on_worker_done(self, calculatedHash):
-        # modify the UI
+    def __on_finished_hash_calculation(self, calculatedHash):
         self.ui.lineEditHashBox.setText(calculatedHash)
+
+    @Slot(int)
+    def __on_going_progressbar(self, value):
+        self.ui.progressBarHashCaclulation.setValue(value)
 
 
 if __name__ == "__main__":

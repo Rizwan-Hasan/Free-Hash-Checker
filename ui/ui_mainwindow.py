@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
         self.lineEditHashBox = QLineEdit(self.layoutWidget)
         self.lineEditHashBox.setObjectName(u"lineEditHashBox")
         self.lineEditHashBox.setMaxLength(128)
-        self.lineEditHashBox.setReadOnly(True)
+        self.lineEditHashBox.setReadOnly(False)
 
         self.horizontalLayout_3.addWidget(self.lineEditHashBox)
 
@@ -186,6 +186,8 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.buttonClearHashBox.clicked.connect(self.lineEditHashBox.clear)
         self.buttnClearCheckHashBox.clicked.connect(self.lineEditCheckHashBox.clear)
+        self.buttonClearHashBox.clicked.connect(self.lineEditFileExplore.clear)
+        self.buttonClearHashBox.clicked.connect(self.progressBarHashCaclulation.reset)
 
         self.tabWidget.setCurrentIndex(0)
 

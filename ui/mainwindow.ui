@@ -308,12 +308,12 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>90</x>
-     <y>113</y>
+     <x>103</x>
+     <y>140</y>
     </hint>
     <hint type="destinationlabel">
-     <x>122</x>
-     <y>113</y>
+     <x>221</x>
+     <y>140</y>
     </hint>
    </hints>
   </connection>
@@ -324,12 +324,44 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>61</x>
-     <y>140</y>
+     <x>74</x>
+     <y>175</y>
     </hint>
     <hint type="destinationlabel">
-     <x>155</x>
-     <y>141</y>
+     <x>254</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearHashBox</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEditFileExplore</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>28</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonClearHashBox</sender>
+   <signal>clicked()</signal>
+   <receiver>progressBarHashCaclulation</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>28</x>
+     <y>134</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>198</y>
     </hint>
    </hints>
   </connection>
