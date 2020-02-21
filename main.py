@@ -6,7 +6,7 @@ import time
 
 from PySide2.QtCore import Slot
 from PySide2.QtGui import QPixmap, QGuiApplication
-from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
+from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory
 
 from hashcalc import HashingMethods
 from ui.ui_mainwindow import Ui_MainWindow
@@ -107,6 +107,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setStyle(QStyleFactory.create('Fusion'))
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
