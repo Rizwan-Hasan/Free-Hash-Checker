@@ -4,7 +4,7 @@ from hashlib import md5, sha1, sha224, sha384, sha256, sha512
 
 from PySide2.QtCore import QThread, Signal, QObject
 from PySide2.QtWidgets import QLineEdit
-from tqdm import tqdm
+# from tqdm import tqdm
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -63,23 +63,23 @@ class HashingMethods(QThread):
         hasher = self.__hashDecider()
         with open(self.__fileLoc, 'rb') as file:
             fileData = file.read(self.__BLOCKSIZE)
-            consoleProgressBar: tqdm = tqdm(total=100)
+            # consoleProgressBar: tqdm = tqdm(total=100)
             while fileData:
                 sizeCount += self.__BLOCKSIZE
                 if sizeCount >= perUnit:
                     sizeCount -= perUnit
                     count += 1
-                    consoleProgressBar.update(1)
+                    # consoleProgressBar.update(1)
                     # noinspection PyUnresolvedReferences
                     self.signalEmitter.progressBarValue.emit(count)
                 hasher.update(fileData)
                 fileData = file.read(self.__BLOCKSIZE)
             else:
                 count = 100
-                consoleProgressBar.update(count)
-                consoleProgressBar.close()
                 # noinspection PyUnresolvedReferences
                 self.signalEmitter.progressBarValue.emit(count)
+                # consoleProgressBar.update(count)
+                # consoleProgressBar.close()
 
             calculatedHash: str = hasher.hexdigest()
             logging.info(calculatedHash)
