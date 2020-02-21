@@ -98,6 +98,9 @@ class MainWindow(QMainWindow):
             print('Running: {0}'.format(self.__hashCalculator.isRunning()))
         else:
             print('Running: {0}'.format(self.__hashCalculator.isRunning()))
+        self.ui.buttonHashCalculate.clicked.disconnect()
+        self.ui.buttonHashCalculate.setText('Calculate')
+        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
 
 
 if __name__ == "__main__":
