@@ -175,10 +175,14 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.MainTab, icon6, "")
         self.SettingsTab = QWidget()
         self.SettingsTab.setObjectName(u"SettingsTab")
-        self.tabWidget.addTab(self.SettingsTab, "")
+        icon7 = QIcon()
+        icon7.addFile(u":/settings/settings.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabWidget.addTab(self.SettingsTab, icon7, "")
         self.AboutTab = QWidget()
         self.AboutTab.setObjectName(u"AboutTab")
-        self.tabWidget.addTab(self.AboutTab, "")
+        icon8 = QIcon()
+        icon8.addFile(u":/about/question.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabWidget.addTab(self.AboutTab, icon8, "")
 
         self.verticalLayout_2.addWidget(self.tabWidget)
 

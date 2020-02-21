@@ -296,11 +296,19 @@
        </widget>
       </widget>
       <widget class="QWidget" name="SettingsTab">
+       <attribute name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/settings/settings.png</normaloff>:/settings/settings.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>Settings</string>
        </attribute>
       </widget>
       <widget class="QWidget" name="AboutTab">
+       <attribute name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/about/question.png</normaloff>:/about/question.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>About</string>
        </attribute>
