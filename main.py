@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import logging
+import os
 import sys
 import time
 
-from PySide2.QtCore import Slot, qApp
-from PySide2.QtGui import QPixmap, QGuiApplication, QPalette, QColor, Qt
-from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory
+from PySide2.QtCore import Slot
+from PySide2.QtGui import QPixmap, QGuiApplication
+from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory, QMessageBox
 
 from hashcalc import HashingMethods
 from ui.ui_mainwindow import Ui_MainWindow
@@ -34,13 +35,19 @@ class MainWindow(QMainWindow):
         # Window customizing ↓
         self.setWindowTitle('Free Hash Checker')
 
-        # Enable/Disable Stat Set ↓
-        self.ui.buttonHashCalculate.setDisabled(True)
-        self.ui.comboBoxHashChoices.setDisabled(True)
-        self.ui.progressBarHashCaclulation.setDisabled(True)
+        # Clipboard setup ↓
+        self.__clipboard = QApplication.clipboard()
+        self.__clipboard.clear(mode=self.__clipboard.Clipboard)
+
+        # Resetting progress bar ↓
+        self.ui.progressBarHashCaclulation.reset()
 
         # Default Button's Behaviour Set ↓
         self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
+        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+        self.ui.buttonClearHashBox.clicked.connect(lambda func: self.__buttonClearHashBox_Func())
+        self.ui.buttonCopyToClipboard.clicked.connect(lambda func: self.__buttonCopyToClipboard_Func())
+        self.ui.buttonCheckHash.clicked.connect(lambda func: self.__buttonCheckHash_Func())
 
     # For launching windows in center ↓
     def __makeWindowCenter(self):
@@ -64,9 +71,6 @@ class MainWindow(QMainWindow):
             self.ui.lineEditFileExplore.setText(fileName)
             self.ui.labelFileExplore.setPixmap(QPixmap(":ok/ok.png"))
             logging.info('File selected "{0}"'.format(fileName))
-            self.ui.buttonHashCalculate.setDisabled(False)
-            self.ui.comboBoxHashChoices.setDisabled(False)
-            self.ui.progressBarHashCaclulation.setDisabled(False)
             try:
                 self.ui.buttonHashCalculate.clicked.disconnect()
             except RuntimeError:
@@ -74,17 +78,21 @@ class MainWindow(QMainWindow):
             self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
 
     def __buttonHashCalculate__Func(self):
-        self.__hashCalculator = HashingMethods()
-        self.__hashCalculator.setHashName(self.ui.comboBoxHashChoices.currentText())
-        self.__hashCalculator.setFileLoc(self.ui.lineEditFileExplore.text())
-        self.__hashCalculator.signalEmitter.calculatedHash.connect(self.__on_finished_hash_calculation)
-        self.__hashCalculator.signalEmitter.progressBarValue.connect(self.__on_going_progressbar)
-        self.__hashCalculator.start()
-        if self.__hashCalculator.isRunning():
-            self.ui.progressBarHashCaclulation.setFormat('%p%')
-            self.ui.buttonHashCalculate.setText('Cancel')
-            self.ui.buttonHashCalculate.clicked.disconnect()
-            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__btnHashCalculatorThreadCanceler_Func())
+        if not os.path.isfile(self.ui.lineEditFileExplore.text()):
+            # noinspection PyTypeChecker
+            QMessageBox().warning(None, 'Warning', 'Please select a file to continue!', QMessageBox.Abort)
+        else:
+            self.__hashCalculator = HashingMethods()
+            self.__hashCalculator.setHashName(self.ui.comboBoxHashChoices.currentText())
+            self.__hashCalculator.setFileLoc(self.ui.lineEditFileExplore.text())
+            self.__hashCalculator.signalEmitter.calculatedHash.connect(self.__on_finished_hash_calculation)
+            self.__hashCalculator.signalEmitter.progressBarValue.connect(self.__on_going_progressbar)
+            self.__hashCalculator.start()
+            if self.__hashCalculator.isRunning():
+                self.ui.progressBarHashCaclulation.setFormat('%p%')
+                self.ui.buttonHashCalculate.setText('Cancel')
+                self.ui.buttonHashCalculate.clicked.disconnect()
+                self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__btnHashCalculatorThreadCanceler_Func())
 
     @Slot(str)
     def __on_finished_hash_calculation(self, calculatedHash):
@@ -106,11 +114,24 @@ class MainWindow(QMainWindow):
         self.__hashCalculator.terminateThread()
         self.ui.buttonHashCalculate.clicked.disconnect()
         self.ui.buttonHashCalculate.setText('Calculate')
-        self.ui.buttonHashCalculate.setDisabled(True)
-        self.ui.comboBoxHashChoices.setDisabled(True)
-        self.ui.progressBarHashCaclulation.setDisabled(True)
         self.ui.progressBarHashCaclulation.reset()
         self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+
+    def __buttonClearHashBox_Func(self):
+        self.ui.lineEditFileExplore.clear()
+        self.ui.lineEditHashBox.clear()
+        self.ui.progressBarHashCaclulation.reset()
+        try:
+            self.ui.buttonHashCalculate.clicked.disconnect()
+        except RuntimeError:
+            pass
+        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+
+    def __buttonCopyToClipboard_Func(self):
+        self.__clipboard.setText(self.ui.lineEditHashBox.text())
+
+    def __buttonCheckHash_Func(self):
+        self.ui.lineEditCheckHashBox.setText(self.__clipboard.text())
 
 
 if __name__ == "__main__":

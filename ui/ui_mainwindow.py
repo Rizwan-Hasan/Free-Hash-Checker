@@ -196,10 +196,6 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.buttonClearHashBox.clicked.connect(self.lineEditHashBox.clear)
-        self.buttnClearCheckHashBox.clicked.connect(self.lineEditCheckHashBox.clear)
-        self.buttonClearHashBox.clicked.connect(self.lineEditFileExplore.clear)
-        self.buttonClearHashBox.clicked.connect(self.progressBarHashCaclulation.reset)
 
         self.tabWidget.setCurrentIndex(0)
 
