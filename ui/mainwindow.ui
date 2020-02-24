@@ -203,7 +203,7 @@
          <item row="3" column="0">
           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0">
            <property name="leftMargin">
-            <number>1</number>
+            <number>0</number>
            </property>
            <item>
             <widget class="QComboBox" name="comboBoxHashChoices">

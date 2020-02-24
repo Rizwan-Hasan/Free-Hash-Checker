@@ -132,7 +132,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(1, -1, -1, -1)
+        self.horizontalLayout_2.setContentsMargins(0, -1, -1, -1)
         self.comboBoxHashChoices = QComboBox(self.layoutWidget)
         self.comboBoxHashChoices.addItem("")
         self.comboBoxHashChoices.addItem("")
