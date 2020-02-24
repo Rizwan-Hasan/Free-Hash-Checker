@@ -135,11 +135,12 @@ class MainWindow(QMainWindow):
 
 
 def main():
-	app = QApplication(sys.argv)
+    app = QApplication(sys.argv)
     app.setStyle(QStyleFactory.create('Fusion'))
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
+
 
 if __name__ == "__main__":
     main()
