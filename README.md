@@ -115,45 +115,6 @@
 
 Mark Text is an MIT licensed open source project, and the latest version will always be downloadable for free from the GitHub release page. Mark Text is still in development, and its development is inseparable from all sponsors. I hope you join them:
 
-- [Become a backer or sponsor on Patreon](https://www.patreon.com/ranluo) or [One time donation](https://github.com/Jocs/sponsor.me)
-- [Become a backer or sponsor on Open Collective](https://opencollective.com/marktext)
-
-##### What's the difference between Patreon and Open Collective?
-
-Patreon: Funds will be directly sponsored to Luo Ran (@jocs) who created Mark Text and continues to maintain it.
-Open Collective: All expenses are transparent. The funds will be used for the development and maintenance of Mark Text, funding online and offline activities, and acquiring other necessary resources.
-Names and company logos of all sponsors (from both Patreon and Open Collective) will appear on the official website for Mark Text and in its README.md file.
-
-**Platinum Sponsors**
-
-<a href="https://opencollective.com/marktext#platinum-sponsors">
- <img src="https://opencollective.com/marktext/tiers/platinum-sponsors.svg?avatarHeight=36&width=600">
-</a>
-
-**Gold Sponsors**
-
-<a href="https://opencollective.com/marktext#platinum-sponsors">
-  <img src="https://opencollective.com/marktext/tiers/gold-sponsors.svg?avatarHeight=36&width=600">
-</a>
-
-**Silver Sponsors**
-
-<a href="https://opencollective.com/marktext#platinum-sponsors">
-  <img src="https://opencollective.com/marktext/tiers/silver-sponsors.svg?avatarHeight=36&width=600">
-</a>
-
-**Bronze Sponsors**
-
-<a href="https://opencollective.com/marktext#platinum-sponsors">
-  <img src="https://opencollective.com/marktext/tiers/bronze-sponsors.svg?avatarHeight=36&width=600">
-</a>
-
-**Backers**
-
-<a href="https://opencollective.com/marktext#backers">
-  <img src="https://opencollective.com/marktext/tiers/backer.svg?avatarHeight=36&width=600">
-</a>
-
 ## Screenshot
 
 ![](docs/marktext.png?raw=true)
@@ -178,18 +139,6 @@ Names and company logos of all sponsors (from both Patreon and Open Collective) 
 | Ulysses Light                                     | One Dark                                        |
 | ![](docs/themeImages/ulysses-light.png?raw=true)  | ![](docs/themeImages/one-dark.png?raw=true)     |
 
-<h4 align="center">:smile_cat:Edit modes:dog:</h4>
-
-| Source Code          | Typewriter               | Focus               |
-|:--------------------:|:------------------------:|:-------------------:|
-| ![](docs/source.gif) | ![](docs/typewriter.gif) | ![](docs/focus.gif) |
-
-## Why write another editor?
-
-1. I love writing. I have used a lot of markdown editors, yet there is still not an editor that can fully meet my needs. I don't like to be disturbed when I write by some unbearable bug. **Mark Text** uses virtual DOM to render pages which has the added benefits of being highly efficient and being open source. That way anyone who loves markdown and writing can use Mark Text.
-2. As mentioned above, **Mark Text** is completely free and open source and will be open source forever. We hope that all markdown lovers will contribute their own code and help develop **Mark Text** into a popular markdown editor.
-3. There are many markdown editors and all have their own merits, some have features which others don't. It's difficult to satisfy each markdown users' needs but we hope **Mark Text** will be able to satisfy each markdown user as much as possible. Although the latest **Mark Text** is still not perfect, we will try to make it as best as we possibly can.
-
 ## Download and Installation
 
 ![platform](https://img.shields.io/static/v1.svg?label=Platform&message=Linux-64%20|%20macOS-64%20|%20Win-32%20|%20Win-64&style=for-the-badge)
@@ -200,14 +149,6 @@ Names and company logos of all sponsors (from both Patreon and Open Collective) 
 
 Want to see new features of the latest version? Please refer to [CHANGELOG](.github/CHANGELOG.md).
 
-#### macOS
-
-You can either download the latest `marktext-%version%.dmg` from the [release page](https://github.com/marktext/marktext/releases/latest) or install Mark Text using [**homebrew cask**](https://github.com/caskroom/homebrew-cask). To use Homebrew-Cask you just need to have [Homebrew](https://brew.sh/) installed.
-
-```bash
-brew cask install mark-text
-```
-
 #### Windows
 
 Simply download and install Mark Text via setup wizard (`marktext-setup-%version%.exe`) and choose whether to install per-user or machine wide.
@@ -215,10 +156,6 @@ Simply download and install Mark Text via setup wizard (`marktext-setup-%version
 #### Linux
 
 Please follow the [Linux installation instructions](docs/LINUX.md).
-
-#### Other
-
-All binaries for Linux, macOS and Windows can be downloaded from the [release page](https://github.com/marktext/marktext/releases/latest). If a version is unavailable for your system, then please open an [issue](https://github.com/marktext/marktext/issues).
 
 ## Development
 
