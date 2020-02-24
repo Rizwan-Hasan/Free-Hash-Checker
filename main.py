@@ -134,9 +134,12 @@ class MainWindow(QMainWindow):
         self.ui.lineEditCheckHashBox.setText(self.__clipboard.text())
 
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
+def main():
+	app = QApplication(sys.argv)
     app.setStyle(QStyleFactory.create('Fusion'))
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    main()
