@@ -5,7 +5,7 @@ import os
 import sys
 import time
 
-from PySide2.QtCore import Slot, qApp
+from PySide2.QtCore import Slot
 from PySide2.QtGui import QPixmap, QGuiApplication
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory, QMessageBox
 
@@ -137,12 +137,6 @@ class MainWindow(QMainWindow):
 def main():
     app = QApplication(sys.argv)
     app.setStyle(QStyleFactory.create('Fusion'))
-    qApp.setStyleSheet("""
-    QPushButton:hover:!pressed {
-        border: 1px solid #00B0FF;
-        border-radius: 3px;
-    }""")
-
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())

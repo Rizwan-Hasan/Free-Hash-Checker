@@ -50,8 +50,8 @@
       </property>
       <property name="iconSize">
        <size>
-        <width>20</width>
-        <height>20</height>
+        <width>16</width>
+        <height>16</height>
        </size>
       </property>
       <widget class="QWidget" name="MainTab">
@@ -68,7 +68,7 @@
           <x>11</x>
           <y>11</y>
           <width>431</width>
-          <height>138</height>
+          <height>141</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout">
@@ -78,7 +78,7 @@
             <number>6</number>
            </property>
            <property name="bottomMargin">
-            <number>3</number>
+            <number>0</number>
            </property>
            <item>
             <widget class="QLabel" name="labelFileExplore">
@@ -89,7 +89,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap resource="resources.qrc">:/folder/folder.png</pixmap>
+              <pixmap resource="resources.qrc">:/folder/opened-folder.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -113,7 +113,13 @@
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/select/cursor.png</normaloff>:/select/cursor.png</iconset>
+               <normaloff>:/select/import-file.png</normaloff>:/select/import-file.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>21</height>
+              </size>
              </property>
             </widget>
            </item>
@@ -129,6 +135,12 @@
              <property name="icon">
               <iconset resource="resources.qrc">
                <normaloff>:/clear/eraser.png</normaloff>:/clear/eraser.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>21</height>
+              </size>
              </property>
             </widget>
            </item>
@@ -154,6 +166,12 @@
               <iconset resource="resources.qrc">
                <normaloff>:/copy/copy.png</normaloff>:/copy/copy.png</iconset>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>21</height>
+              </size>
+             </property>
             </widget>
            </item>
           </layout>
@@ -168,6 +186,12 @@
              <property name="icon">
               <iconset resource="resources.qrc">
                <normaloff>:/clear/eraser.png</normaloff>:/clear/eraser.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>21</height>
+              </size>
              </property>
             </widget>
            </item>
@@ -196,6 +220,12 @@
               <iconset resource="resources.qrc">
                <normaloff>:/check/magnifying-glass.png</normaloff>:/check/magnifying-glass.png</iconset>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>21</height>
+              </size>
+             </property>
             </widget>
            </item>
           </layout>
@@ -210,11 +240,20 @@
              <property name="enabled">
               <bool>true</bool>
              </property>
+             <property name="editable">
+              <bool>false</bool>
+             </property>
              <property name="currentText">
               <string>MD5</string>
              </property>
              <property name="sizeAdjustPolicy">
               <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
              </property>
              <property name="frame">
               <bool>true</bool>
@@ -223,30 +262,54 @@
               <property name="text">
                <string>MD5</string>
               </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/rhombus/rhombus.png</normaloff>:/rhombus/rhombus.png</iconset>
+              </property>
              </item>
              <item>
               <property name="text">
                <string>SHA1</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/rhombus/rhombus.png</normaloff>:/rhombus/rhombus.png</iconset>
               </property>
              </item>
              <item>
               <property name="text">
                <string>SHA224</string>
               </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/rhombus/rhombus.png</normaloff>:/rhombus/rhombus.png</iconset>
+              </property>
              </item>
              <item>
               <property name="text">
                <string>SHA256</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/rhombus/rhombus.png</normaloff>:/rhombus/rhombus.png</iconset>
               </property>
              </item>
              <item>
               <property name="text">
                <string>SHA384</string>
               </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/rhombus/rhombus.png</normaloff>:/rhombus/rhombus.png</iconset>
+              </property>
              </item>
              <item>
               <property name="text">
                <string>SHA512</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/rhombus/rhombus.png</normaloff>:/rhombus/rhombus.png</iconset>
               </property>
              </item>
             </widget>
@@ -280,9 +343,21 @@
              </property>
              <property name="icon">
               <iconset resource="resources.qrc">
-               <normaloff>:/calculate/calculator.png</normaloff>:/calculate/calculator.png</iconset>
+               <normaloff>:/calculate/drawing-compass.png</normaloff>:/calculate/drawing-compass.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>21</height>
+              </size>
              </property>
              <property name="checkable">
+              <bool>false</bool>
+             </property>
+             <property name="autoDefault">
+              <bool>false</bool>
+             </property>
+             <property name="default">
               <bool>false</bool>
              </property>
              <property name="flat">
@@ -307,7 +382,7 @@
       <widget class="QWidget" name="AboutTab">
        <attribute name="icon">
         <iconset resource="resources.qrc">
-         <normaloff>:/about/question.png</normaloff>:/about/question.png</iconset>
+         <normaloff>:/about/info.png</normaloff>:/about/info.png</iconset>
        </attribute>
        <attribute name="title">
         <string>About</string>
