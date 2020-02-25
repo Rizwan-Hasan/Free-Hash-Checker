@@ -6,7 +6,7 @@ import sys
 import time
 
 from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication
+from PySide2.QtGui import QPixmap, QGuiApplication, QIcon
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory, QMessageBox
 
 from hashcalc import HashingMethods
@@ -119,6 +119,7 @@ class MainWindow(QMainWindow):
 
     def __buttonClearHashBox_Func(self):
         self.ui.lineEditFileExplore.clear()
+        self.ui.labelFileExplore.setPixmap(QPixmap(u":/folder/opened-folder.png"))
         self.ui.lineEditHashBox.clear()
         self.ui.progressBarHashCaclulation.reset()
         try:
