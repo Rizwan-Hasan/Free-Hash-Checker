@@ -158,6 +158,10 @@ If you wish to build **Mark Text** yourself, please check out our [build instruc
 
 If you have any questions regarding **Mark Text**, you are welcome to write an issue. When doing so please use the default format found when opening an issue. Of course, if you submit a PR directly, it will be greatly appreciated.
 
+## Credits
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 ## License
 
 [**MIT**](LICENSE).
