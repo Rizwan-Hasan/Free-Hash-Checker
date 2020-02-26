@@ -56,6 +56,7 @@ class MainWindow(QMainWindow):
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
 
+    # Close button behaviour ↓
     def closeEvent(self, event: QCloseEvent):
         buttonReply = QMessageBox.question(self, 'Warning', "Sure to exit?",
                                            QMessageBox.Ok | QMessageBox.Cancel, QMessageBox.Cancel)
