@@ -9,19 +9,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>526</width>
-    <height>326</height>
+    <width>500</width>
+    <height>297</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>526</width>
-    <height>326</height>
+    <width>450</width>
+    <height>297</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>526</width>
+    <width>500</width>
     <height>326</height>
    </size>
   </property>
@@ -167,6 +167,9 @@
              </item>
              <item>
               <widget class="QLineEdit" name="lineEditHashBox">
+               <property name="text">
+                <string/>
+               </property>
                <property name="maxLength">
                 <number>128</number>
                </property>
@@ -431,8 +434,20 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar">
+   <property name="minimumSize">
+    <size>
+     <width>450</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>600</width>
+     <height>326</height>
+    </size>
+   </property>
    <property name="sizeGripEnabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
