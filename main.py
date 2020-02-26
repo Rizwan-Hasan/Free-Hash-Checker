@@ -6,8 +6,8 @@ import sys
 import time
 
 from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent
-from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory, QMessageBox
+from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QPalette, QColor, Qt
+from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory, QMessageBox, qApp
 
 from hashcalc import HashingMethods
 from ui.ui_mainwindow import Ui_MainWindow
@@ -61,17 +61,16 @@ class MainWindow(QMainWindow):
 
     # Close button behaviour ↓
     def closeEvent(self, event: QCloseEvent):
-        buttonReply = QMessageBox.question(self, 'Warning', "Sure to exit?",
-                                           QMessageBox.Ok | QMessageBox.Cancel, QMessageBox.Cancel)
-        if buttonReply == QMessageBox.Ok:
-            try:
-                if self.__hashCalculator.isRunning() is True:
-                    self.__btnHashCalculatorThreadCanceler_Func()
-            except AttributeError:
-                pass
-            event.accept()
-        else:
-            event.ignore()
+        try:
+            if self.__hashCalculator.isRunning() is True:
+                self.__btnHashCalculatorThreadCanceler_Func()
+        except AttributeError:
+            buttonReply = QMessageBox.question(self, 'Warning', "Sure to exit?",
+                                               QMessageBox.Ok | QMessageBox.Cancel, QMessageBox.Cancel)
+            if buttonReply == QMessageBox.Ok:
+                event.accept()
+            else:
+                event.ignore()
 
     def __buttonSelectFile_Func(self):
         dialog = QFileDialog(self)
@@ -165,6 +164,39 @@ class MainWindow(QMainWindow):
 def main():
     app = QApplication(sys.argv)
     app.setStyle(QStyleFactory.create('Fusion'))
+
+    qApp.setStyle(QStyleFactory.create("Fusion"))
+
+    darkPalette = QPalette()
+
+    darkColor = QColor(45, 45, 45)
+    disabledColor = QColor(127, 127, 127)
+    darkPalette.setColor(QPalette.Window, darkColor)
+    darkPalette.setColor(QPalette.WindowText, Qt.white)
+    darkPalette.setColor(QPalette.Base, QColor(40, 40, 40))
+    darkPalette.setColor(QPalette.AlternateBase, darkColor)
+    darkPalette.setColor(QPalette.ToolTipBase, Qt.white)
+    darkPalette.setColor(QPalette.ToolTipText, Qt.white)
+    darkPalette.setColor(QPalette.Text, Qt.white)
+    darkPalette.setColor(QPalette.Disabled, QPalette.Text, disabledColor)
+    darkPalette.setColor(QPalette.Button, darkColor)
+    darkPalette.setColor(QPalette.ButtonText, Qt.white)
+    darkPalette.setColor(QPalette.Disabled, QPalette.ButtonText, disabledColor)
+    darkPalette.setColor(QPalette.BrightText, Qt.red)
+    darkPalette.setColor(QPalette.Link, QColor(42, 130, 218))
+    darkPalette.setColor(QPalette.Highlight, QColor(42, 130, 218))
+    darkPalette.setColor(QPalette.HighlightedText, Qt.black)
+    darkPalette.setColor(QPalette.Disabled, QPalette.HighlightedText, disabledColor)
+
+    qApp.setPalette(darkPalette)
+
+    qApp.setStyleSheet("""
+        QToolTip { 
+            color: #ffffff; 
+            background-color: #2A82DA; 
+            border: 1px solid white;
+        }""")
+
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
