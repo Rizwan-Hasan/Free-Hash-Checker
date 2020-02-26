@@ -42,7 +42,7 @@ class Ui_MainWindow(object):
         self.MainTab.setObjectName(u"MainTab")
         self.layoutWidget = QWidget(self.MainTab)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(11, 11, 431, 144))
+        self.layoutWidget.setGeometry(QRect(11, 11, 431, 141))
         self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -171,8 +171,9 @@ class Ui_MainWindow(object):
         icon6 = QIcon()
         icon6.addFile(u":/calculate/drawing-compass.png", QSize(), QIcon.Normal, QIcon.Off)
         self.buttonHashCalculate.setIcon(icon6)
-        self.buttonHashCalculate.setIconSize(QSize(16, 16))
+        self.buttonHashCalculate.setIconSize(QSize(20, 21))
         self.buttonHashCalculate.setCheckable(False)
+        self.buttonHashCalculate.setAutoDefault(False)
         self.buttonHashCalculate.setFlat(False)
 
         self.horizontalLayout_2.addWidget(self.buttonHashCalculate)
@@ -208,6 +209,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.tabWidget.setCurrentIndex(0)
+        self.buttonHashCalculate.setDefault(False)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

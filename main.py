@@ -6,7 +6,7 @@ import sys
 import time
 
 from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication, QIcon
+from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QStyleFactory, QMessageBox
 
 from hashcalc import HashingMethods
@@ -55,6 +55,19 @@ class MainWindow(QMainWindow):
         centerPoint = QGuiApplication.primaryScreen().geometry().center()
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
+
+    def closeEvent(self, event: QCloseEvent):
+        buttonReply = QMessageBox.question(self, 'Warning', "Sure to exit?",
+                                           QMessageBox.Ok | QMessageBox.Cancel, QMessageBox.Cancel)
+        if buttonReply == QMessageBox.Ok:
+            try:
+                if self.__hashCalculator.isRunning() is True:
+                    self.__btnHashCalculatorThreadCanceler_Func()
+            except AttributeError:
+                pass
+            event.accept()
+        else:
+            event.ignore()
 
     def __buttonSelectFile_Func(self):
         dialog = QFileDialog(self)
