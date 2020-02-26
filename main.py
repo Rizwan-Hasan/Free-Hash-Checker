@@ -49,6 +49,9 @@ class MainWindow(QMainWindow):
         self.ui.buttonCopyToClipboard.clicked.connect(lambda func: self.__buttonCopyToClipboard_Func())
         self.ui.buttonCheckHash.clicked.connect(lambda func: self.__buttonCheckHash_Func())
 
+        # Status Bar
+        self.ui.statusbar.hide()
+
     # For launching windows in center ↓
     def __makeWindowCenter(self):
         qtRectangle = self.frameGeometry()
