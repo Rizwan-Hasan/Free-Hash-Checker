@@ -94,7 +94,7 @@ class MainWindow(QMainWindow):
     def __buttonHashCalculate__Func(self):
         if not os.path.isfile(self.ui.lineEditFileExplore.text()):
             # noinspection PyTypeChecker
-            QMessageBox().warning(None, 'Warning', 'Please select a file to continue!', QMessageBox.Abort)
+            QMessageBox().warning(None, 'Warning', 'Please select a file to continue!', QMessageBox.Ok)
         else:
             self.__hashCalculator = HashingMethods()
             self.__hashCalculator.setHashName(self.ui.comboBoxHashChoices.currentText())
@@ -125,17 +125,27 @@ class MainWindow(QMainWindow):
         self.ui.progressBarHashCaclulation.setValue(value)
 
     def __btnHashCalculatorThreadCanceler_Func(self):
-        self.__hashCalculator.terminateThread()
-        self.ui.buttonHashCalculate.clicked.disconnect()
-        self.ui.buttonHashCalculate.setText('Calculate')
-        self.ui.progressBarHashCaclulation.reset()
-        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+        buttonReply = QMessageBox.question(self, 'Confirmation', "Are you sure to cancel?",
+                                           QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        if buttonReply == QMessageBox.Yes:
+            self.__hashCalculator.terminateThread()
+            self.ui.buttonHashCalculate.clicked.disconnect()
+            self.ui.buttonHashCalculate.setText('Calculate')
+            self.ui.progressBarHashCaclulation.reset()
+            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+        else:
+            pass
 
     def __buttonClearHashBox_Func(self):
         self.ui.lineEditFileExplore.clear()
         self.ui.labelFileExplore.setPixmap(QPixmap(u":/folder/opened-folder.png"))
         self.ui.lineEditHashBox.clear()
         self.ui.progressBarHashCaclulation.reset()
+        try:
+            if self.__hashCalculator.isRunning() is True:
+                self.__btnHashCalculatorThreadCanceler_Func()
+        except AttributeError:
+            pass
         try:
             self.ui.buttonHashCalculate.clicked.disconnect()
         except RuntimeError:
