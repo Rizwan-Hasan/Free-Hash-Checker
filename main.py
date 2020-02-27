@@ -5,7 +5,7 @@ import os
 import time
 
 from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent
+from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QKeyEvent
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
 from hashcalc import HashingMethods
@@ -24,6 +24,11 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.__hashCalculator: HashingMethods
+
+        # Setting fixed window size to disable fullscreen↓
+        self.setFixedWidth(self.size().width())
+        self.setFixedHeight(self.size().height())
+
         #
         self.__main()
 
@@ -57,6 +62,9 @@ class MainWindow(QMainWindow):
         centerPoint = QGuiApplication.primaryScreen().geometry().center()
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
+
+    def keyPressEvent(self, event: QKeyEvent):
+        print(event.key())
 
     # Close button behaviour ↓
     def closeEvent(self, event: QCloseEvent):
