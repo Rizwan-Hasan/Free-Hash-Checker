@@ -381,7 +381,7 @@
               <bool>false</bool>
              </property>
              <property name="placeholderText">
-              <string>Paste your existing hash here</string>
+              <string>Paste hash here</string>
              </property>
              <property name="clearButtonEnabled">
               <bool>false</bool>

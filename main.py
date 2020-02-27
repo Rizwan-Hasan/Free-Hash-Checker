@@ -5,7 +5,7 @@ import os
 import time
 
 from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QKeyEvent
+from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
 from hashcalc import HashingMethods
@@ -62,9 +62,6 @@ class MainWindow(QMainWindow):
         centerPoint = QGuiApplication.primaryScreen().geometry().center()
         qtRectangle.moveCenter(centerPoint)
         self.move(qtRectangle.topLeft())
-
-    def keyPressEvent(self, event: QKeyEvent):
-        print(event.key())
 
     # Close button behaviour ↓
     def closeEvent(self, event: QCloseEvent):
@@ -165,7 +162,18 @@ class MainWindow(QMainWindow):
         self.__clipboard.setText(self.ui.lineEditHashBox.text())
 
     def __buttonCheckHash_Func(self):
-        self.ui.lineEditCheckHashBox.setText(self.__clipboard.text())
+        if not self.ui.lineEditHashBox.text().strip():
+            return
+        elif self.ui.lineEditHashBox.text().strip() == self.ui.lineEditCheckHashBox.text().strip():
+            QMessageBox.information(
+                self, 'Result', "Good news! It's Matched!",
+                QMessageBox.Ok, QMessageBox.Ok
+            )
+        else:
+            QMessageBox.information(
+                self, 'Result', "Bad news! Not Matched!",
+                QMessageBox.Ok, QMessageBox.Ok
+            )
 
 
 if __name__ == "__main__":
