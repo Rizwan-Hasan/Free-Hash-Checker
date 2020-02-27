@@ -1,6 +1,4 @@
-<p align="center"><img src="ui/header.png" alt="Mark Text"></p>
-
-<h1 align="center">Free Hash Checker</h1>
+<p align="center"><img src="ui/header.png" alt="header"></p>
 
 <div align="center">
   <a href="https://twitter.com/intent/tweet?via=marktextme&url=https://github.com/marktext/marktext/&text=What%20do%20you%20want%20to%20say%20to%20app?&hashtags=happyMarkText">
