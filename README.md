@@ -8,7 +8,7 @@
   </a>
 </div>
 <div align="center">
-  <strong>:high_brightness: Next generation markdown editor :crescent_moon:</strong><br>
+  <strong>:high_brightness: A Free Hash Checking Tool :crescent_moon:</strong><br>
   A simple and elegant open-source markdown editor that focused on speed and usability.<br>
   <sub>Available for Linux, macOS and Windows.</sub>
 </div>
@@ -70,40 +70,9 @@
 </div>
 
 <div align="center">
-  <sub>Translations:</sub>
-  <a href="docs/i18n/zh_cn.md#readme">
-    <span>:cn:</span>
-  </a>
-  <a href="docs/i18n/zh_tw.md#readme">
-    <span>:taiwan:</span>
-  </a>
-  <a href="docs/i18n/pl.md#readme">
-    <span>:poland:</span>
-  </a>
-  <a href="docs/i18n/ja.md#readme">
-    <span>:jp:</span>
-  </a>
-  <a href="docs/i18n/french.md#readme">
-    <span>:fr:</span>
-  </a>
-  <a href="docs/i18n/tr.md#readme">
-    <span>:tr:</span>
-  </a>
-  <a href="docs/i18n/spanish.md#readme">
-    <span>:es:</span>
-  </a>
-  <a href="docs/i18n/pt.md#readme">
-    <span>:portugal:</span>
-  </a>
-  <a href="docs/i18n/ko.md#readme">
-    <span>:kr:</span>
-  </a>
-</div>
-
-<div align="center">
   <sub>This Markdown editor that could. Built with ❤︎ by
-    <a href="https://github.com/Jocs">Jocs</a> and
-    <a href="https://github.com/marktext/marktext/graphs/contributors">
+    <a href="https://www.linkedin.com/in/rizwan486/">Rizwan Hasan</a> and
+    <a href="https://github.com/Rizwan-Hasan/Free-Hash-Checker/graphs/contributors">
       contributors
     </a>
   </sub>
