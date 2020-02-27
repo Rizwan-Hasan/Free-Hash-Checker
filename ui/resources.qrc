@@ -2,9 +2,6 @@
   <qresource prefix="icon">
     <file>icon.png</file>
   </qresource>
-  <qresource prefix="fonts">
-    <file>NotoMono-Regular.ttf</file>
-  </qresource>
   <qresource prefix="header">
     <file>header.png</file>
   </qresource>
