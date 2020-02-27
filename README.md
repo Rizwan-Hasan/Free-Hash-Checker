@@ -9,8 +9,8 @@
 </div>
 <div align="center">
   <strong>:high_brightness: A Free Hash Checking Tool :crescent_moon:</strong><br>
-  A simple and elegant open-source markdown editor that focused on speed and usability.<br>
-  <sub>Available for Linux, macOS and Windows.</sub>
+  A simple and elegant open-source hash checker that focused on simplicity.<br>
+  <sub>Available for Linux and Windows.</sub>
 </div>
 
 <br>
