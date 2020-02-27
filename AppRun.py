@@ -1,6 +1,6 @@
 import sys
 
-from PySide2.QtWidgets import QApplication, QStyleFactory
+from PySide2.QtWidgets import QApplication, QStyleFactory, qApp
 
 import buildAll
 from main import MainWindow
@@ -8,8 +8,7 @@ from main import MainWindow
 
 def main():
     app = QApplication(sys.argv)
-    app.setStyle(QStyleFactory.create('Fusion'))
-    # qApp.setStyle(QStyleFactory.create("Fusion"))
+    qApp.setStyle(QStyleFactory.create("Fusion"))
     # darkPalette = QPalette()
     # darkColor = QColor(45, 45, 45)
     # disabledColor = QColor(127, 127, 127)
