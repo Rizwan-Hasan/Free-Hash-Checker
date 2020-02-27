@@ -56,6 +56,9 @@ class MainWindow(QMainWindow):
         # Status Bar
         self.ui.statusbar.hide()
 
+        # fontDB = QFontDatabase()
+        # fontDB.addApplicationFont(':/fonts/NotoMono-Regular.ttf')
+
     # For launching windows in center ↓
     def __makeWindowCenter(self):
         qtRectangle = self.frameGeometry()

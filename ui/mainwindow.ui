@@ -13,7 +13,7 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>345</height>
+    <height>372</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -80,7 +80,7 @@
        <attribute name="title">
         <string/>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
+       <layout class="QVBoxLayout" name="verticalLayout_MainTab">
         <item>
          <widget class="QGroupBox" name="groupBoxHashCalculation">
           <property name="title">
@@ -315,8 +315,10 @@
                 <string>Calculate</string>
                </property>
                <property name="icon">
-                <iconset resource="resources.qrc">
-                 <normaloff>:/calculate/drawing-compass.png</normaloff>:/calculate/drawing-compass.png</iconset>
+                <iconset>
+                 <normaloff>
+                                                                        :/calculate/drawing-compass.png</normaloff>
+                                                                        :/calculate/drawing-compass.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -356,7 +358,7 @@
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QPushButton" name="buttnClearCheckHashBox">
+            <widget class="QPushButton" name="buttonClearCheckHashBox">
              <property name="text">
               <string>Clear</string>
              </property>
@@ -418,6 +420,7 @@
        <attribute name="title">
         <string>Settings</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_SettingsTab"/>
       </widget>
       <widget class="QWidget" name="AboutTab">
        <attribute name="icon">
@@ -427,6 +430,7 @@
        <attribute name="title">
         <string>About</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_AboutTab"/>
       </widget>
      </widget>
     </item>
@@ -449,13 +453,23 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="resources.qrc"/>
  </resources>
  <connections>
   <connection>
-   <sender>buttnClearCheckHashBox</sender>
+   <sender>buttonClearCheckHashBox</sender>
    <signal>clicked()</signal>
    <receiver>lineEditCheckHashBox</receiver>
    <slot>clear()</slot>
