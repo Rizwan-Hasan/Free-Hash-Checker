@@ -9,11 +9,8 @@ from main import MainWindow
 def main():
     app = QApplication(sys.argv)
     app.setStyle(QStyleFactory.create('Fusion'))
-
     # qApp.setStyle(QStyleFactory.create("Fusion"))
-    #
     # darkPalette = QPalette()
-    #
     # darkColor = QColor(45, 45, 45)
     # disabledColor = QColor(127, 127, 127)
     # darkPalette.setColor(QPalette.Window, darkColor)
@@ -32,16 +29,13 @@ def main():
     # darkPalette.setColor(QPalette.Highlight, QColor(42, 130, 218))
     # darkPalette.setColor(QPalette.HighlightedText, Qt.black)
     # darkPalette.setColor(QPalette.Disabled, QPalette.HighlightedText, disabledColor)
-    #
     # qApp.setPalette(darkPalette)
-    #
     # qApp.setStyleSheet("""
     #     QToolTip {
     #         color: #ffffff;
     #         background-color: #2A82DA;
     #         border: 1px solid white;
     #     }""")
-
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
