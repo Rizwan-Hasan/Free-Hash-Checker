@@ -1,11 +1,6 @@
 <p align="center"><img src="ui/header.png" alt="Hash Checker" width="70%"></p>
 
 <div align="center">
-  <a href="https://twitter.com/intent/tweet?via=marktextme&url=https://github.com/marktext/marktext/&text=What%20do%20you%20want%20to%20say%20to%20app?&hashtags=happyMarkText">
-    <img src="https://img.shields.io/twitter/url/https/github.com/marktext/marktext.svg?style=for-the-badge" alt="twitter">
-  </a>
-</div>
-<div align="center">
   <strong>:high_brightness: A Free Hash Checking Tool :crescent_moon:</strong><br>
   A simple and elegant open-source hash checker that focused on simplicity.<br>
   <sub>Available for Linux and Windows.</sub>
