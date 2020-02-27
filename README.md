@@ -115,4 +115,4 @@ If you have any questions regarding **Mark Text**, you are welcome to write an i
 
 ## License
 
-[**MIT**](LICENSE)
+[**MIT**](LICENSE).
