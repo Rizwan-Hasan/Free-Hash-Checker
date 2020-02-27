@@ -110,7 +110,7 @@ If you have any questions regarding **Mark Text**, you are welcome to write an i
 
 ## Credits
 
-<div>Icons made by <a href="hhttps://icons8.com/" title="Icons8">Icons8</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://icons8.com/">Icons8</a></div>
 
 ## License
 
