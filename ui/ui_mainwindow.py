@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
         MainWindow.setEnabled(True)
-        MainWindow.resize(500, 297)
+        MainWindow.resize(500, 347)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -173,9 +173,7 @@ class Ui_MainWindow(object):
         self.groupBoxHashMatcher.setObjectName(u"groupBoxHashMatcher")
         self.groupBoxHashMatcher.setCheckable(True)
         self.groupBoxHashMatcher.setChecked(False)
-        self.verticalLayout_3 = QVBoxLayout(self.groupBoxHashMatcher)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4 = QHBoxLayout(self.groupBoxHashMatcher)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.buttnClearCheckHashBox = QPushButton(self.groupBoxHashMatcher)
         self.buttnClearCheckHashBox.setObjectName(u"buttnClearCheckHashBox")
@@ -200,9 +198,6 @@ class Ui_MainWindow(object):
         self.buttonCheckHash.setIconSize(QSize(20, 21))
 
         self.horizontalLayout_4.addWidget(self.buttonCheckHash)
-
-
-        self.verticalLayout_3.addLayout(self.horizontalLayout_4)
 
 
         self.verticalLayout_4.addWidget(self.groupBoxHashMatcher)
