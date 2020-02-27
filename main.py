@@ -25,11 +25,11 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.__hashCalculator: HashingMethods
 
-        # Setting fixed window size to disable fullscreen↓
+        # Setting fixed window size to disable fullscreen ↓
         self.setFixedWidth(self.size().width())
         self.setFixedHeight(self.minimumSizeHint().height())
 
-        #
+        # ↓
         self.__main()
 
     def __main(self):
