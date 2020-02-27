@@ -52,7 +52,7 @@
 
 <div align="center">
   <sub>This Hash Checker Tool that could. Built with ❤︎ by
-    <a href="https://www.linkedin.com/in/rizwan486/">Rizwan Hasan</a> and
+    <a href="https://github.com/Rizwan-Hasan/">Rizwan Hasan</a> and
     <a href="https://github.com/Rizwan-Hasan/Free-Hash-Checker/graphs/contributors">
       contributors
     </a>
