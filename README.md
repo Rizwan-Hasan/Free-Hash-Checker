@@ -1,4 +1,4 @@
-<p align="center"><img src="ui/header.png" alt="header"></p>
+<p align="center"><img src="ui/header.png" alt="Hash Checker" width="600"></p>
 
 <div align="center">
   <a href="https://twitter.com/intent/tweet?via=marktextme&url=https://github.com/marktext/marktext/&text=What%20do%20you%20want%20to%20say%20to%20app?&hashtags=happyMarkText">
