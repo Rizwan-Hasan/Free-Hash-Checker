@@ -26,6 +26,7 @@ class MainWindow(QMainWindow):
         self.__hashCalculator: HashingMethods
 
         # Setting fixed window size to disable fullscreen↓
+        self.setFixedWidth(self.size().width())
         self.setFixedHeight(self.minimumSizeHint().height())
 
         #
