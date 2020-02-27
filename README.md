@@ -111,6 +111,7 @@ If you have any questions regarding **Mark Text**, you are welcome to write an i
 ## Credits
 
 <div>Icons made by <a href="https://icons8.com/">Icons8</a></div>
+<div>Logo made by <a href="https://github.com/skinan">Sakib Khan Inan</a></div>
 
 ## License
 
