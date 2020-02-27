@@ -1,7 +1,7 @@
 <p align="center"><img src="ui/header.png" alt="Hash Checker" width="70%"></p>
 
 <div align="center">
-  <strong>:high_brightness: A Free Hash Checking Tool :crescent_moon:</strong><br>
+  <strong>:high_brightness: Free Hash Checking Tool :crescent_moon:</strong><br>
   A simple and elegant open-source hash checker that focused on simplicity.<br>
   <sub>Available for Linux and Windows.</sub>
 </div>
