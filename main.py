@@ -5,7 +5,7 @@ import os
 import time
 
 from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent
+from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
 from hashcalc import HashingMethods
@@ -111,6 +111,7 @@ class MainWindow(QMainWindow):
             if self.__hashCalculator.isRunning():
                 self.ui.progressBarHashCaclulation.setFormat('%p%')
                 self.ui.buttonHashCalculate.setText('Cancel')
+                self.ui.buttonHashCalculate.setIcon(QIcon(':/cancel/cancel.png'))
                 self.ui.buttonHashCalculate.clicked.disconnect()
                 self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__btnHashCalculatorThreadCanceler_Func())
 
@@ -118,6 +119,7 @@ class MainWindow(QMainWindow):
     def __on_finished_hash_calculation(self, calculatedHash):
         self.ui.lineEditHashBox.setText(calculatedHash)
         self.ui.buttonHashCalculate.setText('Calculate')
+        self.ui.buttonHashCalculate.setIcon(QIcon(':/calculate/drawing-compass.png'))
         self.ui.buttonHashCalculate.clicked.disconnect()
         self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
         logging.info('Response received: ' + calculatedHash)
@@ -137,6 +139,7 @@ class MainWindow(QMainWindow):
             self.__hashCalculator.terminateThread()
             self.ui.buttonHashCalculate.clicked.disconnect()
             self.ui.buttonHashCalculate.setText('Calculate')
+            self.ui.buttonHashCalculate.setIcon(QIcon(':/calculate/drawing-compass.png'))
             self.ui.progressBarHashCaclulation.reset()
             self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
         else:

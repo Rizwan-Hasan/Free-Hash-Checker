@@ -41,4 +41,7 @@
   <qresource prefix="ok">
     <file>ok.png</file>
   </qresource>
+  <qresource prefix="cancel">
+    <file>cancel.png</file>
+  </qresource>
 </RCC>
