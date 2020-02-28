@@ -53,6 +53,15 @@ class MainWindow(QMainWindow):
         self.ui.buttonCopyToClipboard.clicked.connect(lambda func: self.__buttonCopyToClipboard_Func())
         self.ui.buttonCheckHash.clicked.connect(lambda func: self.__buttonCheckHash_Func())
 
+        # Default ToolTip ↓
+        self.ui.buttonSelectFile.setToolTip('Click and select a file')
+        self.ui.buttonHashCalculate.setToolTip()
+        self.ui.buttonClearHashBox.setToolTip()
+        self.ui.buttonClearCheckHashBox.setToolTip()
+        self.ui.buttonCopyToClipboard.setToolTip()
+        self.ui.buttonCopyToClipboard.setToolTip()
+        self.ui.buttonCheckHash.setToolTip()
+
         # Status Bar
         self.ui.statusbar.hide()
 
