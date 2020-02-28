@@ -3,4 +3,3 @@
 out
 gen
 /venv/
-!/test.py
