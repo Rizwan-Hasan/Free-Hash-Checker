@@ -452,12 +452,15 @@
            <property name="childrenCollapsible">
             <bool>true</bool>
            </property>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
               <widget class="QLabel" name="label_2">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Developer:&lt;/span&gt;&lt;a href=&quot;https://github.com/Rizwan-Hasan/&quot;&gt;&lt;span style=&quot;text-decoration: none; color:#0000ff;&quot;&gt; Rizwan Hasan&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Developer:&lt;/span&gt;&lt;a href=&quot;https://github.com/Rizwan-Hasan/&quot;&gt;&lt;span style=&quot;text-decoration: none; font-size:10pt; color:#0000ff;&quot;&gt; Rizwan Hasan&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="scaledContents">
+                <bool>false</bool>
                </property>
                <property name="openExternalLinks">
                 <bool>true</bool>
@@ -467,7 +470,7 @@
              <item>
               <widget class="QLabel" name="label_3">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Email: &lt;/span&gt;&lt;a href=&quot;mailto:rizwan.hasan486@gmail.com&quot;&gt;&lt;span style=&quot;text-decoration: none; color:#0000ff;&quot;&gt;rizwan.hasan486@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Email: &lt;/span&gt;&lt;a href=&quot;mailto:rizwan.hasan486@gmail.com&quot;&gt;&lt;span style=&quot;text-decoration: none; font-size:10pt; color:#0000ff;&quot;&gt;rizwan.hasan486@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="openExternalLinks">
                 <bool>true</bool>
@@ -477,7 +480,7 @@
              <item>
               <widget class="QLabel" name="label_6">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Logo: &lt;/span&gt;&lt;a href=&quot;https://github.com/skinan&quot;&gt;&lt;span style=&quot;text-decoration: none; color:#0000ff;&quot;&gt;Sakib Khan Inan&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Logo credit: &lt;/span&gt;&lt;a href=&quot;https://github.com/skinan&quot;&gt;&lt;span style=&quot;text-decoration: none; font-size:10pt; color:#0000ff;&quot;&gt;Sakib Khan Inan&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="openExternalLinks">
                 <bool>true</bool>
@@ -487,14 +490,14 @@
              <item>
               <widget class="QLabel" name="label">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Email: &lt;/span&gt;&lt;a href=&quot;mailto:sakib.khaninan@hotmail.com&quot;&gt;&lt;span style=&quot; text-decoration: none; color:#0000ff;&quot;&gt;sakib.khaninan@hotmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Email: &lt;/span&gt;&lt;a href=&quot;mailto:sakib.khaninan@hotmail.com&quot;&gt;&lt;span style=&quot;text-decoration: none; font-size:10pt; color:#0000ff;&quot;&gt;sakib.khaninan@hotmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="label_4">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Icons: &lt;/span&gt;&lt;a href=&quot;https://icons8.com/&quot;&gt;&lt;span style=&quot;text-decoration: none; color:#0000ff;&quot;&gt;https://icons8.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Icons credit: &lt;/span&gt;&lt;a href=&quot;https://icons8.com/&quot;&gt;&lt;span style=&quot;text-decoration: none; font-size:10pt; color:#0000ff;&quot;&gt;https://icons8.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="openExternalLinks">
                 <bool>true</bool>
@@ -503,7 +506,7 @@
              </item>
             </layout>
            </widget>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
               <widget class="QLabel" name="label_8">
@@ -589,7 +592,7 @@
      <x>0</x>
      <y>0</y>
      <width>500</width>
-     <height>27</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

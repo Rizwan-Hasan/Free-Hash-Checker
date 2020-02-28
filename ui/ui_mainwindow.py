@@ -226,47 +226,48 @@ class Ui_MainWindow(object):
         self.splitter.setOrientation(Qt.Horizontal)
         self.splitter.setOpaqueResize(False)
         self.splitter.setChildrenCollapsible(True)
-        self.widget = QWidget(self.splitter)
-        self.widget.setObjectName(u"widget")
-        self.verticalLayout_2 = QVBoxLayout(self.widget)
+        self.layoutWidget = QWidget(self.splitter)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.widget)
+        self.label_2 = QLabel(self.layoutWidget)
         self.label_2.setObjectName(u"label_2")
+        self.label_2.setScaledContents(False)
         self.label_2.setOpenExternalLinks(True)
 
         self.verticalLayout_2.addWidget(self.label_2)
 
-        self.label_3 = QLabel(self.widget)
+        self.label_3 = QLabel(self.layoutWidget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setOpenExternalLinks(True)
 
         self.verticalLayout_2.addWidget(self.label_3)
 
-        self.label_6 = QLabel(self.widget)
+        self.label_6 = QLabel(self.layoutWidget)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setOpenExternalLinks(True)
 
         self.verticalLayout_2.addWidget(self.label_6)
 
-        self.label = QLabel(self.widget)
+        self.label = QLabel(self.layoutWidget)
         self.label.setObjectName(u"label")
 
         self.verticalLayout_2.addWidget(self.label)
 
-        self.label_4 = QLabel(self.widget)
+        self.label_4 = QLabel(self.layoutWidget)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setOpenExternalLinks(True)
 
         self.verticalLayout_2.addWidget(self.label_4)
 
-        self.splitter.addWidget(self.widget)
-        self.widget1 = QWidget(self.splitter)
-        self.widget1.setObjectName(u"widget1")
-        self.verticalLayout_4 = QVBoxLayout(self.widget1)
+        self.splitter.addWidget(self.layoutWidget)
+        self.layoutWidget1 = QWidget(self.splitter)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.verticalLayout_4 = QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.label_8 = QLabel(self.widget1)
+        self.label_8 = QLabel(self.layoutWidget1)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setPixmap(QPixmap(u":/header/header.png"))
 
@@ -274,7 +275,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.groupBox_2 = QGroupBox(self.widget1)
+        self.groupBox_2 = QGroupBox(self.layoutWidget1)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.verticalLayout_5 = QVBoxLayout(self.groupBox_2)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -287,7 +288,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.groupBox_2)
 
-        self.groupBox_4 = QGroupBox(self.widget1)
+        self.groupBox_4 = QGroupBox(self.layoutWidget1)
         self.groupBox_4.setObjectName(u"groupBox_4")
         self.verticalLayout_6 = QVBoxLayout(self.groupBox_4)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
@@ -302,7 +303,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_5)
 
-        self.splitter.addWidget(self.widget1)
+        self.splitter.addWidget(self.layoutWidget1)
         self.splitter_2.addWidget(self.splitter)
         self.textBrowser = QTextBrowser(self.splitter_2)
         self.textBrowser.setObjectName(u"textBrowser")
@@ -325,7 +326,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 500, 27))
+        self.menubar.setGeometry(QRect(0, 0, 500, 21))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -364,11 +365,11 @@ class Ui_MainWindow(object):
         self.buttonCheckHash.setText(QCoreApplication.translate("MainWindow", u"Check", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.MainTab), "")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.SettingsTab), QCoreApplication.translate("MainWindow", u"Settings", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Developer:</span><a href=\"https://github.com/Rizwan-Hasan/\"><span style=\"text-decoration: none; color:#0000ff;\"> Rizwan Hasan</span></a></p></body></html>", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Email: </span><a href=\"mailto:rizwan.hasan486@gmail.com\"><span style=\"text-decoration: none; color:#0000ff;\">rizwan.hasan486@gmail.com</span></a></p></body></html>", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Logo: </span><a href=\"https://github.com/skinan\"><span style=\"text-decoration: none; color:#0000ff;\">Sakib Khan Inan</span></a></p></body></html>", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Email: </span><a href=\"mailto:sakib.khaninan@hotmail.com\"><span style=\" text-decoration: none; color:#0000ff;\">sakib.khaninan@hotmail.com</span></a></p></body></html>", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:600;\">Icons: </span><a href=\"https://icons8.com/\"><span style=\"text-decoration: none; color:#0000ff;\">https://icons8.com</span></a></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Developer:</span><a href=\"https://github.com/Rizwan-Hasan/\"><span style=\"text-decoration: none; font-size:10pt; color:#0000ff;\"> Rizwan Hasan</span></a></p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Email: </span><a href=\"mailto:rizwan.hasan486@gmail.com\"><span style=\"text-decoration: none; font-size:10pt; color:#0000ff;\">rizwan.hasan486@gmail.com</span></a></p></body></html>", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Logo credit: </span><a href=\"https://github.com/skinan\"><span style=\"text-decoration: none; font-size:10pt; color:#0000ff;\">Sakib Khan Inan</span></a></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Email: </span><a href=\"mailto:sakib.khaninan@hotmail.com\"><span style=\"text-decoration: none; font-size:10pt; color:#0000ff;\">sakib.khaninan@hotmail.com</span></a></p></body></html>", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Icons credit: </span><a href=\"https://icons8.com/\"><span style=\"text-decoration: none; font-size:10pt; color:#0000ff;\">https://icons8.com</span></a></p></body></html>", None))
         self.label_8.setText("")
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Source", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><a href=\"https://github.com/Rizwan-Hasan/Free-Hash-Checker\"><img src=\":/github/github.png\"/></a></p></body></html>", None))
