@@ -315,10 +315,8 @@
                 <string>Calculate</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>
-                                                                        :/calculate/drawing-compass.png</normaloff>
-                                                                        :/calculate/drawing-compass.png</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/calculate/drawing-compass.png</normaloff>:/calculate/drawing-compass.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -506,7 +504,7 @@
              </item>
             </layout>
            </widget>
-           <widget class="QWidget" name="layoutWidget">
+           <widget class="QWidget" name="layoutWidget1">
             <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
               <widget class="QLabel" name="label_8">
@@ -592,7 +590,7 @@
      <x>0</x>
      <y>0</y>
      <width>500</width>
-     <height>21</height>
+     <height>27</height>
     </rect>
    </property>
   </widget>
