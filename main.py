@@ -61,6 +61,11 @@ class MainWindow(QMainWindow):
         self.ui.buttonCopyToClipboard.setToolTip()
         self.ui.buttonCopyToClipboard.setToolTip()
         self.ui.buttonCheckHash.setToolTip()
+        self.ui.lineEditFileExplore.setToolTip()
+        self.ui.lineEditHashBox.setToolTip()
+        self.ui.progressBarHashCaclulation.setToolTip()
+        self.ui.buttonClearCheckHashBox.setToolTip()
+        self.ui.lineEditCheckHashBox.setToolTip()
 
         # Status Bar
         self.ui.statusbar.hide()
