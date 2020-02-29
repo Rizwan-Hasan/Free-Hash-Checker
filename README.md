@@ -42,25 +42,6 @@
 - Various themes: **Cadmium Light**, **Material Dark** etc.
 - Various editing modes: **Source Code mode**, **Typewriter mode**, **Focus mode**.
 
-## Download and Installation
-
-#### Windows
-
-Simply download and install Mark Text via setup wizard (`marktext-setup-%version%.exe`) and choose whether to install per-user or machine wide.
-
-#### Linux
-
-Please follow the [Linux installation instructions](docs/LINUX.md).
-
-## Development
-
-If you wish to build **Mark Text** yourself, please check out our [build instructions](docs/dev/BUILD.md).
-
-- [User documentation](docs/README.md)
-- [Developer documentation](docs/dev/README.md)
-
-If you have any questions regarding **Mark Text**, you are welcome to write an issue. When doing so please use the default format found when opening an issue. Of course, if you submit a PR directly, it will be greatly appreciated.
-
 ## Credits
 
 <div>Icons made by <a href="https://icons8.com/">Icons8</a></div>
