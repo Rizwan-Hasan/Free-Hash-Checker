@@ -52,11 +52,11 @@ class MainWindow(QMainWindow):
         self.__aboutInformationSetter()
 
         # Default Button's Behaviour Set ↓
-        self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
-        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
-        self.ui.buttonClearHashBox.clicked.connect(lambda func: self.__buttonClearHashBox_Func())
-        self.ui.buttonCopyToClipboard.clicked.connect(lambda func: self.__buttonCopyToClipboard_Func())
-        self.ui.buttonCheckHash.clicked.connect(lambda func: self.__buttonCheckHash_Func())
+        self.ui.buttonSelectFile.clicked.connect(self.__buttonSelectFile_Func)
+        self.ui.buttonHashCalculate.clicked.connect(self.__buttonHashCalculate__Func)
+        self.ui.buttonClearHashBox.clicked.connect(self.__buttonClearHashBox_Func)
+        self.ui.buttonCopyToClipboard.clicked.connect(self.__buttonCopyToClipboard_Func)
+        self.ui.buttonCheckHash.clicked.connect(self.__buttonCheckHash_Func)
 
         # Default ToolTip Information Setter ↓
         self.__toolTipInfoSetter()
