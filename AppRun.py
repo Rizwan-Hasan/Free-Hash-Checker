@@ -2,6 +2,7 @@
 
 import sys
 
+from PySide2.QtGui import qApp
 from PySide2.QtWidgets import QApplication, QStyleFactory
 
 import buildAll
@@ -10,7 +11,7 @@ from main import MainWindow
 
 def main():
     app = QApplication(sys.argv)
-    app.setStyle(QStyleFactory.create("Fusion"))
+    qApp.setStyle(QStyleFactory.create("Fusion"))
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())

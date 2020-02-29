@@ -153,8 +153,7 @@ class Ui_MainWindow(object):
         self.buttonHashCalculate = QPushButton(self.groupBoxHashCalculation)
         self.buttonHashCalculate.setObjectName(u"buttonHashCalculate")
         icon5 = QIcon()
-        icon5.addFile(u"\n"
-"                                                                        :/calculate/drawing-compass.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/calculate/drawing-compass.png", QSize(), QIcon.Normal, QIcon.Off)
         self.buttonHashCalculate.setIcon(icon5)
         self.buttonHashCalculate.setIconSize(QSize(20, 21))
         self.buttonHashCalculate.setCheckable(False)

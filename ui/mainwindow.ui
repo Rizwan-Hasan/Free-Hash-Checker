@@ -315,10 +315,8 @@
                 <string>Calculate</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>
-                                                                        :/calculate/drawing-compass.png</normaloff>
-                                                                        :/calculate/drawing-compass.png</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/calculate/drawing-compass.png</normaloff>:/calculate/drawing-compass.png</iconset>
                </property>
                <property name="iconSize">
                 <size>

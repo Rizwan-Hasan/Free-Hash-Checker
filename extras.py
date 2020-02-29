@@ -30,7 +30,7 @@ class informationManger:
         self.__toolTip()
 
     def __info(self):
-        self.developerName = """<html><head/><body><p><span style=" font-size:10pt; 
+        self.developerName = """<html><head/><body><p><span style="font-size:10pt; 
         font-weight:600;">Developer:</span><a href="https://github.com/Rizwan-Hasan/"><span style="text-decoration: 
         none; font-size:10pt; color:#0000ff;"> Rizwan Hasan</span></a></p></body></html> """
 
