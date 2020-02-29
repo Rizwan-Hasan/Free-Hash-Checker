@@ -37,4 +37,5 @@ class updateManager:
         return self.__updateData
 
 
-updateManager().haveUpdate()
+if __name__ == "__main__":
+    print('Hello World')
