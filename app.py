@@ -156,7 +156,7 @@ class MainWindow(QMainWindow):
                 self.ui.buttonHashCalculate.clicked.disconnect()
             except RuntimeError:
                 pass
-            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+            self.ui.buttonHashCalculate.clicked.connect(self.__buttonHashCalculate__Func)
 
     def __buttonHashCalculate__Func(self):
         if not os.path.isfile(self.ui.lineEditFileExplore.text()):
@@ -174,7 +174,7 @@ class MainWindow(QMainWindow):
                 self.ui.buttonHashCalculate.setText('Cancel')
                 self.ui.buttonHashCalculate.setIcon(QIcon(':/cancel/cancel.png'))
                 self.ui.buttonHashCalculate.clicked.disconnect()
-                self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__btnHashCalculatorThreadCanceler_Func())
+                self.ui.buttonHashCalculate.clicked.connect(self.__btnHashCalculatorThreadCanceler_Func)
 
     @Slot(str)
     def __on_finished_hash_calculation(self, calculatedHash):
@@ -182,7 +182,7 @@ class MainWindow(QMainWindow):
         self.ui.buttonHashCalculate.setText('Calculate')
         self.ui.buttonHashCalculate.setIcon(QIcon(':/calculate/drawing-compass.png'))
         self.ui.buttonHashCalculate.clicked.disconnect()
-        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+        self.ui.buttonHashCalculate.clicked.connect(self.__buttonHashCalculate__Func)
         logging.info('Response received: ' + calculatedHash)
         while self.__hashCalculator.isFinished() is False:
             time.sleep(0.5)
@@ -202,7 +202,7 @@ class MainWindow(QMainWindow):
             self.ui.buttonHashCalculate.setText('Calculate')
             self.ui.buttonHashCalculate.setIcon(QIcon(':/calculate/drawing-compass.png'))
             self.ui.progressBarHashCaclulation.reset()
-            self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+            self.ui.buttonHashCalculate.clicked.connect(self.__buttonHashCalculate__Func)
         else:
             pass
 
@@ -220,7 +220,7 @@ class MainWindow(QMainWindow):
             self.ui.buttonHashCalculate.clicked.disconnect()
         except RuntimeError:
             pass
-        self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
+        self.ui.buttonHashCalculate.clicked.connect(self.__buttonHashCalculate__Func)
 
     def __buttonCopyToClipboard_Func(self):
         self.__clipboard.setText(self.ui.lineEditHashBox.text())

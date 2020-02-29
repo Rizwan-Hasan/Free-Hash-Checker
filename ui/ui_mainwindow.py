@@ -9,13 +9,14 @@
 ################################################################################
 
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
+                            QRect, QSize, QUrl, Qt)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+                           QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
+                           QRadialGradient)
 from PySide2.QtWidgets import *
 
 import resources_rc
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -23,7 +24,7 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
         MainWindow.setEnabled(True)
-        MainWindow.resize(500, 372)
+        MainWindow.resize(500, 321)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -86,7 +87,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.buttonSelectFile)
 
-
         self.verticalLayout.addLayout(self.horizontalLayout)
 
         self.horizontalLayout_3 = QHBoxLayout()
@@ -115,7 +115,6 @@ class Ui_MainWindow(object):
         self.buttonCopyToClipboard.setIconSize(QSize(20, 21))
 
         self.horizontalLayout_3.addWidget(self.buttonCopyToClipboard)
-
 
         self.verticalLayout.addLayout(self.horizontalLayout_3)
 
@@ -162,9 +161,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.buttonHashCalculate)
 
-
         self.verticalLayout.addLayout(self.horizontalLayout_2)
-
 
         self.verticalLayout_MainTab.addWidget(self.groupBoxHashCalculation)
 
@@ -197,7 +194,6 @@ class Ui_MainWindow(object):
         self.buttonCheckHash.setIconSize(QSize(20, 21))
 
         self.horizontalLayout_4.addWidget(self.buttonCheckHash)
-
 
         self.verticalLayout_MainTab.addWidget(self.groupBoxHashMatcher)
 
@@ -272,7 +268,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.sourceCodeLink)
 
-
         self.horizontalLayout_5.addWidget(self.groupBox_2)
 
         self.groupBox_4 = QGroupBox(self.layoutWidget1)
@@ -284,9 +279,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.applicationVersion)
 
-
         self.horizontalLayout_5.addWidget(self.groupBox_4)
-
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_5)
 
@@ -315,7 +308,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 500, 27))
+        self.menubar.setGeometry(QRect(0, 0, 500, 21))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
@@ -324,19 +317,21 @@ class Ui_MainWindow(object):
         self.tabWidget.setCurrentIndex(0)
         self.buttonHashCalculate.setDefault(False)
 
-
         QMetaObject.connectSlotsByName(MainWindow)
+
     # setupUi
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Free Hash Checker", None))
         self.groupBoxHashCalculation.setTitle(QCoreApplication.translate("MainWindow", u"Hash Calculation", None))
         self.labelFileExplore.setText("")
-        self.lineEditFileExplore.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Select a file to begin", None))
+        self.lineEditFileExplore.setPlaceholderText(
+            QCoreApplication.translate("MainWindow", u"Select a file to begin", None))
         self.buttonSelectFile.setText(QCoreApplication.translate("MainWindow", u"Select file", None))
         self.buttonClearHashBox.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.lineEditHashBox.setText("")
-        self.lineEditHashBox.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Hash will be displayed here", None))
+        self.lineEditHashBox.setPlaceholderText(
+            QCoreApplication.translate("MainWindow", u"Hash will be displayed here", None))
         self.buttonCopyToClipboard.setText(QCoreApplication.translate("MainWindow", u"Copy", None))
         self.comboBoxHashChoices.setItemText(0, QCoreApplication.translate("MainWindow", u"MD5", None))
         self.comboBoxHashChoices.setItemText(1, QCoreApplication.translate("MainWindow", u"SHA1", None))
@@ -352,40 +347,48 @@ class Ui_MainWindow(object):
         self.buttonClearCheckHashBox.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.lineEditCheckHashBox.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Paste hash here", None))
         self.buttonCheckHash.setText(QCoreApplication.translate("MainWindow", u"Check", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.MainTab), QCoreApplication.translate("MainWindow", u"Home", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.MainTab),
+                                  QCoreApplication.translate("MainWindow", u"Home", None))
         self.developerName.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
-"                                                                style=\" font-size:10pt; font-weight:600;\">Developer:</span>\n"
-"                                                                Rizwan Hasan</span></p></body></html>\n"
-"                                                            ", None))
+                                                                            "                                                                style=\" font-size:10pt; font-weight:600;\">Developer:</span>\n"
+                                                                            "                                                                Rizwan Hasan</span></p></body></html>\n"
+                                                                            "                                                            ",
+                                                              None))
         self.developerEmail.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
-"                                                                style=\" font-size:10pt; font-weight:600;\">Email:\n"
-"                                                                </span>rizwan.hasan486@gmail.com</span></p></body></html>\n"
-"                                                            ", None))
+                                                                             "                                                                style=\" font-size:10pt; font-weight:600;\">Email:\n"
+                                                                             "                                                                </span>rizwan.hasan486@gmail.com</span></p></body></html>\n"
+                                                                             "                                                            ",
+                                                               None))
         self.logoCreditName.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
-"                                                                style=\" font-size:10pt; font-weight:600;\">Logo\n"
-"                                                                credit: </span>Sakib Khan Inan</p></body></html>\n"
-"                                                            ", None))
+                                                                             "                                                                style=\" font-size:10pt; font-weight:600;\">Logo\n"
+                                                                             "                                                                credit: </span>Sakib Khan Inan</p></body></html>\n"
+                                                                             "                                                            ",
+                                                               None))
         self.logoCreditEmail.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
-"                                                                style=\" font-size:10pt; font-weight:600;\">Email:\n"
-"                                                                </span>sakib.khaninan@hotmail.com</p></body></html>\n"
-"                                                            ", None))
+                                                                              "                                                                style=\" font-size:10pt; font-weight:600;\">Email:\n"
+                                                                              "                                                                </span>sakib.khaninan@hotmail.com</p></body></html>\n"
+                                                                              "                                                            ",
+                                                                None))
         self.icons8Credit.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
-"                                                                style=\" font-size:10pt; font-weight:600;\">Icons\n"
-"                                                                credit: </span>Icons8</p></body></html>\n"
-"                                                            ", None))
+                                                                           "                                                                style=\" font-size:10pt; font-weight:600;\">Icons\n"
+                                                                           "                                                                credit: </span>Icons8</p></body></html>\n"
+                                                                           "                                                            ",
+                                                             None))
         self.hashCheckerHeader.setText("")
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"GitHub", None))
         self.sourceCodeLink.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p\n"
-"                                                                                    align=\"center\"><a\n"
-"                                                                                    href=\"https://github.com/Rizwan-Hasan/Free-Hash-Checker\"><img\n"
-"                                                                                    src=\":/github/github.png\"/></a></p></body></html>\n"
-"                                                                                ", None))
+                                                                             "                                                                                    align=\"center\"><a\n"
+                                                                             "                                                                                    href=\"https://github.com/Rizwan-Hasan/Free-Hash-Checker\"><img\n"
+                                                                             "                                                                                    src=\":/github/github.png\"/></a></p></body></html>\n"
+                                                                             "                                                                                ",
+                                                               None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"Version", None))
         self.applicationVersion.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p\n"
-"                                                                                    align=\"center\"><span\n"
-"                                                                                    style=\" font-size:22pt;\n"
-"                                                                                    font-weight:600;\">0.0</span></p></body></html>\n"
-"                                                                                ", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.AboutTab), QCoreApplication.translate("MainWindow", u"About", None))
+                                                                                 "                                                                                    align=\"center\"><span\n"
+                                                                                 "                                                                                    style=\" font-size:22pt;\n"
+                                                                                 "                                                                                    font-weight:600;\">0.0</span></p></body></html>\n"
+                                                                                 "                                                                                ",
+                                                                   None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.AboutTab),
+                                  QCoreApplication.translate("MainWindow", u"About", None))
     # retranslateUi
-
