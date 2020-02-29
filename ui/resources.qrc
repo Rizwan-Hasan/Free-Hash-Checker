@@ -14,9 +14,6 @@
   <qresource prefix="about">
     <file>info.png</file>
   </qresource>
-  <qresource prefix="settings">
-    <file>settings.png</file>
-  </qresource>
   <qresource prefix="home">
     <file>home.png</file>
   </qresource>

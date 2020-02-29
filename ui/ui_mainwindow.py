@@ -179,9 +179,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.buttonClearCheckHashBox = QPushButton(self.groupBoxHashMatcher)
         self.buttonClearCheckHashBox.setObjectName(u"buttonClearCheckHashBox")
-        icon6 = QIcon()
-        icon6.addFile(u":/clear/eraser.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.buttonClearCheckHashBox.setIcon(icon6)
+        self.buttonClearCheckHashBox.setIcon(icon2)
         self.buttonClearCheckHashBox.setIconSize(QSize(20, 21))
 
         self.horizontalLayout_4.addWidget(self.buttonClearCheckHashBox)
@@ -196,9 +194,9 @@ class Ui_MainWindow(object):
 
         self.buttonCheckHash = QPushButton(self.groupBoxHashMatcher)
         self.buttonCheckHash.setObjectName(u"buttonCheckHash")
-        icon7 = QIcon()
-        icon7.addFile(u":/check/magnifying-glass.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.buttonCheckHash.setIcon(icon7)
+        icon6 = QIcon()
+        icon6.addFile(u":/check/magnifying-glass.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.buttonCheckHash.setIcon(icon6)
         self.buttonCheckHash.setIconSize(QSize(20, 21))
 
         self.horizontalLayout_4.addWidget(self.buttonCheckHash)
@@ -206,9 +204,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_MainTab.addWidget(self.groupBoxHashMatcher)
 
-        icon8 = QIcon()
-        icon8.addFile(u":/home/home.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.tabWidget.addTab(self.MainTab, icon8, "")
+        icon7 = QIcon()
+        icon7.addFile(u":/home/home.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabWidget.addTab(self.MainTab, icon7, "")
         self.AboutTab = QWidget()
         self.AboutTab.setObjectName(u"AboutTab")
         self.verticalLayout_7 = QVBoxLayout(self.AboutTab)
@@ -306,9 +304,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.licenseTextBrowser)
 
-        icon9 = QIcon()
-        icon9.addFile(u":/about/info.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.tabWidget.addTab(self.AboutTab, icon9, "")
+        icon8 = QIcon()
+        icon8.addFile(u":/about/info.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabWidget.addTab(self.AboutTab, icon8, "")
 
         self.verticalLayout_3.addWidget(self.tabWidget)
 
