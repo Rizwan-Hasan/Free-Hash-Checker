@@ -54,10 +54,6 @@
 
 <br />
 
-<h2 align="center">Supporting Mark Text</h2>
-
-Mark Text is an MIT licensed open source project, and the latest version will always be downloadable for free from the GitHub release page. Mark Text is still in development, and its development is inseparable from all sponsors. I hope you join them:
-
 ## Screenshot
 
 ![](docs/marktext.png?raw=true)
