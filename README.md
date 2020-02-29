@@ -68,16 +68,6 @@
 - Various themes: **Cadmium Light**, **Material Dark** etc.
 - Various editing modes: **Source Code mode**, **Typewriter mode**, **Focus mode**.
 
-<h4 align="center">:crescent_moon:themes:high_brightness:</h4>
-
-| Cadmium Light                                     | Dark                                            |
-|:-------------------------------------------------:|:-----------------------------------------------:|
-| ![](docs/themeImages/cadmium-light.png?raw=true)  | ![](docs/themeImages/dark.png?raw=true)         |
-| Graphite Light                                    | Material Dark                                   |
-| ![](docs/themeImages/graphite-light.png?raw=true) | ![](docs/themeImages/materal-dark.png?raw=true) |
-| Ulysses Light                                     | One Dark                                        |
-| ![](docs/themeImages/ulysses-light.png?raw=true)  | ![](docs/themeImages/one-dark.png?raw=true)     |
-
 ## Download and Installation
 
 #### Windows
