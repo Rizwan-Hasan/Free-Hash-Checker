@@ -20,7 +20,7 @@ class informationManger:
         self.licenseTextBrowserTooltip: str
 
         # Version ↓
-        self.version: str = '3.0'
+        self.version: str = '2.0'
 
         # License ↓
         self.__license: str

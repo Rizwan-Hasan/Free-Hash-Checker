@@ -15,6 +15,9 @@ class updateManager:
 
     def __init__(self):
         self.__url: str = 'https://rizwan-hasan.github.io/Free-Hash-Checker/updates.json'
+        self.__updateData: dict = {
+            'version': infoManager.informationManger().version
+        }
         try:
             self.__updateData = requests.get(self.__url).json()
         except requests.exceptions.ConnectionError:

@@ -8,9 +8,10 @@ from PySide2.QtCore import Slot
 from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
-from infoManager import informationManger
 from hashcalc import HashingMethods
+from infoManager import informationManger
 from ui.ui_mainwindow import Ui_MainWindow
+from updateManager import updateManager
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -66,6 +67,21 @@ class MainWindow(QMainWindow):
         # Hiding Menu Bar and Status Bar ↓
         self.ui.menubar.hide()
         self.ui.statusbar.hide()
+
+        # Showing application update ↓
+        self.__updateMessageBox()
+
+    def __updateMessageBox(self):
+        appUpdates = updateManager()
+        if appUpdates.haveUpdate() is True:
+            updateData = appUpdates.getUpdateData()
+            message: str = """<html><head/><body><p>Version: {0}</p><p>Go to download page, 
+            <a style=\"text-decoration: none\" href=\"{1}\">Click Here</a></p></body></html>""".format(
+                updateData['version'], updateData['update'])
+            QMessageBox.information(self, 'New update!', message,
+                                    QMessageBox.Ok, QMessageBox.Ok)
+        else:
+            pass
 
     # For launching windows in center ↓
     def __makeWindowCenter(self):
