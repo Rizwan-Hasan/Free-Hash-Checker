@@ -215,12 +215,7 @@ class Ui_MainWindow(object):
         self.AboutTab.setObjectName(u"AboutTab")
         self.verticalLayout_7 = QVBoxLayout(self.AboutTab)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.splitter_2 = QSplitter(self.AboutTab)
-        self.splitter_2.setObjectName(u"splitter_2")
-        self.splitter_2.setOrientation(Qt.Vertical)
-        self.splitter_2.setOpaqueResize(False)
-        self.splitter_2.setChildrenCollapsible(True)
-        self.splitter = QSplitter(self.splitter_2)
+        self.splitter = QSplitter(self.AboutTab)
         self.splitter.setObjectName(u"splitter")
         self.splitter.setOrientation(Qt.Horizontal)
         self.splitter.setOpaqueResize(False)
@@ -303,13 +298,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addLayout(self.horizontalLayout_5)
 
         self.splitter.addWidget(self.layoutWidget1)
-        self.splitter_2.addWidget(self.splitter)
-        self.licenseTextBrowser = QTextBrowser(self.splitter_2)
+
+        self.verticalLayout_7.addWidget(self.splitter)
+
+        self.licenseTextBrowser = QTextBrowser(self.AboutTab)
         self.licenseTextBrowser.setObjectName(u"licenseTextBrowser")
         self.licenseTextBrowser.setOpenExternalLinks(True)
-        self.splitter_2.addWidget(self.licenseTextBrowser)
 
-        self.verticalLayout_7.addWidget(self.splitter_2)
+        self.verticalLayout_7.addWidget(self.licenseTextBrowser)
 
         icon9 = QIcon()
         icon9.addFile(u":/about/info.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -371,7 +367,7 @@ class Ui_MainWindow(object):
         self.logoCreditEmail.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Email: </span>sakib.khaninan@hotmail.com</p></body></html>", None))
         self.icons8Credit.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Icons credit: </span>Icons8</p></body></html>", None))
         self.hashCheckerHeader.setText("")
-        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Source", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"GitHub", None))
         self.sourceCodeLink.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><a href=\"https://github.com/Rizwan-Hasan/Free-Hash-Checker\"><img src=\":/github/github.png\"/></a></p></body></html>", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"Version", None))
         self.applicationVersion.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; font-weight:600;\">0.0</span></p></body></html>", None))
