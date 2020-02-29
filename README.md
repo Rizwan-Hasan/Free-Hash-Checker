@@ -2,8 +2,8 @@
 
 <div align="center">
   <strong>:high_brightness: Free Hash Checking Tool :crescent_moon:</strong><br>
-  A simple and elegant open-source hash checker that focused on simplicity.<br>
-  <sub>Available for Linux and Windows.</sub>
+  A simple and elegant open-source hash checker software.<br>
+  <sub>Available for Linux and Windows both.</sub>
 </div>
 
 <br>
