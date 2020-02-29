@@ -32,15 +32,15 @@
 
 ![](docs/marktext.png?raw=true)
 
-## Features
+## Features & Supports
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- MD5
+- SHA1
+- SHA224
+- SHA384
+- SHA256
+- SHA512
+- Hash Matching
 
 ## Credits
 
