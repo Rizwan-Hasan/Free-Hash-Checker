@@ -8,6 +8,7 @@ from PySide2.QtCore import Slot
 from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
+from extraManager import informationManger
 from hashcalc import HashingMethods
 from ui.ui_mainwindow import Ui_MainWindow
 
@@ -24,7 +25,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.__hashCalculator: HashingMethods
-        print(type(self.ui))
+
         # Setting fixed window size to disable fullscreen ↓
         self.setFixedWidth(self.size().width())
         self.setFixedHeight(self.minimumSizeHint().height())
@@ -46,6 +47,9 @@ class MainWindow(QMainWindow):
         # Resetting progress bar ↓
         self.ui.progressBarHashCaclulation.reset()
 
+        # Updating about information ↓
+        self.__aboutInformationSetter()
+
         # Default Button's Behaviour Set ↓
         self.ui.buttonSelectFile.clicked.connect(lambda func: self.__buttonSelectFile_Func())
         self.ui.buttonHashCalculate.clicked.connect(lambda func: self.__buttonHashCalculate__Func())
@@ -53,18 +57,8 @@ class MainWindow(QMainWindow):
         self.ui.buttonCopyToClipboard.clicked.connect(lambda func: self.__buttonCopyToClipboard_Func())
         self.ui.buttonCheckHash.clicked.connect(lambda func: self.__buttonCheckHash_Func())
 
-        # Default ToolTip Hints↓
-        self.ui.buttonSelectFile.setToolTip('Click to select file.')
-        self.ui.buttonHashCalculate.setToolTip('Start calculation.')
-        self.ui.buttonClearHashBox.setToolTip('Clear all.')
-        self.ui.buttonClearCheckHashBox.setToolTip('C')
-        self.ui.buttonCopyToClipboard.setToolTip('Copy hash to the clipboard.')
-        self.ui.buttonCheckHash.setToolTip('Paste & Check hash matching result.')
-        self.ui.lineEditFileExplore.setToolTip('Selected file location will be shown here.')
-        self.ui.lineEditHashBox.setToolTip('Calculated hash will be shown here.')
-        self.ui.progressBarHashCaclulation.setToolTip('Calculation\'s progress will be shown here.')
-        self.ui.buttonClearCheckHashBox.setToolTip('Clear pasted hash.')
-        self.ui.lineEditCheckHashBox.setToolTip('Pasted hash will be shown here for matching.')
+        # Default ToolTip Information Setter↓
+        self.__toolTipInfoSetter()
 
         # Status Bar
         self.ui.statusbar.hide()
@@ -88,6 +82,30 @@ class MainWindow(QMainWindow):
                 event.accept()
             else:
                 event.ignore()
+
+    def __aboutInformationSetter(self):
+        info = informationManger()
+        self.ui.developerName.setText(info.developerName)
+        self.ui.developerEmail.setText(info.developerEmail)
+        self.ui.logoCreditName.setText(info.logoCreditName)
+        self.ui.logoCreditEmail.setText(info.logoCreditEmail)
+        self.ui.icons8Credit.setText(info.icons8Credit)
+        self.ui.sourceCodeLink.setText(info.sourceCodeLink)
+        self.ui.applicationVersion.setText(info.applicationVersion)
+
+    # Default ToolTip Information Setter↓
+    def __toolTipInfoSetter(self):
+        self.ui.buttonSelectFile.setToolTip('Click to select file.')
+        self.ui.buttonHashCalculate.setToolTip('Start calculation.')
+        self.ui.buttonClearHashBox.setToolTip('Clear all.')
+        self.ui.buttonClearCheckHashBox.setToolTip('C')
+        self.ui.buttonCopyToClipboard.setToolTip('Copy hash to the clipboard.')
+        self.ui.buttonCheckHash.setToolTip('Paste & Check hash matching result.')
+        self.ui.lineEditFileExplore.setToolTip('Selected file location will be shown here.')
+        self.ui.lineEditHashBox.setToolTip('Calculated hash will be shown here.')
+        self.ui.progressBarHashCaclulation.setToolTip('Calculation\'s progress will be shown here.')
+        self.ui.buttonClearCheckHashBox.setToolTip('Clear pasted hash.')
+        self.ui.lineEditCheckHashBox.setToolTip('Pasted hash will be shown here for matching.')
 
     def __buttonSelectFile_Func(self):
         dialog = QFileDialog(self)
