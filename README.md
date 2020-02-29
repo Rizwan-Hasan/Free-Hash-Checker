@@ -6,6 +6,8 @@
   <sub>Available for Linux and Windows both.</sub>
 </div>
 
+<br>
+
 <div align="center">
   <!-- Version -->
   <a href="https://marktext.github.io/website">
