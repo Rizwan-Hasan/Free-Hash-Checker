@@ -52,8 +52,6 @@
   </sub>
 </div>
 
-<br />
-
 ## Screenshot
 
 ![](docs/marktext.png?raw=true)
