@@ -20,18 +20,6 @@
 </div>
 
 <div align="center">
-  <h3>
-    <a href="https://marktext.app">
-      Website
-    </a>
-    <span> | </span>
-    <a href="https://github.com/marktext/marktext#download-and-installation">
-      Downloads
-    </a>
-  </h3>
-</div>
-
-<div align="center">
   <sub>This Hash Checker Tool that could. Built with ❤︎ by
     <a href="https://github.com/Rizwan-Hasan/">Rizwan Hasan</a> and
     <a href="https://github.com/Rizwan-Hasan/Free-Hash-Checker/graphs/contributors">
