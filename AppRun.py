@@ -6,7 +6,7 @@ from PySide2.QtGui import qApp
 from PySide2.QtWidgets import QApplication, QStyleFactory
 
 import buildAll
-from main import MainWindow
+from app import MainWindow
 
 
 def main():
