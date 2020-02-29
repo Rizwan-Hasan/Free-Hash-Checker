@@ -53,19 +53,18 @@ class MainWindow(QMainWindow):
         self.ui.buttonCopyToClipboard.clicked.connect(lambda func: self.__buttonCopyToClipboard_Func())
         self.ui.buttonCheckHash.clicked.connect(lambda func: self.__buttonCheckHash_Func())
 
-        # Default ToolTip ↓
-        self.ui.buttonSelectFile.setToolTip('Click and select a file')
-        self.ui.buttonHashCalculate.setToolTip()
-        self.ui.buttonClearHashBox.setToolTip()
-        self.ui.buttonClearCheckHashBox.setToolTip()
-        self.ui.buttonCopyToClipboard.setToolTip()
-        self.ui.buttonCopyToClipboard.setToolTip()
-        self.ui.buttonCheckHash.setToolTip()
-        self.ui.lineEditFileExplore.setToolTip()
-        self.ui.lineEditHashBox.setToolTip()
-        self.ui.progressBarHashCaclulation.setToolTip()
-        self.ui.buttonClearCheckHashBox.setToolTip()
-        self.ui.lineEditCheckHashBox.setToolTip()
+        # Default ToolTip Hints↓
+        self.ui.buttonSelectFile.setToolTip('Click to select file.')
+        self.ui.buttonHashCalculate.setToolTip('Start calculation.')
+        self.ui.buttonClearHashBox.setToolTip('Clear all.')
+        self.ui.buttonClearCheckHashBox.setToolTip('C')
+        self.ui.buttonCopyToClipboard.setToolTip('Copy hash to the clipboard.')
+        self.ui.buttonCheckHash.setToolTip('Paste & Check hash matching result.')
+        self.ui.lineEditFileExplore.setToolTip('Selected file location will be shown here.')
+        self.ui.lineEditHashBox.setToolTip('Calculated hash will be shown here.')
+        self.ui.progressBarHashCaclulation.setToolTip('Calculation\'s progress will be shown here.')
+        self.ui.buttonClearCheckHashBox.setToolTip('Clear pasted hash.')
+        self.ui.lineEditCheckHashBox.setToolTip('Pasted hash will be shown here for matching.')
 
         # Status Bar
         self.ui.statusbar.hide()
