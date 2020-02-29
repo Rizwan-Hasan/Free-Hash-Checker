@@ -5,7 +5,6 @@ import sys
 from PySide2.QtGui import qApp
 from PySide2.QtWidgets import QApplication, QStyleFactory
 
-import buildAll
 from app import MainWindow
 
 
@@ -18,5 +17,4 @@ def main():
 
 
 if __name__ == "__main__":
-    buildAll.main()
     main()
