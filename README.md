@@ -25,20 +25,8 @@
       Website
     </a>
     <span> | </span>
-    <a href="https://github.com/marktext/marktext#features">
-      Features
-    </a>
-    <span> | </span>
     <a href="https://github.com/marktext/marktext#download-and-installation">
       Downloads
-    </a>
-    <span> | </span>
-    <a href="https://github.com/marktext/marktext#development">
-      Development
-    </a>
-    <span> | </span>
-    <a href="https://github.com/marktext/marktext#contribution">
-      Contribution
     </a>
   </h3>
 </div>
