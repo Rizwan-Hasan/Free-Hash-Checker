@@ -9,8 +9,21 @@ class informationManger:
         self.applicationVersion: str
         self.sourceCodeLink: str
 
-        # Setting information ↓
+        # Tooltip Variables ↓
+        self.developerNameTooltip: str
+        self.developerEmailTooltip: str
+        self.logoCreditNameTooltip: str
+        self.logoCreditEmailTooltip: str
+        self.icons8CreditTooltip: str
+        self.applicationVersionTooltip: str
+        self.sourceCodeLinkTooltip: str
+
+        # Version ↓
+        self.version: str = '3.0'
+
+        # Setting up variables ↓
         self.__info()
+        self.__toolTip()
 
     def __info(self):
         self.developerName = """<html><head/><body><p><span style=" font-size:10pt; 
@@ -34,8 +47,17 @@ class informationManger:
                 color:#0000ff;">Icons8</span></a></p></body></html>"""
 
         self.applicationVersion = """<html><head/><body><p align="center"><span style=" font-size:22pt; 
-        font-weight:600;">0.0</span></p></body></html>"""
+        font-weight:600;">{0}</span></p></body></html>""".format(self.version)
 
         self.sourceCodeLink = """<html><head/><body><p align="center"><a 
         href="https://github.com/Rizwan-Hasan/Free-Hash-Checker"><img 
         src=":/github/github.png"/></a></p></body></html>"""
+
+    def __toolTip(self):
+        self.developerNameTooltip = 'https://github.com/Rizwan-Hasan'
+        self.developerEmailTooltip = 'rizwan.hasan486@gmail.com'
+        self.logoCreditNameTooltip = 'https://github.com/skinan'
+        self.logoCreditEmailTooltip = 'sakib.khaninan@hotmail.com'
+        self.icons8CreditTooltip = 'https://icons8.com'
+        self.applicationVersionTooltip = self.version
+        self.sourceCodeLinkTooltip = 'https://github.com/Rizwan-Hasan/Free-Hash-Checker'

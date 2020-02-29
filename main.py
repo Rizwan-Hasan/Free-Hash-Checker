@@ -107,6 +107,15 @@ class MainWindow(QMainWindow):
         self.ui.progressBarHashCaclulation.setToolTip('Calculation\'s progress will be shown here.')
         self.ui.buttonClearCheckHashBox.setToolTip('Clear pasted hash.')
         self.ui.lineEditCheckHashBox.setToolTip('Pasted hash will be shown here for matching.')
+        self.ui.developerName.setToolTip(informationManger().developerName)
+        info = informationManger()
+        self.ui.developerName.setToolTip(info.developerNameTooltip)
+        self.ui.developerEmail.setToolTip(info.developerEmailTooltip)
+        self.ui.logoCreditName.setToolTip(info.logoCreditNameTooltip)
+        self.ui.logoCreditEmail.setToolTip(info.logoCreditEmailTooltip)
+        self.ui.icons8Credit.setToolTip(info.icons8CreditTooltip)
+        self.ui.sourceCodeLink.setToolTip(info.sourceCodeLinkTooltip)
+        self.ui.applicationVersion.setToolTip(info.applicationVersionTooltip)
 
     def __buttonSelectFile_Func(self):
         dialog = QFileDialog(self)
