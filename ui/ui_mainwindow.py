@@ -306,6 +306,7 @@ class Ui_MainWindow(object):
         self.splitter_2.addWidget(self.splitter)
         self.licenseTextBrowser = QTextBrowser(self.splitter_2)
         self.licenseTextBrowser.setObjectName(u"licenseTextBrowser")
+        self.licenseTextBrowser.setOpenExternalLinks(True)
         self.splitter_2.addWidget(self.licenseTextBrowser)
 
         self.verticalLayout_7.addWidget(self.splitter_2)

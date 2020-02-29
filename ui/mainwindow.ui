@@ -558,7 +558,11 @@
             </layout>
            </widget>
           </widget>
-          <widget class="QTextBrowser" name="licenseTextBrowser"/>
+          <widget class="QTextBrowser" name="licenseTextBrowser">
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
          </widget>
         </item>
        </layout>

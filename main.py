@@ -57,10 +57,13 @@ class MainWindow(QMainWindow):
         self.ui.buttonCopyToClipboard.clicked.connect(lambda func: self.__buttonCopyToClipboard_Func())
         self.ui.buttonCheckHash.clicked.connect(lambda func: self.__buttonCheckHash_Func())
 
-        # Default ToolTip Information Setter↓
+        # Default ToolTip Information Setter ↓
         self.__toolTipInfoSetter()
 
-        # Hiding Menu Bar and Status Bar
+        # Set License Text ↓
+        self.ui.licenseTextBrowser.setText(informationManger().getLicense())
+
+        # Hiding Menu Bar and Status Bar ↓
         self.ui.menubar.hide()
         self.ui.statusbar.hide()
 
@@ -116,6 +119,7 @@ class MainWindow(QMainWindow):
         self.ui.icons8Credit.setToolTip(info.icons8CreditTooltip)
         self.ui.sourceCodeLink.setToolTip(info.sourceCodeLinkTooltip)
         self.ui.applicationVersion.setToolTip(info.applicationVersionTooltip)
+        self.ui.licenseTextBrowser.setToolTip(info.licenseTextBrowserTooltip)
 
     def __buttonSelectFile_Func(self):
         dialog = QFileDialog(self)
