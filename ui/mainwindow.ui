@@ -12,8 +12,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>321</height>
+    <width>511</width>
+    <height>372</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -435,10 +435,7 @@
             <item>
              <widget class="QLabel" name="developerName">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span
-                                                                style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Developer:&lt;/span&gt;
-                                                                Rizwan Hasan&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Developer:&lt;/span&gt; Rizwan Hasan&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -451,10 +448,7 @@
             <item>
              <widget class="QLabel" name="developerEmail">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span
-                                                                style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Email:
-                                                                &lt;/span&gt;rizwan.hasan486@gmail.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Email: &lt;/span&gt;rizwan.hasan486@gmail.com &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="openExternalLinks">
                <bool>true</bool>
@@ -464,10 +458,7 @@
             <item>
              <widget class="QLabel" name="logoCreditName">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span
-                                                                style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Logo
-                                                                credit: &lt;/span&gt;Sakib Khan Inan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Logo credit: &lt;/span&gt;Sakib Khan Inan &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="openExternalLinks">
                <bool>true</bool>
@@ -477,20 +468,14 @@
             <item>
              <widget class="QLabel" name="logoCreditEmail">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span
-                                                                style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Email:
-                                                                &lt;/span&gt;sakib.khaninan@hotmail.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Email: &lt;/span&gt;sakib.khaninan@hotmail.com &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QLabel" name="icons8Credit">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span
-                                                                style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Icons
-                                                                credit: &lt;/span&gt;Icons8&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                            </string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Icons credit: &lt;/span&gt;Icons8&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="openExternalLinks">
                <bool>true</bool>
@@ -522,11 +507,7 @@
                  <item>
                   <widget class="QLabel" name="sourceCodeLink">
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p
-                                                                                    align=&quot;center&quot;&gt;&lt;a
-                                                                                    href=&quot;https://github.com/Rizwan-Hasan/Free-Hash-Checker&quot;&gt;&lt;img
-                                                                                    src=&quot;:/github/github.png&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                                                </string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/Rizwan-Hasan/Free-Hash-Checker&quot;&gt;&lt;img src=&quot;:/github/github.png&quot;/&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="openExternalLinks">
                     <bool>true</bool>
@@ -545,11 +526,7 @@
                  <item>
                   <widget class="QLabel" name="applicationVersion">
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p
-                                                                                    align=&quot;center&quot;&gt;&lt;span
-                                                                                    style=&quot; font-size:22pt;
-                                                                                    font-weight:600;&quot;&gt;0.0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-                                                                                </string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt; font-weight:600;&quot;&gt;0.0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -597,8 +574,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
-     <height>21</height>
+     <width>511</width>
+     <height>27</height>
     </rect>
    </property>
   </widget>
