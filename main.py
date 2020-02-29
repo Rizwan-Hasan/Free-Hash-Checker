@@ -8,7 +8,7 @@ from PySide2.QtCore import Slot
 from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
-from extras import informationManger
+from infoManager import informationManger
 from hashcalc import HashingMethods
 from ui.ui_mainwindow import Ui_MainWindow
 
