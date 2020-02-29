@@ -259,8 +259,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.hashCheckerHeader = QLabel(self.layoutWidget1)
         self.hashCheckerHeader.setObjectName(u"hashCheckerHeader")
-        self.hashCheckerHeader.setPixmap(QPixmap(u":/header/header.png\n"
-"                                                            "))
+        self.hashCheckerHeader.setPixmap(QPixmap(u":/header/header.png"))
 
         self.verticalLayout_4.addWidget(self.hashCheckerHeader)
 

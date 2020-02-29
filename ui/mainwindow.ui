@@ -511,8 +511,7 @@
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>:/header/header.png
-                                                            </pixmap>
+               <pixmap resource="resources.qrc">:/header/header.png</pixmap>
               </property>
              </widget>
             </item>
