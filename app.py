@@ -91,6 +91,7 @@ class MainWindow(QMainWindow):
         self.move(qtRectangle.topLeft())
 
     # Close button behaviour ↓
+    @Slot(QCloseEvent)
     def closeEvent(self, event: QCloseEvent):
         try:
             if self.__hashCalculator.isRunning() is True:
