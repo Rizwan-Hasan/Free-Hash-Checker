@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow: 
 
-Sitemap: https://rizwan-hasan.github.io/Hash-Checker/sitemap.xml
+Sitemap: https://rizwan-hasan.github.io/Free-Hash-Checker/sitemap.xml
