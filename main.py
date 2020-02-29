@@ -60,7 +60,8 @@ class MainWindow(QMainWindow):
         # Default ToolTip Information Setter↓
         self.__toolTipInfoSetter()
 
-        # Status Bar
+        # Hiding Menu Bar and Status Bar
+        self.ui.menubar.hide()
         self.ui.statusbar.hide()
 
     # For launching windows in center ↓
