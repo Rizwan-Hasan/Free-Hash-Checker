@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: 
+
+Sitemap: https://rizwan-hasan.github.io/Hash-Checker/sitemap.xml
