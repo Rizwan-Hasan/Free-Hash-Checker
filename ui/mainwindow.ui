@@ -113,9 +113,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>
-                                                                    :/folder/opened-folder.png
-                                                                </pixmap>
+                <pixmap resource="resources.qrc">:/folder/opened-folder.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>

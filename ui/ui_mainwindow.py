@@ -66,9 +66,7 @@ class Ui_MainWindow(object):
         self.labelFileExplore = QLabel(self.groupBoxHashCalculation)
         self.labelFileExplore.setObjectName(u"labelFileExplore")
         self.labelFileExplore.setFrameShape(QFrame.NoFrame)
-        self.labelFileExplore.setPixmap(QPixmap(u"\n"
-"                                                                    :/folder/opened-folder.png\n"
-"                                                                "))
+        self.labelFileExplore.setPixmap(QPixmap(u":/folder/opened-folder.png"))
         self.labelFileExplore.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.labelFileExplore)
