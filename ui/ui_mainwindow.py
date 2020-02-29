@@ -66,7 +66,9 @@ class Ui_MainWindow(object):
         self.labelFileExplore = QLabel(self.groupBoxHashCalculation)
         self.labelFileExplore.setObjectName(u"labelFileExplore")
         self.labelFileExplore.setFrameShape(QFrame.NoFrame)
-        self.labelFileExplore.setPixmap(QPixmap(u":/folder/opened-folder.png"))
+        self.labelFileExplore.setPixmap(QPixmap(u"\n"
+"                                                                    :/folder/opened-folder.png\n"
+"                                                                "))
         self.labelFileExplore.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.labelFileExplore)
@@ -153,7 +155,8 @@ class Ui_MainWindow(object):
         self.buttonHashCalculate = QPushButton(self.groupBoxHashCalculation)
         self.buttonHashCalculate.setObjectName(u"buttonHashCalculate")
         icon5 = QIcon()
-        icon5.addFile(u":/calculate/drawing-compass.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u"\n"
+"                                                                        :/calculate/drawing-compass.png", QSize(), QIcon.Normal, QIcon.Off)
         self.buttonHashCalculate.setIcon(icon5)
         self.buttonHashCalculate.setIconSize(QSize(20, 21))
         self.buttonHashCalculate.setCheckable(False)
@@ -176,7 +179,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.buttonClearCheckHashBox = QPushButton(self.groupBoxHashMatcher)
         self.buttonClearCheckHashBox.setObjectName(u"buttonClearCheckHashBox")
-        self.buttonClearCheckHashBox.setIcon(icon2)
+        icon6 = QIcon()
+        icon6.addFile(u":/clear/eraser.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.buttonClearCheckHashBox.setIcon(icon6)
         self.buttonClearCheckHashBox.setIconSize(QSize(20, 21))
 
         self.horizontalLayout_4.addWidget(self.buttonClearCheckHashBox)
@@ -191,9 +196,9 @@ class Ui_MainWindow(object):
 
         self.buttonCheckHash = QPushButton(self.groupBoxHashMatcher)
         self.buttonCheckHash.setObjectName(u"buttonCheckHash")
-        icon6 = QIcon()
-        icon6.addFile(u":/check/magnifying-glass.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.buttonCheckHash.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/check/magnifying-glass.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.buttonCheckHash.setIcon(icon7)
         self.buttonCheckHash.setIconSize(QSize(20, 21))
 
         self.horizontalLayout_4.addWidget(self.buttonCheckHash)
@@ -201,16 +206,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_MainTab.addWidget(self.groupBoxHashMatcher)
 
-        icon7 = QIcon()
-        icon7.addFile(u":/home/home.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.tabWidget.addTab(self.MainTab, icon7, "")
-        self.SettingsTab = QWidget()
-        self.SettingsTab.setObjectName(u"SettingsTab")
-        self.verticalLayout_SettingsTab = QVBoxLayout(self.SettingsTab)
-        self.verticalLayout_SettingsTab.setObjectName(u"verticalLayout_SettingsTab")
         icon8 = QIcon()
-        icon8.addFile(u":/settings/settings.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.tabWidget.addTab(self.SettingsTab, icon8, "")
+        icon8.addFile(u":/home/home.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabWidget.addTab(self.MainTab, icon8, "")
         self.AboutTab = QWidget()
         self.AboutTab.setObjectName(u"AboutTab")
         self.verticalLayout_7 = QVBoxLayout(self.AboutTab)
@@ -263,7 +261,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.hashCheckerHeader = QLabel(self.layoutWidget1)
         self.hashCheckerHeader.setObjectName(u"hashCheckerHeader")
-        self.hashCheckerHeader.setPixmap(QPixmap(u":/header/header.png"))
+        self.hashCheckerHeader.setPixmap(QPixmap(u":/header/header.png\n"
+"                                                            "))
 
         self.verticalLayout_4.addWidget(self.hashCheckerHeader)
 
@@ -359,18 +358,40 @@ class Ui_MainWindow(object):
         self.buttonClearCheckHashBox.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.lineEditCheckHashBox.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Paste hash here", None))
         self.buttonCheckHash.setText(QCoreApplication.translate("MainWindow", u"Check", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.MainTab), "")
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.SettingsTab), QCoreApplication.translate("MainWindow", u"Settings", None))
-        self.developerName.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Developer:</span> Rizwan Hasan</span></p></body></html>", None))
-        self.developerEmail.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Email: </span>rizwan.hasan486@gmail.com</span></p></body></html>", None))
-        self.logoCreditName.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Logo credit: </span>Sakib Khan Inan</p></body></html>", None))
-        self.logoCreditEmail.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Email: </span>sakib.khaninan@hotmail.com</p></body></html>", None))
-        self.icons8Credit.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">Icons credit: </span>Icons8</p></body></html>", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.MainTab), QCoreApplication.translate("MainWindow", u"Home", None))
+        self.developerName.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
+"                                                                style=\" font-size:10pt; font-weight:600;\">Developer:</span>\n"
+"                                                                Rizwan Hasan</span></p></body></html>\n"
+"                                                            ", None))
+        self.developerEmail.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
+"                                                                style=\" font-size:10pt; font-weight:600;\">Email:\n"
+"                                                                </span>rizwan.hasan486@gmail.com</span></p></body></html>\n"
+"                                                            ", None))
+        self.logoCreditName.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
+"                                                                style=\" font-size:10pt; font-weight:600;\">Logo\n"
+"                                                                credit: </span>Sakib Khan Inan</p></body></html>\n"
+"                                                            ", None))
+        self.logoCreditEmail.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
+"                                                                style=\" font-size:10pt; font-weight:600;\">Email:\n"
+"                                                                </span>sakib.khaninan@hotmail.com</p></body></html>\n"
+"                                                            ", None))
+        self.icons8Credit.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span\n"
+"                                                                style=\" font-size:10pt; font-weight:600;\">Icons\n"
+"                                                                credit: </span>Icons8</p></body></html>\n"
+"                                                            ", None))
         self.hashCheckerHeader.setText("")
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"GitHub", None))
-        self.sourceCodeLink.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><a href=\"https://github.com/Rizwan-Hasan/Free-Hash-Checker\"><img src=\":/github/github.png\"/></a></p></body></html>", None))
+        self.sourceCodeLink.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p\n"
+"                                                                                    align=\"center\"><a\n"
+"                                                                                    href=\"https://github.com/Rizwan-Hasan/Free-Hash-Checker\"><img\n"
+"                                                                                    src=\":/github/github.png\"/></a></p></body></html>\n"
+"                                                                                ", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"Version", None))
-        self.applicationVersion.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; font-weight:600;\">0.0</span></p></body></html>", None))
+        self.applicationVersion.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p\n"
+"                                                                                    align=\"center\"><span\n"
+"                                                                                    style=\" font-size:22pt;\n"
+"                                                                                    font-weight:600;\">0.0</span></p></body></html>\n"
+"                                                                                ", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.AboutTab), QCoreApplication.translate("MainWindow", u"About", None))
     # retranslateUi
 
