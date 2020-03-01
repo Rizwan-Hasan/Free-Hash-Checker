@@ -1,44 +1,44 @@
 <RCC>
-  <qresource prefix="icon">
-    <file>icon.png</file>
-  </qresource>
-  <qresource prefix="github">
-    <file>github.png</file>
-  </qresource>
-  <qresource prefix="header">
-    <file>header.png</file>
-  </qresource>
-  <qresource prefix="rhombus">
-    <file>rhombus.png</file>
-  </qresource>
-  <qresource prefix="about">
-    <file>info.png</file>
-  </qresource>
-  <qresource prefix="home">
-    <file>home.png</file>
-  </qresource>
-  <qresource prefix="calculate">
-    <file>drawing-compass.png</file>
-  </qresource>
-  <qresource prefix="check">
-    <file>magnifying-glass.png</file>
-  </qresource>
-  <qresource prefix="copy">
-    <file>copy.png</file>
-  </qresource>
-  <qresource prefix="select">
-    <file>import-file.png</file>
-  </qresource>
-  <qresource prefix="clear">
-    <file>eraser.png</file>
-  </qresource>
-  <qresource prefix="folder">
-    <file>opened-folder.png</file>
-  </qresource>
-  <qresource prefix="ok">
-    <file>ok.png</file>
-  </qresource>
-  <qresource prefix="cancel">
-    <file>cancel.png</file>
-  </qresource>
+    <qresource prefix="icon">
+        <file>icon.png</file>
+    </qresource>
+    <qresource prefix="github">
+        <file>github.png</file>
+    </qresource>
+    <qresource prefix="header">
+        <file>header.png</file>
+    </qresource>
+    <qresource prefix="rhombus">
+        <file>rhombus.png</file>
+    </qresource>
+    <qresource prefix="about">
+        <file>info.png</file>
+    </qresource>
+    <qresource prefix="home">
+        <file>home.png</file>
+    </qresource>
+    <qresource prefix="calculate">
+        <file>drawing-compass.png</file>
+    </qresource>
+    <qresource prefix="check">
+        <file>magnifying-glass.png</file>
+    </qresource>
+    <qresource prefix="copy">
+        <file>copy.png</file>
+    </qresource>
+    <qresource prefix="select">
+        <file>import-file.png</file>
+    </qresource>
+    <qresource prefix="clear">
+        <file>eraser.png</file>
+    </qresource>
+    <qresource prefix="folder">
+        <file>opened-folder.png</file>
+    </qresource>
+    <qresource prefix="ok">
+        <file>ok.png</file>
+    </qresource>
+    <qresource prefix="cancel">
+        <file>cancel.png</file>
+    </qresource>
 </RCC>
