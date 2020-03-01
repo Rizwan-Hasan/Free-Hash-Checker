@@ -23,7 +23,7 @@
 
 <div align="center">
   <!-- Warning -->
-  <img src="https://img.shields.io/badge/WARNING-not%20released%20yet-red" alt="LICENSE">
+  <img src="https://img.shields.io/badge/NOTICE-not%20released%20yet-red" alt="LICENSE">
 </div>
 
 
