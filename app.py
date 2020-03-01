@@ -2,12 +2,11 @@
 
 import logging
 import os
-import sys
 import time
 
 from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon, qApp
-from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QStyleFactory
+from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon
+from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
 from hashcalc import HashingMethods
 from infoManager import informationManger
@@ -94,16 +93,16 @@ class MainWindow(QMainWindow):
     # Close button behaviour ↓
     @Slot(QCloseEvent)
     def closeEvent(self, event: QCloseEvent):
-        try:
-            if self.__hashCalculator.isRunning() is True:
-                self.__btnHashCalculatorThreadCanceler_Func()
-        except AttributeError:
-            buttonReply = QMessageBox.question(self, 'Warning', "Sure to exit?",
-                                               QMessageBox.Ok | QMessageBox.Cancel, QMessageBox.Cancel)
-            if buttonReply == QMessageBox.Ok:
-                event.accept()
-            else:
-                event.ignore()
+        buttonReply = QMessageBox.question(self, 'Warning', "Sure to exit?",
+                                           QMessageBox.Ok | QMessageBox.Cancel, QMessageBox.Cancel)
+        if buttonReply == QMessageBox.Ok:
+            try:
+                self.__hashCalculator.terminateThread()
+            except AttributeError:
+                pass
+            event.accept()
+        else:
+            event.ignore()
 
     def __aboutInformationSetter(self):
         info = informationManger()
