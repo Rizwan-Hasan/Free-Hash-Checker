@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
         MainWindow.setEnabled(True)
-        MainWindow.resize(511, 372)
+        MainWindow.resize(511, 325)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -66,9 +66,7 @@ class Ui_MainWindow(object):
         self.labelFileExplore = QLabel(self.groupBoxHashCalculation)
         self.labelFileExplore.setObjectName(u"labelFileExplore")
         self.labelFileExplore.setFrameShape(QFrame.NoFrame)
-        self.labelFileExplore.setPixmap(QPixmap(u"\n"
-"                                                                    :/folder/opened-folder.png\n"
-"                                                                "))
+        self.labelFileExplore.setPixmap(QPixmap(u":/folder/opened-folder.png"))
         self.labelFileExplore.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.labelFileExplore)
@@ -179,9 +177,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.buttonClearCheckHashBox = QPushButton(self.groupBoxHashMatcher)
         self.buttonClearCheckHashBox.setObjectName(u"buttonClearCheckHashBox")
-        icon6 = QIcon()
-        icon6.addFile(u":/clear/eraser.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.buttonClearCheckHashBox.setIcon(icon6)
+        self.buttonClearCheckHashBox.setIcon(icon2)
         self.buttonClearCheckHashBox.setIconSize(QSize(20, 21))
 
         self.horizontalLayout_4.addWidget(self.buttonClearCheckHashBox)
@@ -196,9 +192,9 @@ class Ui_MainWindow(object):
 
         self.buttonCheckHash = QPushButton(self.groupBoxHashMatcher)
         self.buttonCheckHash.setObjectName(u"buttonCheckHash")
-        icon7 = QIcon()
-        icon7.addFile(u":/check/magnifying-glass.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.buttonCheckHash.setIcon(icon7)
+        icon6 = QIcon()
+        icon6.addFile(u":/check/magnifying-glass.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.buttonCheckHash.setIcon(icon6)
         self.buttonCheckHash.setIconSize(QSize(20, 21))
 
         self.horizontalLayout_4.addWidget(self.buttonCheckHash)
@@ -206,9 +202,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_MainTab.addWidget(self.groupBoxHashMatcher)
 
-        icon8 = QIcon()
-        icon8.addFile(u":/home/home.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.tabWidget.addTab(self.MainTab, icon8, "")
+        icon7 = QIcon()
+        icon7.addFile(u":/home/home.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabWidget.addTab(self.MainTab, icon7, "")
         self.AboutTab = QWidget()
         self.AboutTab.setObjectName(u"AboutTab")
         self.verticalLayout_7 = QVBoxLayout(self.AboutTab)
@@ -261,8 +257,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.hashCheckerHeader = QLabel(self.layoutWidget1)
         self.hashCheckerHeader.setObjectName(u"hashCheckerHeader")
-        self.hashCheckerHeader.setPixmap(QPixmap(u":/header/header.png\n"
-"                                                            "))
+        self.hashCheckerHeader.setPixmap(QPixmap(u":/header/header.png"))
 
         self.verticalLayout_4.addWidget(self.hashCheckerHeader)
 
@@ -306,9 +301,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.licenseTextBrowser)
 
-        icon9 = QIcon()
-        icon9.addFile(u":/about/info.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.tabWidget.addTab(self.AboutTab, icon9, "")
+        icon8 = QIcon()
+        icon8.addFile(u":/about/info.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabWidget.addTab(self.AboutTab, icon8, "")
 
         self.verticalLayout_3.addWidget(self.tabWidget)
 
@@ -321,7 +316,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 511, 27))
+        self.menubar.setGeometry(QRect(0, 0, 511, 21))
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
