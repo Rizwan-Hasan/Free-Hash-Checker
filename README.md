@@ -11,11 +11,11 @@
 <div align="center">
   <!-- Version -->
   <a href="https://rizwan-hasan.github.io/Free-Hash-Checker/">
-    <img src="https://badge.fury.io/gh/jocs%2Fmarktext.svg" alt="website">
+    <img src="https://img.shields.io/badge/version-3.0-brightgreen" alt="website">
   </a>
   <!-- License -->
   <a href="LICENSE">
-    <img src="https://img.shields.io/github/license/marktext/marktext.svg" alt="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-green" alt="LICENSE">
   </a>
 </div>
 
