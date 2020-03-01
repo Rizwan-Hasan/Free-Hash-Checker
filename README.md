@@ -34,7 +34,7 @@
   <img src="docs/screenshots/calculating.png" alt="Calculating Window"/>
 </p>
 
-## Features & Supports
+## Features
 
 - MD5
 - SHA1
