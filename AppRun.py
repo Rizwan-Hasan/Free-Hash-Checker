@@ -2,8 +2,6 @@
 
 import sys
 
-# noinspection PyUnresolvedReferences
-import requests
 from PySide2.QtGui import qApp
 from PySide2.QtWidgets import QApplication, QStyleFactory
 

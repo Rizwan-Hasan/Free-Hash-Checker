@@ -2,11 +2,12 @@
 
 import logging
 import os
+import sys
 import time
 
 from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon
-from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
+from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon, qApp
+from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QStyleFactory
 
 from hashcalc import HashingMethods
 from infoManager import informationManger
@@ -241,5 +242,13 @@ class MainWindow(QMainWindow):
             )
 
 
+def main():
+    app = QApplication(sys.argv)
+    qApp.setStyle(QStyleFactory.create("Fusion"))
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec_())
+
+
 if __name__ == "__main__":
-    print('Hello World')
+    main()
