@@ -30,10 +30,12 @@
 
 ## Screenshot
 
-![](docs/screenshots/start.png?raw=true)
-![](docs/screenshots/calculating.png?raw=true)
-![](docs/screenshots/finished.png?raw=true)
-![](docs/screenshots/checker.png?raw=true)
+<p align="center">
+  <img src="docs/screenshots/start.png" alt="Start Window"/>
+  <img src="docs/screenshots/calculating.png" alt="Calculating Window"/>
+  <img src="docs/screenshots/finished.png" alt="Finishing Window"/>
+  <img src="docs/screenshots/checker.png" alt="Hash Matching Window"/>
+</p>
 
 ## Features & Supports
 
