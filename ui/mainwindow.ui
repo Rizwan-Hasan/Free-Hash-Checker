@@ -13,7 +13,7 @@
     <x>0</x>
     <y>0</y>
     <width>511</width>
-    <height>325</height>
+    <height>321</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -315,10 +315,8 @@
                 <string>Calculate</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>
-                                                                        :/calculate/drawing-compass.png</normaloff>
-                                                                        :/calculate/drawing-compass.png</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/calculate/drawing-compass.png</normaloff>:/calculate/drawing-compass.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
