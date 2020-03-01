@@ -10,7 +10,7 @@
 
 <div align="center">
   <!-- Version -->
-  <a href="https://marktext.github.io/website">
+  <a href="https://rizwan-hasan.github.io/Free-Hash-Checker/">
     <img src="https://badge.fury.io/gh/jocs%2Fmarktext.svg" alt="website">
   </a>
   <!-- License -->
