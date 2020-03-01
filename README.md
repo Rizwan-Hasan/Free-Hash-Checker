@@ -11,7 +11,7 @@
 <div align="center">
   <!-- Version -->
   <a href="https://rizwan-hasan.github.io/Free-Hash-Checker/">
-    <img src="https://img.shields.io/badge/version-3.0-yellowgreen" alt="website">
+    <img src="https://img.shields.io/badge/version-3.0-orange" alt="website">
   </a>
   <!-- Build -->
   <img src="https://img.shields.io/badge/build-passing-brightgreen" alt="LICENSE">
