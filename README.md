@@ -13,11 +13,19 @@
   <a href="https://rizwan-hasan.github.io/Free-Hash-Checker/">
     <img src="https://img.shields.io/badge/version-3.0-brightgreen" alt="website">
   </a>
+  <!-- Build -->
+  <img src="https://img.shields.io/badge/build-failed-red" alt="LICENSE">
   <!-- License -->
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-green" alt="LICENSE">
   </a>
 </div>
+
+<div align="center">
+  <!-- Warning -->
+  <img src="https://img.shields.io/badge/WARNING-Currently%20is%20in%20development-red" alt="LICENSE">
+</div>
+
 
 <div align="center">
   <sub>This Hash Checker Tool that could. Built with ❤︎ by
