@@ -30,7 +30,10 @@
 
 ## Screenshot
 
-![](docs/marktext.png?raw=true)
+![](docs/screenshots/start.png?raw=true)
+![](docs/screenshots/calculating.png?raw=true)
+![](docs/screenshots/finished.png?raw=true)
+![](docs/screenshots/checker.png?raw=true)
 
 ## Features & Supports
 
