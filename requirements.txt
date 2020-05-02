@@ -1,9 +1,10 @@
-certifi==2019.11.28
+certifi==2020.4.5.1
 chardet==3.0.4
+Cython==0.29.17
 idna==2.9
-PySide2==5.14.1
+PySide2==5.14.2.1
 requests==2.23.0
 ruamel.yaml==0.16.10
 ruamel.yaml.clib==0.2.0
-shiboken2==5.14.1
-urllib3==1.25.8
+shiboken2==5.14.2.1
+urllib3==1.25.9
