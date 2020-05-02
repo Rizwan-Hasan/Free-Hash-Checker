@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.__hashCalculator: HashingMethods
 
-        # Setting fixed window size to disable fullscreen ↓
+        # Setting fixed window size to disable full screen ↓
         self.setFixedWidth(self.size().width())
         self.setFixedHeight(self.minimumSizeHint().height())
 
@@ -91,6 +91,7 @@ class MainWindow(QMainWindow):
         self.move(qtRectangle.topLeft())
 
     # Close button behaviour ↓
+    # noinspection PyCallingNonCallable
     @Slot(QCloseEvent)
     def closeEvent(self, event: QCloseEvent):
         buttonReply = QMessageBox.question(self, 'Warning', "Sure to exit?",
@@ -177,6 +178,7 @@ class MainWindow(QMainWindow):
                 self.ui.buttonHashCalculate.clicked.disconnect()
                 self.ui.buttonHashCalculate.clicked.connect(self.__btnHashCalculatorThreadCanceler_Func)
 
+    # noinspection PyCallingNonCallable
     @Slot(str)
     def __on_finished_hash_calculation(self, calculatedHash):
         self.ui.lineEditHashBox.setText(calculatedHash)
@@ -189,7 +191,7 @@ class MainWindow(QMainWindow):
             time.sleep(0.5)
         logging.info('Hash Calculator Thread Finished')
 
-    # noinspection PyTypeChecker
+    # noinspection PyTypeChecker,PyCallingNonCallable
     @Slot(int)
     def __on_going_progressbar(self, value):
         self.ui.progressBarHashCaclulation.setValue(value)
