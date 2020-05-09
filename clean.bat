@@ -3,4 +3,5 @@
 rmdir /s /q "build"
 rmdir /s /q "dist"
 rmdir /s /q "__pycache__"
-rmdir /s /q "ui/__pycache__"
+rmdir /s /q "freeHashChecker/__pycache__"
+rmdir /s /q "freeHashChecker/ui/__pycache__"

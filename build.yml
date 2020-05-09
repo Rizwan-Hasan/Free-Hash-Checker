@@ -1,6 +1,6 @@
-- name: ui/mainwindow.ui
-  pyName: ui/ui_mainwindow.py
+- name: freeHashChecker/ui/mainwindow.ui
+  pyName: freeHashChecker/ui/ui_mainwindow.py
   type: ui
-- name: ui/resources.qrc
-  pyName: resources_rc.py
+- name: freeHashChecker/ui/resources.qrc
+  pyName: freeHashChecker/resources_rc.py
   type: qrc

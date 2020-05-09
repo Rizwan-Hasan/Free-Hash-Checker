@@ -3,7 +3,7 @@ import platform
 
 import requests
 
-import infoManager
+from freeHashChecker import infoManager
 
 logging.basicConfig(
     level=logging.DEBUG,

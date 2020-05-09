@@ -1,12 +1,12 @@
-# -*- mode: python -*-
+# -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
 
 
-a = Analysis(['AppRun.py'],
-             pathex=['D:\\Downloads\\Free-Hash-Checker'],
+a = Analysis(['freeHashChecker\\AppRun.py'],
+             pathex=['C:\\Users\\Rizwan\\PycharmProjects\\Free-Hash-Checker'],
              binaries=[],
-             datas=[('ui', 'ui/'), ('app.py', '.'), ('hashcalc.py', '.'), ('infoManager.py', '.'), ('LICENSE', '.'), ('resources_rc.py', '.'), ('updateManager.py', '.')],
+             datas=[('freeHashChecker/ui', 'freeHashChecker/ui/'), ('freeHashChecker/resources_rc.py', '.'), ('LICENSE', '.')],
              hiddenimports=['requests'],
              hookspath=[],
              runtime_hooks=[],
@@ -26,11 +26,12 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=True , version='version-file.txt', icon='logo\\icon.ico')
+          console=True , version='version-file.txt', icon='freeHashChecker\\logo\\icon.ico')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
                a.datas,
                strip=False,
                upx=True,
+               upx_exclude=[],
                name='Free-Hash-Checker')

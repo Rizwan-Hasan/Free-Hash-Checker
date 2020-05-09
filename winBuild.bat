@@ -2,29 +2,22 @@
 
 rmdir /s /q "build"
 rmdir /s /q "dist"
-rmdir /s /q "__pycache__"
-rmdir /s /q "ui/__pycache__"
 
 pyinstaller -y ^
 --console ^
 --name "Free-Hash-Checker" ^
---icon "logo/icon.ico" ^
---add-data "ui";"ui/" ^
---add-data "app.py";"." ^
---add-data "hashcalc.py";"." ^
---add-data "infoManager.py";"." ^
+--icon "freeHashChecker/logo/icon.ico" ^
+--add-data "freeHashChecker/ui";"freeHashChecker/ui/" ^
+--add-data "freeHashChecker/resources_rc.py";"." ^
 --add-data "LICENSE";"." ^
---add-data "resources_rc.py";"." ^
---add-data "updateManager.py";"." ^
 --hidden-import "requests" ^
---version-file "version-file.txt" ^ "AppRun.py" ^
+--version-file "version-file.txt" ^ "freeHashChecker/AppRun.py" ^
 --clean
 
 rmdir /s /q "build"
-rmdir /s /q "__pycache__"
-rmdir /s /q "ui/__pycache__"
-del /s /q "dist\\Free-Hash-Checker\\ui\\"*.png
-del /s /q "dist\\Free-Hash-Checker\\ui\\"*.qrc
-del /s /q "dist\\Free-Hash-Checker\\ui\\"*.ui
-del /s /q "dist\\Free-Hash-Checker\\ui\\__init__.py"
+rmdir /s /q "dist\\Free-Hash-Checker\\freeHashChecker\\ui\\__pycache__"
+del /s /q "dist\\Free-Hash-Checker\\freeHashChecker\\ui\\"*.png
+del /s /q "dist\\Free-Hash-Checker\\freeHashChecker\\ui\\"*.qrc
+del /s /q "dist\\Free-Hash-Checker\\freeHashChecker\\ui\\"*.ui
+del /s /q "dist\\Free-Hash-Checker\\freeHashChecker\\ui\\__init__.py"
 pause
