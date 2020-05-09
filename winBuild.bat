@@ -2,6 +2,7 @@
 
 rmdir /s /q "build"
 rmdir /s /q "dist"
+del /s /q "Free-Hash-Checker.spec"
 
 pyinstaller -y ^
 --console ^
@@ -15,6 +16,7 @@ pyinstaller -y ^
 --clean
 
 rmdir /s /q "build"
+del /s /q "Free-Hash-Checker.spec"
 rmdir /s /q "dist\\Free-Hash-Checker\\freeHashChecker\\ui\\__pycache__"
 del /s /q "dist\\Free-Hash-Checker\\freeHashChecker\\ui\\"*.png
 del /s /q "dist\\Free-Hash-Checker\\freeHashChecker\\ui\\"*.qrc
