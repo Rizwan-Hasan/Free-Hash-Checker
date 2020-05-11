@@ -4,14 +4,6 @@ import sys
 from setuptools import find_packages, setup
 
 
-def recursive_files(directory):
-    paths = []
-    for (path, _, filenames) in os.walk(directory):
-        for filename in filenames:
-            paths.append(os.path.join('..', path, filename))
-    return paths
-
-
 if sys.version_info < (3, 7):
     raise RuntimeError("Free Hash Checker requires Python 3.7 or later")
 
