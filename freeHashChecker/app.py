@@ -69,7 +69,7 @@ class MainWindow(QMainWindow):
         self.ui.statusbar.hide()
 
         # Showing application update ↓
-        self.__updateMessageBox()
+        # self.__updateMessageBox()
 
     def __updateMessageBox(self):
         appUpdates = updateManager()

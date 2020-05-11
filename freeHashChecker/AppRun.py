@@ -9,12 +9,14 @@ __maintainer__ = "Rizwan Hasan"
 __email__ = "rizwan.hasan486@gmail.com"
 
 """
-
+import os
 import sys
 
 from PySide2.QtWidgets import QApplication, QStyleFactory
 
 from freeHashChecker.app import MainWindow
+
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 
 def main():
