@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
-
 import os
 import subprocess
 import sys
-import platform
+
 from ruamel.yaml import YAML
 from ruamel.yaml.compat import StringIO
 
@@ -31,18 +30,12 @@ def runCommand(command: list):
 
 
 def uic(inputFile: str, outputFile: str):
-    if platform.system().lower() == 'windows':
-        command: list = ['pyside2-uic', inputFile, '-o', outputFile]
-    else:
-        command: list = ['uic', '-g', 'python', inputFile, '-o', outputFile]
+    command: list = ['pyside2-uic', inputFile, '-o', outputFile]
     return runCommand(command)
 
 
 def rcc(inputFile: str, outputFile: str):
-    if platform.system().lower() == 'windows':
-        command: list = ['pyside2-rcc', inputFile, '-o', outputFile]
-    else:
-        command: list = ['rcc', '-g', 'python', inputFile, '-o', outputFile]
+    command: list = ['pyside2-rcc', inputFile, '-o', outputFile]
     return runCommand(command)
 
 
