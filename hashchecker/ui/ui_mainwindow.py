@@ -15,7 +15,7 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 
-from freeHashChecker import resources_rc
+from hashchecker import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):

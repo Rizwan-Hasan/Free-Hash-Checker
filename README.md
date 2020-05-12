@@ -1,4 +1,4 @@
-<p align="center"><img src="freeHashChecker/logo/hash_checker_header.png" alt="Hash Checker" width="35%"></p>
+<p align="center"><img src="hashchecker/logo/hash_checker_header.png" alt="Hash Checker" width="35%"></p>
 
 <div align="center">
   <strong>:star: Free Hash Checking Tool :star:</strong><br>

@@ -14,7 +14,7 @@ import sys
 
 from PySide2.QtWidgets import QApplication, QStyleFactory
 
-from freeHashChecker.app import MainWindow
+from hashchecker.app import MainWindow
 
 # sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 

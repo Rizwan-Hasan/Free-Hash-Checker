@@ -8,10 +8,10 @@ from PySide2.QtCore import Slot
 from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
-from freeHashChecker.hashcalc import HashingMethods
-from freeHashChecker.infoManager import informationManger
-from freeHashChecker.ui.ui_mainwindow import Ui_MainWindow
-from freeHashChecker.updateManager import updateManager
+from hashchecker.hashcalc import HashingMethods
+from hashchecker.infoManager import informationManger
+from hashchecker.ui.ui_mainwindow import Ui_MainWindow
+from hashchecker.updateManager import updateManager
 
 logging.basicConfig(
     level=logging.DEBUG,
