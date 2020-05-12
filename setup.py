@@ -15,7 +15,7 @@ for line in open(os.path.join(setupdir, "requirements.txt"), encoding="ASCII"):
 
 setup(
     name="hash-checker",
-    version="3.0",
+    version="3.0.dev0",
     description="A simple and elegant open-source hash checker software.",
     long_description="A simple and elegant open-source hash checker software.",
     url="https://rizwan-hasan.github.io/hash-checker/",
