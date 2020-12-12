@@ -3,16 +3,13 @@ import platform
 
 import requests
 
-from hashchecker import infoManager
+import infoManager
 
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(name)s:%(levelname)s:%(message)s'
-)
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(name)s:%(levelname)s:%(message)s')
 
 
 class updateManager:
-
     def __init__(self):
         self.__url: str = 'https://rizwan-hasan.github.io/Free-Hash-Checker/updates.json'
         self.__updateData: dict = {
@@ -24,7 +21,8 @@ class updateManager:
             logging.warning('No Internet! Can\'t check updates')
 
     def haveUpdate(self):
-        if self.__updateData['version'] != infoManager.informationManger().version:
+        if self.__updateData['version'] != infoManager.informationManger(
+        ).version:
             return True
         else:
             return False

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 """
 __author__ = "Rizwan Hasan"
 __copyright__ = "Copyright 2020"
@@ -11,10 +10,8 @@ __email__ = "rizwan.hasan486@gmail.com"
 """
 import os
 import sys
-
 from PySide2.QtWidgets import QApplication, QStyleFactory
-
-from hashchecker.app import MainWindow
+from app import MainWindow
 
 # sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 

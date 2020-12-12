@@ -1,6 +1,0 @@
-- name: hashchecker/ui/mainwindow.ui
-  pyName: hashchecker/ui/ui_mainwindow.py
-  type: ui
-- name: hashchecker/ui/resources.qrc
-  pyName: hashchecker/resources_rc.py
-  type: qrc
