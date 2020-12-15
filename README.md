@@ -34,8 +34,11 @@
 
 <p align="center">
   <img src="screenshots/calculating.png" alt="Calculating Window"/>
+  <br />
   <img src="screenshots/checker.png" alt="Checker Window"/>
+  <br />
   <img src="screenshots/finished.png" alt="Finished Window"/>
+  <br />
   <img src="screenshots/start.png" alt="Start Window"/>
 </p>
 
