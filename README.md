@@ -6,7 +6,7 @@
   <sub>Available for Linux and Windows both.</sub>
 </div>
 
-<br>
+<br />
 
 <div align="center">
   <!-- Version -->
@@ -21,10 +21,19 @@
   </a>
 </div>
 
+<br />
+
+<div align="center">
+    <a href="https://sourceforge.net/projects/free-hash-checker/files/latest/download"><img alt="Download Free Hash Checker" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x">
+    </a>  
+</div>
+
+<br />
+
 <div align="center">
   <sub>This Hash Checker Tool that could. Built with ❤︎ by
-    <a href="https://github.com/Rizwan-Hasan/">Rizwan Hasan</a> and
-    <a href="https://github.com/Rizwan-Hasan/Free-Hash-Checker/graphs/contributors">
+    <a href="https://github.com/TechLearnersInc">TechLearnersInc</a> and
+    <a href="https://github.com/TechLearnersInc/Free-Hash-Checker/graphs/contributors">
       contributors
     </a>
   </sub>
@@ -34,12 +43,6 @@
 
 <p align="center">
   <img src="screenshots/calculating.png" alt="Calculating Window"/>
-  <br />
-  <img src="screenshots/checker.png" alt="Checker Window"/>
-  <br />
-  <img src="screenshots/finished.png" alt="Finished Window"/>
-  <br />
-  <img src="screenshots/start.png" alt="Start Window"/>
 </p>
 
 ## Features
