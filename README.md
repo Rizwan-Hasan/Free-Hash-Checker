@@ -33,7 +33,7 @@
 ## Screenshot
 
 <p align="center">
-  <img src="screenshots/calculating.png" alt="Calculating Window"/>
+  <img src="https://github.com/TechLearnersInc/Free-Hash-Checker/raw/main/screenshots/calculating.png" alt="Calculating Window"/>
 </p>
 
 ## Features
