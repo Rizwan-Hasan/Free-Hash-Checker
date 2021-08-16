@@ -8,7 +8,6 @@ __maintainer__ = "Rizwan Hasan"
 __email__ = "rizwan.hasan486@gmail.com"
 
 """
-import os
 import sys
 from PySide2.QtWidgets import QApplication, QStyleFactory
 from app import MainWindow
