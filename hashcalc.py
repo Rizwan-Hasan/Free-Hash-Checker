@@ -11,7 +11,7 @@ logging.basicConfig(
 
 
 class HashingMethods(QThread):
-    __BLOCKSIZE: int = 4096
+    __BLOCKSIZE: int = 32768
     __fileLoc: str
     __lineEditHashBox: QLineEdit
     __hashName: str
