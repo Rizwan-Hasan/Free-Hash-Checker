@@ -70,7 +70,6 @@ class HashingMethods(QThread):
                 if sizeCount >= perUnit:
                     sizeCount -= perUnit
                     count += 1
-                    # noinspection PyUnresolvedReferences
                     self.signalEmitter.progressBarValue.emit(count)
                 hasher.update(fileData)
                 fileData = file.read(self.__BLOCKSIZE)
@@ -79,12 +78,10 @@ class HashingMethods(QThread):
                     return
             else:
                 count = 100
-                # noinspection PyUnresolvedReferences
                 self.signalEmitter.progressBarValue.emit(count)
 
             calculatedHash: str = hasher.hexdigest()
             logging.info("Response from the thread: " + calculatedHash)
-            # noinspection PyUnresolvedReferences
             self.signalEmitter.calculatedHash.emit(calculatedHash)
             return
 
