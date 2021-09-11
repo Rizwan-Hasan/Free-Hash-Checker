@@ -54,6 +54,16 @@ class MainWindow(QMainWindow):
         self.ui.buttonCopyToClipboard.clicked.connect(self.__buttonCopyToClipboard_Func)
         self.ui.buttonCheckHash.clicked.connect(self.__buttonCheckHash_Func)
 
+        # Drag and Drop in GroupBoxHashCalculation ↓
+        self.ui.groupBoxHashCalculation.setAcceptDrops(True)
+        self.ui.groupBoxHashCalculation.dragEnterEvent = lambda event: event.accept()
+        self.ui.groupBoxHashCalculation.dragMoveEvent = lambda event: event.accept()
+        self.ui.groupBoxHashCalculation.dropEvent = (
+            lambda event: self.__buttonSelectFile_Func(
+                fileName=[url.toLocalFile() for url in event.mimeData().urls()]
+            )
+        )
+
         # Default ToolTip Information Setter ↓
         self.__toolTipInfoSetter()
 
@@ -63,15 +73,6 @@ class MainWindow(QMainWindow):
         # Hiding Menu Bar and Status Bar ↓
         self.ui.menubar.hide()
         self.ui.statusbar.hide()
-
-        self.ui.groupBoxHashCalculation.setAcceptDrops(True)
-        self.ui.groupBoxHashCalculation.dragEnterEvent = lambda event: event.accept()
-        self.ui.groupBoxHashCalculation.dragMoveEvent = lambda event: event.accept()
-        self.ui.groupBoxHashCalculation.dropEvent = (
-            lambda event: self.__buttonSelectFile_Func(
-                fileName=[url.toLocalFile() for url in event.mimeData().urls()]
-            )
-        )
 
         # Showing application update ↓
         # self.__updateMessageBox()
