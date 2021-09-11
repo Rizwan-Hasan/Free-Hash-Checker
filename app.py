@@ -54,7 +54,7 @@ class MainWindow(QMainWindow):
         self.ui.buttonCopyToClipboard.clicked.connect(self.__buttonCopyToClipboard_Func)
         self.ui.buttonCheckHash.clicked.connect(self.__buttonCheckHash_Func)
 
-        # Drag and Drop in GroupBoxHashCalculation ↓
+        # Drag and Drop in groupBoxHashCalculation ↓
         self.ui.groupBoxHashCalculation.setAcceptDrops(True)
         self.ui.groupBoxHashCalculation.dragEnterEvent = lambda event: event.accept()
         self.ui.groupBoxHashCalculation.dragMoveEvent = lambda event: event.accept()
