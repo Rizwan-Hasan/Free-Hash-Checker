@@ -5,8 +5,8 @@ import os
 import time
 
 from PySide2.QtCore import Slot
-from PySide2.QtGui import QPixmap, QGuiApplication, QCloseEvent, QIcon
-from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
+from PySide2.QtGui import QCloseEvent, QGuiApplication, QIcon, QPixmap
+from PySide2.QtWidgets import QApplication, QFileDialog, QMainWindow, QMessageBox
 
 from hashcalc import HashingMethods
 from infoManager import informationManger
@@ -64,6 +64,15 @@ class MainWindow(QMainWindow):
         self.ui.menubar.hide()
         self.ui.statusbar.hide()
 
+        self.ui.groupBoxHashCalculation.setAcceptDrops(True)
+        self.ui.groupBoxHashCalculation.dragEnterEvent = lambda event: event.accept()
+        self.ui.groupBoxHashCalculation.dragMoveEvent = lambda event: event.accept()
+        self.ui.groupBoxHashCalculation.dropEvent = (
+            lambda event: self.__buttonSelectFile_Func(
+                fileName=[url.toLocalFile() for url in event.mimeData().urls()]
+            )
+        )
+
         # Showing application update ↓
         # self.__updateMessageBox()
 
@@ -89,7 +98,6 @@ class MainWindow(QMainWindow):
         self.move(qtRectangle.topLeft())
 
     # Close button behaviour ↓
-    # noinspection PyCallingNonCallable
     @Slot(QCloseEvent)
     def closeEvent(self, event: QCloseEvent):
         buttonReply = QMessageBox.question(
@@ -148,13 +156,13 @@ class MainWindow(QMainWindow):
         self.ui.applicationVersion.setToolTip(info.applicationVersionTooltip)
         self.ui.licenseTextBrowser.setToolTip(info.licenseTextBrowserTooltip)
 
-    def __buttonSelectFile_Func(self):
-        dialog = QFileDialog(self)
-        dialog.setFileMode(QFileDialog.AnyFile)
-        # noinspection PyTypeChecker
-        fileName = dialog.getOpenFileName(
-            self, self.tr(u"Select a File"), str(), self.tr(u"All Files (*)")
-        )
+    def __buttonSelectFile_Func(self, fileName: list = []):
+        if not fileName:
+            dialog = QFileDialog(self)
+            dialog.setFileMode(QFileDialog.AnyFile)
+            fileName = dialog.getOpenFileName(
+                self, self.tr(u"Select a File"), str(), self.tr(u"All Files (*)")
+            )
         fileName = fileName[0]
         if fileName:
             self.ui.lineEditFileExplore.clear()
@@ -171,7 +179,6 @@ class MainWindow(QMainWindow):
 
     def __buttonHashCalculate__Func(self):
         if not os.path.isfile(self.ui.lineEditFileExplore.text()):
-            # noinspection PyTypeChecker
             QMessageBox().warning(
                 None, "Warning", "Please select a file to continue!", QMessageBox.Ok
             )
