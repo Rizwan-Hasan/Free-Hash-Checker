@@ -31,12 +31,12 @@ VSVersionInfo(
         u'040904E4',
         [StringStruct(u'CompanyName', u'Rizwan Hasan'),
         StringStruct(u'ProductName', u'Free Hash Checker'),
-        StringStruct(u'ProductVersion', u'3,0'),
+        StringStruct(u'ProductVersion', u'3,1'),
         StringStruct(u'InternalName', u'free-hash-checker'),
         StringStruct(u'OriginalFilename', u'Free Hash Checker.exe'),
-        StringStruct(u'FileVersion', u'3.0'),
+        StringStruct(u'FileVersion', u'3.1'),
         StringStruct(u'FileDescription', u'A Free Hash Checking Tool'),
-        StringStruct(u'LegalCopyright', u'Copyright (c) 2020 Rizwan Hasan'),
+        StringStruct(u'LegalCopyright', u'Copyright (c) 2021 Rizwan Hasan'),
         StringStruct(u'LegalTrademarks', u'Free Hash Checker')])
       ]), 
     VarFileInfo([VarStruct(u'Translation', [1033, 1252])])
