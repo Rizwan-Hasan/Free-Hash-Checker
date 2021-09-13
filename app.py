@@ -4,9 +4,15 @@ import logging
 import os
 import time
 
-from PySide2.QtCore import Slot
+from PySide2.QtCore import Slot, QPropertyAnimation
 from PySide2.QtGui import QCloseEvent, QGuiApplication, QIcon, QPixmap
-from PySide2.QtWidgets import QApplication, QFileDialog, QMainWindow, QMessageBox
+from PySide2.QtWidgets import (
+    QApplication,
+    QFileDialog,
+    QMainWindow,
+    QMessageBox,
+    QProgressBar,
+)
 
 from hashcalc import HashingMethods
 from infoManager import informationManger
@@ -43,6 +49,13 @@ class MainWindow(QMainWindow):
 
         # Resetting progress bar ↓
         self.ui.progressBarHashCaclulation.reset()
+
+        # Monkey-Patching The QProgressBar ↓
+        self.ui.progressBarHashCaclulation.setValueWithAnimation = (
+            lambda args: QProgressBar_setValueWithAnimation(
+                self.ui.progressBarHashCaclulation, args
+            )
+        )
 
         # Updating about information ↓
         self.__aboutInformationSetter()
@@ -233,7 +246,7 @@ class MainWindow(QMainWindow):
 
     @Slot(int)
     def __on_going_progressbar(self, value):
-        self.ui.progressBarHashCaclulation.setValue(value)
+        self.ui.progressBarHashCaclulation.setValueWithAnimation(value)
 
     def __btnHashCalculatorThreadCanceler_Func(self):
         buttonReply = QMessageBox.question(
@@ -302,6 +315,18 @@ class MainWindow(QMainWindow):
             QMessageBox.information(
                 self, "Result", "Bad news! Not Matched!", QMessageBox.Ok, QMessageBox.Ok
             )
+
+
+# Monkey-Patching Function the QProgressBar inorder to get Animation
+def QProgressBar_setValueWithAnimation(self, value: int):
+    if hasattr(self, "animation"):
+        self.animation.stop()
+    else:
+        self.animation = QPropertyAnimation(targetObject=self, propertyName=b"value")
+        self.animation.setDuration(100)
+    self.animation.setStartValue(self.value())
+    self.animation.setEndValue(value)
+    self.animation.start()
 
 
 if __name__ == "__main__":
