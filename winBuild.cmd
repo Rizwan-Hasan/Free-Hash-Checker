@@ -8,7 +8,6 @@ pyinstaller -y ^
 --windowed ^
 --onedir ^
 --clean ^
---noupx ^
 --name "Free Hash Checker" ^
 --icon "./logo/icon.ico" ^
 --add-data "./ui";"./ui/" ^
