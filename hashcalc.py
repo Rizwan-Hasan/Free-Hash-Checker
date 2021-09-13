@@ -2,7 +2,7 @@ import logging
 import os
 from hashlib import md5, sha1, sha224, sha384, sha256, sha512
 
-from PySide2.QtCore import QThread, Signal, QObject
+from PySide2.QtCore import QThread, Signal
 from PySide2.QtWidgets import QLineEdit
 
 logging.basicConfig(
