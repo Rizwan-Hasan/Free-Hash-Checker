@@ -6,13 +6,7 @@ import time
 
 from PySide2.QtCore import Slot, QPropertyAnimation
 from PySide2.QtGui import QCloseEvent, QGuiApplication, QIcon, QPixmap
-from PySide2.QtWidgets import (
-    QApplication,
-    QFileDialog,
-    QMainWindow,
-    QMessageBox,
-    QProgressBar,
-)
+from PySide2.QtWidgets import QApplication, QFileDialog, QMainWindow, QMessageBox
 
 from hashcalc import HashingMethods
 from infoManager import informationManger
@@ -30,8 +24,8 @@ class MainWindow(QMainWindow):
         self.__hashCalculator: HashingMethods
 
         # Setting fixed window size to disable full screen ↓
-        self.setFixedWidth(self.size().width())
-        self.setFixedHeight(self.minimumSizeHint().height())
+        self.setMinimumWidth(self.minimumSizeHint().width())
+        self.setMaximumHeight(self.minimumSizeHint().height())
 
         # ↓
         self.__main()
@@ -225,7 +219,7 @@ class MainWindow(QMainWindow):
                 )
 
     @Slot(str)
-    def __on_finished_hash_calculation(self, calculatedHash):
+    def __on_finished_hash_calculation(self, calculatedHash: str):
         QMessageBox.information(
             self,
             "Result",
@@ -245,7 +239,7 @@ class MainWindow(QMainWindow):
         self.__disableOrEnableInput(disable=False)
 
     @Slot(int)
-    def __on_going_progressbar(self, value):
+    def __on_going_progressbar(self, value: int):
         self.ui.progressBarHashCaclulation.setValueWithAnimation(value)
 
     def __btnHashCalculatorThreadCanceler_Func(self):
