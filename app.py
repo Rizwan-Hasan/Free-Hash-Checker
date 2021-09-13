@@ -55,7 +55,6 @@ class MainWindow(QMainWindow):
         self.ui.buttonCheckHash.clicked.connect(self.__buttonCheckHash_Func)
 
         # Drag and Drop in groupBoxHashCalculation ↓
-        self.ui.groupBoxHashCalculation.setAcceptDrops(True)
         self.ui.groupBoxHashCalculation.dragEnterEvent = lambda event: event.accept()
         self.ui.groupBoxHashCalculation.dragMoveEvent = lambda event: event.accept()
         self.ui.groupBoxHashCalculation.dropEvent = (
@@ -63,6 +62,8 @@ class MainWindow(QMainWindow):
                 fileName=[url.toLocalFile() for url in event.mimeData().urls()]
             )
         )
+
+        self.__disableOrEnableInput(disable=False)
 
         # Default ToolTip Information Setter ↓
         self.__toolTipInfoSetter()
@@ -117,6 +118,7 @@ class MainWindow(QMainWindow):
         else:
             event.ignore()
 
+    # About Information Setter ↓
     def __aboutInformationSetter(self):
         info = informationManger()
         self.ui.developerName.setText(info.developerName)
@@ -127,7 +129,7 @@ class MainWindow(QMainWindow):
         self.ui.sourceCodeLink.setText(info.sourceCodeLink)
         self.ui.applicationVersion.setText(info.applicationVersion)
 
-    # Default ToolTip Information Setter↓
+    # Default ToolTip Information Setter ↓
     def __toolTipInfoSetter(self):
         self.ui.buttonSelectFile.setToolTip("Click to select file.")
         self.ui.buttonHashCalculate.setToolTip("Start calculation.")
@@ -157,6 +159,12 @@ class MainWindow(QMainWindow):
         self.ui.applicationVersion.setToolTip(info.applicationVersionTooltip)
         self.ui.licenseTextBrowser.setToolTip(info.licenseTextBrowserTooltip)
 
+    # Disabling Input's ↓
+    def __disableOrEnableInput(self, disable: bool):
+        self.ui.groupBoxHashCalculation.setAcceptDrops(False if disable else True)
+        self.ui.buttonSelectFile.setDisabled(disable)
+        self.ui.lineEditFileExplore.setDisabled(disable)
+
     def __buttonSelectFile_Func(self, fileName: list = []):
         if not fileName:
             dialog = QFileDialog(self)
@@ -184,6 +192,7 @@ class MainWindow(QMainWindow):
                 None, "Warning", "Please select a file to continue!", QMessageBox.Ok
             )
         else:
+            self.__disableOrEnableInput(disable=True)
             self.__hashCalculator = HashingMethods()
             self.__hashCalculator.setHashName(self.ui.comboBoxHashChoices.currentText())
             self.__hashCalculator.setFileLoc(self.ui.lineEditFileExplore.text())
@@ -203,7 +212,6 @@ class MainWindow(QMainWindow):
                     self.__btnHashCalculatorThreadCanceler_Func
                 )
 
-    # noinspection PyCallingNonCallable
     @Slot(str)
     def __on_finished_hash_calculation(self, calculatedHash):
         self.ui.lineEditHashBox.setText(calculatedHash)
@@ -215,8 +223,8 @@ class MainWindow(QMainWindow):
         while self.__hashCalculator.isFinished() is False:
             time.sleep(0.5)
         logging.info("Hash Calculator Thread Finished")
+        self.__disableOrEnableInput(disable=False)
 
-    # noinspection PyTypeChecker,PyCallingNonCallable
     @Slot(int)
     def __on_going_progressbar(self, value):
         self.ui.progressBarHashCaclulation.setValue(value)
@@ -240,6 +248,7 @@ class MainWindow(QMainWindow):
             self.ui.buttonHashCalculate.clicked.connect(
                 self.__buttonHashCalculate__Func
             )
+            self.__disableOrEnableInput(disable=False)
         else:
             pass
 
