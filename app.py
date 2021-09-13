@@ -63,6 +63,7 @@ class MainWindow(QMainWindow):
             )
         )
 
+        # File Insertion Enabler/Disabler ↓
         self.__disableOrEnableInput(disable=False)
 
         # Default ToolTip Information Setter ↓
