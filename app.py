@@ -213,6 +213,13 @@ class MainWindow(QMainWindow):
 
     @Slot(str)
     def __on_finished_hash_calculation(self, calculatedHash):
+        QMessageBox.information(
+            self,
+            "Result",
+            "Calculation Finished",
+            QMessageBox.Ok,
+            QMessageBox.Ok,
+        )
         self.ui.lineEditHashBox.setText(calculatedHash)
         self.ui.buttonHashCalculate.setText("Calculate")
         self.ui.buttonHashCalculate.setIcon(QIcon(":/calculate/drawing-compass.png"))
@@ -269,6 +276,13 @@ class MainWindow(QMainWindow):
 
     def __buttonCopyToClipboard_Func(self):
         self.__clipboard.setText(self.ui.lineEditHashBox.text())
+        QMessageBox.information(
+            self,
+            "Copied",
+            "Copied to your clipboard",
+            QMessageBox.Ok,
+            QMessageBox.Ok,
+        )
 
     def __buttonCheckHash_Func(self):
         if not self.ui.lineEditHashBox.text().strip():
