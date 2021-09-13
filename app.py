@@ -197,12 +197,10 @@ class MainWindow(QMainWindow):
             self.__hashCalculator = HashingMethods()
             self.__hashCalculator.setHashName(self.ui.comboBoxHashChoices.currentText())
             self.__hashCalculator.setFileLoc(self.ui.lineEditFileExplore.text())
-            self.__hashCalculator.signalEmitter.calculatedHash.connect(
+            self.__hashCalculator.calculatedHash.connect(
                 self.__on_finished_hash_calculation
             )
-            self.__hashCalculator.signalEmitter.progressBarValue.connect(
-                self.__on_going_progressbar
-            )
+            self.__hashCalculator.progressBarValue.connect(self.__on_going_progressbar)
             self.__hashCalculator.start()
             if self.__hashCalculator.isRunning():
                 self.ui.progressBarHashCaclulation.setFormat("%p%")

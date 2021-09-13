@@ -17,11 +17,8 @@ class HashingMethods(QThread):
     __hashName: str
     __termination: bool
 
-    class __SignalEmitter(QObject):
-        calculatedHash = Signal(str)
-        progressBarValue = Signal(int)
-
-    signalEmitter = __SignalEmitter()
+    calculatedHash = Signal(str)
+    progressBarValue = Signal(int)
 
     def run(self):
         self.__hashCalculate()
@@ -70,7 +67,7 @@ class HashingMethods(QThread):
                 if sizeCount >= perUnit:
                     sizeCount -= perUnit
                     count += 1
-                    self.signalEmitter.progressBarValue.emit(count)
+                    self.progressBarValue.emit(count)
                 hasher.update(fileData)
                 fileData = file.read(self.__BLOCKSIZE)
                 if self.__termination:
@@ -78,11 +75,11 @@ class HashingMethods(QThread):
                     return
             else:
                 count = 100
-                self.signalEmitter.progressBarValue.emit(count)
+                self.progressBarValue.emit(count)
 
             calculatedHash: str = hasher.hexdigest()
             logging.info("Response from the thread: " + calculatedHash)
-            self.signalEmitter.calculatedHash.emit(calculatedHash)
+            self.calculatedHash.emit(calculatedHash)
             return
 
 
