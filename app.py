@@ -277,6 +277,13 @@ class MainWindow(QMainWindow):
             pass
         try:
             self.ui.buttonHashCalculate.clicked.disconnect()
+            QMessageBox.information(
+                self,
+                "Cleared",
+                "Successfull",
+                QMessageBox.Ok,
+                QMessageBox.Ok,
+            )
         except RuntimeError:
             pass
         self.ui.buttonHashCalculate.clicked.connect(self.__buttonHashCalculate__Func)
