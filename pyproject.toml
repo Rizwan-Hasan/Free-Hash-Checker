@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "free-hash-checker"
+version = "3.1"
+description = "A simple and elegant open-source hash checker software."
+authors = ["Rizwan-Hasan <rizwan.hasan486@gmail.com>"]
+homepage = "https://github.com/Rizwan-Hasan/Free-Hash-Checker"
+repository = "https://github.com/Rizwan-Hasan/Free-Hash-Checker"
+readme = "README.md"
+license = "MIT"
+
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/Rizwan-Hasan/Free-Hash-Checker/issues"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+PySide2 = "^5.15.2"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+poetry = "^1.1.12"
+black = "*"
+cythonizer = "*"
+pyinstaller = "^4.7"
+wheel = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
