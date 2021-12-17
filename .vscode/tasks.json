@@ -12,6 +12,6 @@
             "type": "shell",
             "command": "poetry update",
             "problemMatcher": []
-        }
+        },
     ]
 }
