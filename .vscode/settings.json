@@ -1,7 +1,7 @@
 {
-    "python.languageServer": "Pylance",
-    "python.formatting.provider": "black",
-    "editor.tabSize": 4,
-    "python.linting.pylintEnabled": false,
-    "python.linting.enabled": false
+  "python.languageServer": "Pylance",
+  "python.formatting.provider": "black",
+  "editor.tabSize": 4,
+  "python.linting.pylintEnabled": false,
+  "python.linting.enabled": false
 }
