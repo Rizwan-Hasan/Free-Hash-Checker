@@ -3,7 +3,7 @@
 __author__ = "Rizwan Hasan"
 __copyright__ = "Copyright 2020"
 __license__ = "MIT"
-__version__ = "3.0"
+__version__ = "3.1"
 __maintainer__ = "Rizwan Hasan"
 __email__ = "rizwan.hasan486@gmail.com"
 
