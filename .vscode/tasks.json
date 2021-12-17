@@ -13,5 +13,17 @@
             "command": "poetry update",
             "problemMatcher": []
         },
+        {
+            "label": "Generate resources_rc.py",
+            "type": "shell",
+            "command": "poetry run pyside2-rcc \"ui/resources.qrc\" -o \"resources_rc.py\"",
+            "problemMatcher": []
+        },
+        {
+            "label": "Generate ui_mainwindow.py",
+            "type": "shell",
+            "command": "poetry run pyside2-uic \"ui/mainwindow.ui\" -o \"ui/ui_mainwindow.py\"",
+            "problemMatcher": []
+        },
     ]
 }
