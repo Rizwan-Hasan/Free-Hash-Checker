@@ -8,7 +8,6 @@ repository = "https://github.com/Rizwan-Hasan/Free-Hash-Checker"
 readme = "README.md"
 license = "MIT"
 
-
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/Rizwan-Hasan/Free-Hash-Checker/issues"
 
