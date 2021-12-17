@@ -3,7 +3,7 @@
     "tasks": [
         {
             "label": "build",
-            "dependsOrder": "parallel",
+            "dependsOrder": "sequence",
             "dependsOn": [
                 "Generate resources_rc.py",
                 "Generate ui_mainwindow.py"
