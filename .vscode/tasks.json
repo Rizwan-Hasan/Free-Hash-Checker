@@ -2,6 +2,15 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "build",
+            "dependsOrder": "parallel",
+            "dependsOn": [
+                "Generate resources_rc.py",
+                "Generate ui_mainwindow.py"
+            ],
+            "problemMatcher": [],
+        },
+        {
             "label": "Install dependencies",
             "type": "shell",
             "command": "poetry install",
