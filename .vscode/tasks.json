@@ -1,58 +1,23 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "build all",
-      "dependsOrder": "parallel",
-      "dependsOn": [
-        "build resources_rc.py",
-        "build ui_mainwindow.py"
-      ],
-      "problemMatcher": [],
-    },
-    {
-      "label": "Install dependencies",
-      "type": "shell",
-      "command": "poetry",
-      "args": [
-        "install"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "Update dependencies",
-      "type": "shell",
-      "command": "poetry",
-      "args": [
-        "update"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "build resources_rc.py",
-      "type": "shell",
-      "command": "poetry",
-      "args": [
-        "run",
-        "pyside2-rcc",
-        "ui/resources.qrc",
-        "-o",
-        "resources_rc.py"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "build ui_mainwindow.py",
-      "type": "shell",
-      "command": "poetry",
-      "args": [
-        "run",
-        "pyside2-uic",
-        "ui/mainwindow.ui",
-        "-o",
-        "ui/ui_mainwindow.py"
-      ],
-      "problemMatcher": []
-    },
-  ],
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "poetry run invoke build-all",
+            "problemMatcher": []
+        },
+        {
+            "label": "Install dependencies",
+            "type": "shell",
+            "command": "poetry install",
+            "problemMatcher": []
+        },
+        {
+            "label": "Update dependencies",
+            "type": "shell",
+            "command": "poetry update",
+            "problemMatcher": []
+        },
+    ],
 }
