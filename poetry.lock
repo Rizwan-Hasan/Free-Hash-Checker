@@ -725,7 +725,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.10"
-content-hash = "69491460e567f5fc02fd242edecd078bfd67950e5f5c35bf547097ee1dec2f22"
+content-hash = "3c83375e5a91d72f85f3468a9af1546b8e9620fce0258e8f951bf3b1d715236c"
 
 [metadata.files]
 altgraph = [

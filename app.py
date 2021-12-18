@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import logging
 import os
 import time
@@ -90,7 +88,7 @@ class MainWindow(QMainWindow):
         appUpdates = updateManager()
         if appUpdates.haveUpdate() is True:
             updateData = appUpdates.getUpdateData()
-            message: str = """<html><head/><body><p>Version: {0}</p><p>Go to download page, 
+            message: str = """<html><head/><body><p>Version: {0}</p><p>Go to download page,
             <a style=\"text-decoration: none\" href=\"{1}\">Click Here</a></p></body></html>""".format(
                 updateData["version"], updateData["update"]
             )
@@ -178,7 +176,7 @@ class MainWindow(QMainWindow):
             dialog = QFileDialog(self)
             dialog.setFileMode(QFileDialog.AnyFile)
             fileName = dialog.getOpenFileName(
-                self, self.tr(u"Select a File"), str(), self.tr(u"All Files (*)")
+                self, self.tr("Select a File"), str(), self.tr("All Files (*)")
             )
         fileName = fileName[0]
         if fileName:
@@ -267,7 +265,7 @@ class MainWindow(QMainWindow):
 
     def __buttonClearHashBox_Func(self):
         self.ui.lineEditFileExplore.clear()
-        self.ui.labelFileExplore.setPixmap(QPixmap(u":/folder/opened-folder.png"))
+        self.ui.labelFileExplore.setPixmap(QPixmap(":/folder/opened-folder.png"))
         self.ui.lineEditHashBox.clear()
         self.ui.progressBarHashCaclulation.reset()
         try:
