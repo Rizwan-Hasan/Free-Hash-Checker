@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 __author__ = "Rizwan Hasan"
 __copyright__ = "Copyright 2020"
@@ -9,8 +8,11 @@ __email__ = "rizwan.hasan486@gmail.com"
 
 """
 import sys
-from PySide2.QtWidgets import QApplication, QStyleFactory
+
+from PySide6.QtWidgets import QApplication, QStyleFactory
+
 from app import MainWindow
+
 
 # sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
@@ -20,7 +22,7 @@ def main():
     app.setStyle(QStyleFactory.create("Fusion"))
     window = MainWindow()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":
