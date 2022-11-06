@@ -5,9 +5,7 @@ from hashlib import md5, sha1, sha224, sha384, sha256, sha512
 from PySide6.QtCore import QThread, Signal
 from PySide6.QtWidgets import QLineEdit
 
-logging.basicConfig(
-    level=logging.DEBUG, format="%(name)s - %(levelname)s : %(message)s"
-)
+logging.basicConfig(level=logging.DEBUG, format="%(name)s - %(levelname)s : %(message)s")
 
 
 class HashingMethods(QThread):
@@ -21,21 +19,21 @@ class HashingMethods(QThread):
     progressBarValue = Signal(int)
 
     def run(self):
-        self.__hashCalculate()
+        self.__hash_calculate()
 
-    def setBLOCKSIZE(self, blocksize: int):
+    def set_blocksize(self, blocksize: int):
         self.__BLOCKSIZE = blocksize
 
-    def setFileLoc(self, fileLoc: str):
-        self.__fileLoc = fileLoc
+    def set_file_loc(self, fileloc: str):
+        self.__fileLoc = fileloc
 
-    def setHashName(self, hashName: str):
-        self.__hashName = hashName.lower()
+    def set_hash_name(self, hash_name: str):
+        self.__hashName = hash_name.lower()
 
-    def getHash(self):
-        return self.__calculatedHash
+    def get_hash(self):
+        return self.__calculatedHash  # noqa
 
-    def __hashDecider(self):
+    def __hash_decider(self):
         if self.__hashName == "md5":
             return md5()
         elif self.__hashName == "sha1":
@@ -49,37 +47,37 @@ class HashingMethods(QThread):
         elif self.__hashName == "sha512":
             return sha512()
 
-    def terminateThread(self):
+    def terminate_thread(self):
         if self.isRunning():
             self.__termination = True
 
-    def __hashCalculate(self):
+    def __hash_calculate(self):
         count: int = 0
-        sizeCount: int = 0
-        fileSize = os.stat(self.__fileLoc).st_size
-        perUnit = fileSize / 100
-        hasher = self.__hashDecider()
+        size_count: int = 0
+        file_size = os.stat(self.__fileLoc).st_size
+        per_unit = file_size / 100
+        hasher = self.__hash_decider()
         self.__termination = False
         with open(self.__fileLoc, "rb") as file:
-            fileData = file.read(self.__BLOCKSIZE)
-            while fileData:
-                sizeCount += self.__BLOCKSIZE
-                if sizeCount >= perUnit:
-                    sizeCount -= perUnit
+            file_data = file.read(self.__BLOCKSIZE)
+            while file_data:
+                size_count += self.__BLOCKSIZE
+                if size_count >= per_unit:
+                    size_count -= per_unit
                     count += 1
-                    self.progressBarValue.emit(count)
-                hasher.update(fileData)
-                fileData = file.read(self.__BLOCKSIZE)
+                    self.progressBarValue.emit(count)  # noqa
+                hasher.update(file_data)
+                file_data = file.read(self.__BLOCKSIZE)
                 if self.__termination:
                     file.close()
                     return
             else:
                 count = 100
-                self.progressBarValue.emit(count)
+                self.progressBarValue.emit(count)  # noqa
 
-            calculatedHash: str = hasher.hexdigest()
-            logging.info("Response from the thread: " + calculatedHash)
-            self.calculatedHash.emit(calculatedHash)
+            calculated_hash: str = hasher.hexdigest()
+            logging.info("Response from the thread: " + calculated_hash)
+            self.calculatedHash.emit(calculated_hash)  # noqa
             return
 
 
